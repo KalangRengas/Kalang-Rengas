@@ -128,12 +128,21 @@
       flex: 1 1 400px;
       border-radius: 16px;
       overflow: hidden;
+      position: relative;
     }
 
     .feature-img img {
       width: 100%;
       height: auto;
       display: block;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      border-radius: 16px;
+    }
+
+    .feature-img:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 103, 158, 0.2);
     }
 
     .feature-text {
@@ -169,10 +178,32 @@
         margin-top: 15px;
       }
       nav ul.show { display: flex; }
+
       .overlay h1 { font-size: 36px; }
-      .overlay .tagline { font-size: 16px; }
-      .overlay p { font-size: 16px; }
-      .feature-row { flex-direction: column; }
+      .overlay .tagline, .overlay p { font-size: 16px; }
+
+      .feature-row {
+        flex-direction: column;
+        padding: 0 10px;
+      }
+
+      .feature-img, .feature-text {
+        flex: 1 1 100%;
+      }
+
+      .features {
+        padding: 40px 10px;
+      }
+
+      .feature-text h3 {
+        font-size: 20px;
+        margin-top: 10px;
+      }
+
+      .feature-text p {
+        font-size: 15px;
+        line-height: 1.7;
+      }
     }
   </style>
   <script>
