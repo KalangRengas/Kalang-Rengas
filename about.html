@@ -1,137 +1,181 @@
-<section class="about-section">
-  <div class="about-wrapper">
-    <div class="about-text">
-      <h2>Tentang Kami</h2>
-      <p class="lead">
-        <span class="first-letter">K</span><span class="first-paragraph">
-        alang Rengas bukan sekadar nama di peta — ia denyut nadi yang diwarisi zaman. Dahulu, sebuah pengkalan dagang yang sibuk; di situlah budu dibotol, ikan rebus dijemur, dan laksa dibungkus dalam daun pisang. Semuanya berlaku dalam lenggok mesra orang kampung, dengan tangan berjabat dan senyum berbalas.
-        </span>
-      </p>
-      <p>
-        Kini, kami — generasi pewaris — menyambung naratif itu. Kami bukan hanya membina kembali tapak sejarah, tetapi menyulamnya dengan semangat baru: pelancongan komuniti (CBT). Kalang Rengas hari ini adalah pentas untuk alam, budaya dan kenangan bersatu.
-      </p>
-      <p>
-        Ikon kami, <strong>“Little Amazon”</strong>, bukan sekadar tarikan. Ia adalah roh kepada hubungan manusia dengan sungai, rimba dan hidup yang damai.
-      </p>
-      <p>
-        Selamat datang ke Kalang Rengas. Di sini, masa silam masih bernafas. Dan masa depan, kita corakkan bersama.
-      </p>
-    </div>
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Kami | Kalang Rengas</title>
+  <link rel="shortcut icon" href="KR.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'League Spartan', sans-serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
 
-    <div class="slider-container">
-      <div class="slider">
-        <div class="slide">
-          <img src="pengkalan.jpg" alt="Pengkalan Dagang Lama" />
-          <p class="caption">Jejak sejarah: pengkalan lama tempat bertukar hasil</p>
-        </div>
-        <div class="slide">
-          <img src="produktempatan.jpg" alt="Produk Tradisional" />
-          <p class="caption">Budu, ikan rebus & laksa: warisan rasa tempatan</p>
-        </div>
-        <div class="slide">
-          <img src="littleamazon.jpg" alt="Little Amazon Kalang Rengas" />
-          <p class="caption">Little Amazon: pelancongan lestari yang menenangkan</p>
-        </div>
+    header {
+      background: #fff;
+      padding: 15px 20px;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      height: 70px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00679e;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    nav a:hover {
+      background: #f0f8ff;
+    }
+
+    .about {
+      background: #f9fafb;
+      padding: 60px 20px;
+      color: #333;
+    }
+
+    .about h2 {
+      font-size: 32px;
+      text-align: center;
+      color: #00679e;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: 0 auto 15px;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      color: #aaa;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .socials {
+      margin-top: 15px;
+    }
+
+    .socials p {
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .social-icons a img {
+      width: 24px;
+      height: 24px;
+      margin: 0 6px;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .social-icons a img:hover {
+      filter: grayscale(0%);
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .about h2 {
+        font-size: 28px;
+      }
+
+      .about p {
+        font-size: 16px;
+      }
+
+      .social-icons a img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="index.html">Utama</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="galery.html">Galeri</a></li>
+          <li><a href="#">Pakej</a></li>
+          <li><a href="#">Fasiliti</a></li>
+          <li><a href="linkbio.html">Hubungi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="about">
+      <div class="container">
+        <h2>Tentang Kami</h2>
+        <p>
+          Kalang Rengas ialah sebuah komuniti pelancongan berasaskan komuniti (CBT) yang berakar di Kampung Gunung, Hulu Terengganu. Di sinilah, warisan dan alam berpadu, mencipta pengalaman yang tidak dapat dilupakan.
+        </p>
+        <p>
+          Diurus dan digerakkan oleh penduduk tempatan, inisiatif ini lahir dari semangat gotong-royong, rasa cinta terhadap alam sekitar, dan keinginan untuk berkongsi keunikan kampung kami dengan dunia luar.
+        </p>
+        <p>
+          Dari keheningan "Little Amazon", ke tapak perkhemahan yang mendamaikan, hinggalah aktiviti budaya dan masakan tradisional, setiap detik di Kalang Rengas adalah hasil sentuhan tangan-tangan tempatan.
+        </p>
+        <p>
+          Kami percaya bahawa pelancongan yang terbaik adalah pelancongan yang menyentuh hati — bukan sekadar melihat, tetapi merasai dan menyelami.
+        </p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
-<style>
-  .about-section {
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-    font-family: 'League Spartan', sans-serif;
-    color: #222;
-  }
-
-  .about-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .about-text {
-    text-align: justify;
-    font-size: 18px;
-    line-height: 1.8;
-  }
-
-  .about-text h2 {
-    text-align: center;
-    color: #00679e;
-    font-size: 32px;
-    margin-bottom: 24px;
-  }
-
-  .lead {
-    position: relative;
-  }
-
-  .first-letter {
-    float: left;
-    font-size: 44px;
-    font-weight: bold;
-    color: #00679e;
-    margin-right: 8px;
-    line-height: 1;
-  }
-
-  .first-paragraph {
-    font-size: 18px;
-    line-height: 1.8;
-  }
-
-  .slider-container {
-    overflow: hidden;
-    position: relative;
-    border-radius: 14px;
-    max-width: 100%;
-  }
-
-  .slider {
-    display: flex;
-    width: 300%;
-    animation: slide 15s infinite ease-in-out;
-  }
-
-  .slide {
-    width: 100%;
-    flex-shrink: 0;
-    text-align: center;
-  }
-
-  .slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 14px;
-    display: block;
-  }
-
-  .caption {
-    margin-top: 8px;
-    font-size: 14px;
-    color: #555;
-  }
-
-  @keyframes slide {
-    0%, 20% { transform: translateX(0); }
-    33.33%, 53.33% { transform: translateX(-100%); }
-    66.66%, 86.66% { transform: translateX(-200%); }
-    100% { transform: translateX(0); }
-  }
-
-  @media (max-width: 768px) {
-    .about-text {
-      font-size: 16px;
-    }
-    .first-paragraph {
-      font-size: 16px;
-    }
-    .caption {
-      font-size: 13px;
-    }
-  }
-</style>
+  <footer>
+    <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
+    <section class="socials">
+      <p>Hubungi kami melalui:</p>
+      <div class="social-icons">
+        <a href="https://facebook.com/kalangrengas" target="_blank" aria-label="Facebook">
+          <img src="icons/facebook.svg" alt="Facebook" />
+        </a>
+        <a href="https://tiktok.com/@kalangrengas" target="_blank" aria-label="TikTok">
+          <img src="icons/tiktok.svg" alt="TikTok" />
+        </a>
+      </div>
+    </section>
+  </footer>
+</body>
+</html>
