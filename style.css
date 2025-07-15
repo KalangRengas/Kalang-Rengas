@@ -215,4 +215,28 @@ nav a {
   transform: scale(1.1);
 }
 
+.section-feature {
+  padding: 60px 20px;
+}
+.section-feature:nth-child(1) {
+  background: #f9f9f9;
+}
+.section-feature:nth-child(2) {
+  background: #f0f8ff;
+}
+.section-feature:nth-child(3) {
+  background: #fefefe;
+}
+
+@media (max-width: 768px) {
+  .feature-row {
+    flex-direction: column;
+  }
+
+  /* Untuk bahagian ke-2 sahaja (Perkhemahan): letak gambar dulu */
+  .section-feature:nth-child(2) .feature-img {
+    order: -1;
+  }
+}
+
 
