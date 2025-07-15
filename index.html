@@ -5,47 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Kalang Rengas CBT – komuniti pelancongan berasaskan warisan dan alam di Hulu Terengganu. Nikmati pelayaran Little Amazon, tapak perkhemahan, dan aktiviti komuniti." />
   <title>Kalang Rengas CBT</title>
-  <link rel="shortcut icon" type="image/x-icon" href="KR.png" />
+  <link rel="shortcut icon" href="KR.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'League Spartan', sans-serif;
-      background-color: #ffffff;
+      background: #fff;
       color: #222;
       line-height: 1.6;
     }
 
     header {
-      background-color: #fff;
+      background: #fff;
       padding: 15px 20px;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid #eee;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
     }
 
     .container {
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
     }
 
-    .logo {
-      height: 70px;
-    }
+    .logo { height: 70px; }
 
     .menu-toggle {
       display: none;
@@ -65,8 +55,6 @@
       list-style: none;
       display: flex;
       gap: 20px;
-      padding: 0;
-      margin: 0;
     }
 
     nav a {
@@ -75,96 +63,90 @@
       font-weight: 600;
       padding: 6px 10px;
       border-radius: 8px;
-      transition: background-color 0.2s ease;
+      transition: background 0.2s ease;
     }
 
-    nav a:hover {
-      background-color: #f0f8ff;
-    }
+    nav a:hover { background: #f0f8ff; }
 
     .hero {
       position: relative;
-      overflow: hidden;
+      width: 100%;
     }
 
     .hero-img {
       width: 100%;
-      height: auto;
       object-fit: cover;
-      display: block;
       filter: brightness(0.6);
+      display: block;
     }
 
     .overlay {
       position: absolute;
       top: 20%;
       left: 6%;
-      transform: translateY(-20%);
-      text-align: left;
       color: #fff;
       max-width: 90%;
     }
 
     .overlay h1 {
-      font-size: 42px;
-      background: rgba(0,0,0,0.4);
-      display: inline-block;
-      padding: 10px 20px;
+      font-size: 40px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 12px 20px;
       border-radius: 12px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .overlay p {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 400;
+      background: rgba(0,0,0,0.3);
+      padding: 8px 16px;
+      display: inline-block;
+      border-radius: 8px;
     }
 
     .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 60px 20px;
       max-width: 1100px;
-      margin: 0 auto;
+      margin: auto;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 12px;
+    .feature-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .feature-img {
+      flex: 1 1 400px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      transition: transform .3s, box-shadow .3s;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 24px rgba(0, 103, 158, 0.2);
-    }
-
-    .card a {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
-    .card-img {
+    .feature-img img {
       width: 100%;
       height: auto;
       display: block;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 8px 8px 0 0;
     }
 
-    .card:hover .card-img {
-      transform: scale(1.03);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    .feature-text {
+      flex: 1 1 400px;
     }
 
-    .card h3 {
+    .feature-text h3 {
+      font-size: 24px;
       color: #00679e;
-      margin: 16px 12px 8px;
-      font-size: 20px;
+      margin-bottom: 12px;
     }
 
-    .card p {
-      font-size: 15px;
-      color: #555;
-      padding: 0 12px 16px;
+    .feature-text p {
+      font-size: 16px;
+      color: #444;
     }
 
     footer {
@@ -173,44 +155,21 @@
       font-size: 14px;
       color: #aaa;
       border-top: 1px solid #e0e0e0;
-      margin-top: 60px;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
+      .menu-toggle { display: flex; }
       nav ul {
         flex-direction: column;
         gap: 10px;
         display: none;
-        margin-top: 15px;
         width: 100%;
+        margin-top: 15px;
       }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      .logo {
-        height: 60px;
-      }
-
-      .overlay h1 {
-        font-size: 28px;
-      }
+      nav ul.show { display: flex; }
+      .overlay h1 { font-size: 28px; }
+      .overlay p { font-size: 16px; }
+      .feature-row { flex-direction: column; }
     }
   </style>
   <script>
@@ -222,11 +181,9 @@
 <body>
   <header>
     <div class="container">
-      <img src="/KR.png" alt="Logo Kalang Rengas" class="logo" />
+      <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
       <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
       <nav>
         <ul id="nav-links">
@@ -243,35 +200,42 @@
 
   <main>
     <section class="hero">
-      <img src="kalangrengas-hero.jpg" alt="Lanskap Kalang Rengas" class="hero-img" loading="lazy" />
+      <img src="kalangrengas-hero.jpg" alt="Lanskap Kalang Rengas" class="hero-img" />
       <div class="overlay">
-        <h1>Kalang Rengas<br />Little Amazon Live</h1>
+        <h1>Kalang Rengas<br>Little Amazon Live</h1>
+        <p>Let the locals craft your experience.</p>
       </div>
     </section>
 
     <section class="features">
-      <div class="card fade-in">
-        <a href="#">
-          <img src="littleamazon.jpg" alt="Little Amazon" class="card-img" loading="lazy" />
+      <div class="feature-row">
+        <div class="feature-img">
+          <img src="littleamazon.jpg" alt="Little Amazon Kalang Rengas">
+        </div>
+        <div class="feature-text">
           <h3>Little Amazon</h3>
-          <p>Alami keajaiban rimba tropika dengan setiap kayuhan. Sungai yang tenang, pokok besar berusia ratusan tahun — satu pelayaran magis di Kalang Rengas.</p>
-        </a>
+          <p>Alami keajaiban rimba tropika dengan setiap kayuhan. Sungai yang tenang, pohon-pohon menjulang, dan bisikan alam — satu pelayaran yang menenangkan jiwa.</p>
+        </div>
       </div>
 
-      <div class="card fade-in">
-        <a href="#">
-          <img src="produk.jpg" alt="Tapak Khemah" class="card-img" loading="lazy" />
+      <div class="feature-row">
+        <div class="feature-text">
           <h3>Tapak Perkhemahan & Perkelahan</h3>
-          <p>Teduh, selesa, dan dekat dengan alam. Ruang terbuka yang luas sesuai untuk keluarga, sekolah, atau aktiviti komuniti.</p>
-        </a>
+          <p>Tempat luas dan teduh di bawah langit biru. Nikmati malam berbintang, bunyi unggas, dan ketenangan alam semula jadi.</p>
+        </div>
+        <div class="feature-img">
+          <img src="produk.jpg" alt="Tapak Perkhemahan Kalang Rengas">
+        </div>
       </div>
 
-      <div class="card fade-in">
-        <a href="#">
-          <img src="aktiviti.jpg" alt="Aktiviti Komuniti" class="card-img" loading="lazy" />
+      <div class="feature-row">
+        <div class="feature-img">
+          <img src="aktiviti.jpg" alt="Aktiviti Komuniti Kalang Rengas">
+        </div>
+        <div class="feature-text">
           <h3>Aktiviti Komuniti</h3>
-          <p>Program santai dan mesra bersama warga tempatan — masakan tradisi, kraf tangan dan warisan budaya yang menghidupkan pengalaman pelancongan.</p>
-        </a>
+          <p>Santuni budaya tempatan melalui seni, kraf, dan masakan tradisional. Bukan sekadar pelawat, tapi jadi sebahagian dari komuniti kami.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -279,21 +243,5 @@
   <footer>
     <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
   </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    document.querySelectorAll('.fade-in').forEach((el) => {
-      observer.observe(el);
-    });
-  </script>
 </body>
 </html>
