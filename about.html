@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tentang Kami - Kalang Rengas</title>
-  <link rel="shortcut icon" href="KR.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tentang Kami | Kalang Rengas</title>
+  <link rel="shortcut icon" href="KR.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'League Spartan', sans-serif;
-      line-height: 1.6;
       background: #fff;
       color: #222;
+      line-height: 1.6;
     }
 
     header {
@@ -27,28 +22,27 @@
       position: sticky;
       top: 0;
       z-index: 999;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
     }
 
     .logo {
       height: 60px;
     }
 
-    .nav-toggle {
+    .menu-toggle {
       display: none;
-      background: none;
-      border: none;
-      font-size: 28px;
+      flex-direction: column;
       cursor: pointer;
-      color: #00679e;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #00679e;
+      margin: 4px 0;
+      border-radius: 2px;
     }
 
     nav ul {
@@ -70,53 +64,49 @@
       background: #f0f8ff;
     }
 
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        display: none;
-        background: #fff;
-        position: absolute;
-        top: 80px;
-        right: 20px;
-        width: 200px;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-
     main {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 20px;
     }
 
-    .section-title {
-      font-size: 32px;
+    h1 {
+      font-size: 36px;
       color: #00679e;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
-    .section-content {
+    p {
       font-size: 18px;
-      color: #333;
-      margin-bottom: 40px;
+      color: #444;
+      margin-bottom: 20px;
     }
 
-    .about-img {
+    .slider-container {
+      position: relative;
+      overflow: hidden;
       width: 100%;
-      max-height: 500px;
-      object-fit: cover;
+      height: 250px;
+      margin-top: 20px;
       border-radius: 12px;
-      margin-bottom: 20px;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 250px;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     footer {
@@ -125,72 +115,106 @@
       font-size: 14px;
       color: #aaa;
       border-top: 1px solid #e0e0e0;
+      margin-top: 50px;
     }
 
-    .socials {
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
       margin-top: 10px;
     }
 
-    .social-icons a img {
-      height: 20px;
-      margin: 0 8px;
-      opacity: 0.7;
-      transition: opacity 0.3s;
+    .social-icons img {
+      width: 22px;
+      height: 22px;
+      filter: grayscale(100%);
+      transition: transform 0.2s ease;
     }
 
-    .social-icons a img:hover {
-      opacity: 1;
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        background: #fff;
+        position: absolute;
+        top: 75px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
     }
   </style>
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+
+    let slideIndex = 0;
+    function autoSlide() {
+      const track = document.querySelector('.slider-track');
+      const slides = document.querySelectorAll('.slide');
+      slideIndex = (slideIndex + 1) % slides.length;
+      track.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+    setInterval(autoSlide, 3000);
+  </script>
 </head>
 <body>
   <header>
-    <div class="container">
-      <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
-
-      <button class="nav-toggle" id="navToggle">&#9776;</button>
-
-      <nav>
-        <ul id="navMenu">
-          <li><a href="index.html">Utama</a></li>
-          <li><a href="about.html">Tentang Kami</a></li>
-          <li><a href="galery.html">Galeri</a></li>
-          <li><a href="#">Pakej</a></li>
-          <li><a href="#">Fasiliti</a></li>
-          <li><a href="linkbio.html">Hubungi</a></li>
-        </ul>
-      </nav>
+    <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">Utama</a></li>
+        <li><a href="about.html">Tentang Kami</a></li>
+        <li><a href="galery.html">Galeri</a></li>
+        <li><a href="#">Pakej</a></li>
+        <li><a href="#">Fasiliti</a></li>
+        <li><a href="linkbio.html">Hubungi</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <h1 class="section-title">Tentang Kalang Rengas</h1>
-    <img src="pengkalan.jpg" alt="Komuniti Kalang Rengas" class="about-img" />
-    <p class="section-content">
-      Kalang Rengas ialah sebuah inisiatif komuniti di Hulu Terengganu yang menjadikan warisan alam dan budaya sebagai teras pelancongan. Didorong oleh semangat kerjasama komuniti Kampung Gunung, projek ini digerakkan oleh Kelab Rukun Tetangga (KRT) dan Kelab Belia tempatan sejak awal penubuhan.
+    <h1>Tentang Kami</h1>
+    <p>
+      Kalang Rengas bukan sekadar sebuah lokasi — ia adalah denyut nadi komuniti kami. Berpaksikan semangat gotong-royong, komuniti ini membangunkan pelancongan berasaskan komuniti (CBT) yang meraikan warisan, alam semula jadi dan budaya.
     </p>
-    <p class="section-content">
-      Kami percaya bahawa pengalaman yang bermakna datang daripada interaksi tulen dengan komuniti dan persekitaran. Oleh itu, pelancong bukan sahaja menikmati keindahan semula jadi seperti "Little Amazon", tetapi juga merasai kehidupan kampung, seni warisan, dan budaya masyarakat kami.
+    <p>
+      Terletak di Hulu Terengganu, Kalang Rengas menghimpunkan keindahan sungai, hutan, dan tradisi dalam satu pengalaman pelancongan yang tulen. Digerakkan oleh Kelab Belia Kampung Gunung dan KRT, semua aktiviti dan fasiliti di sini dibina dengan tangan warga tempatan sendiri.
     </p>
-    <p class="section-content">
-      Melalui CBT (Community-Based Tourism), kami memperkasakan penduduk setempat, melestarikan alam, dan membuka peluang ekonomi berasaskan pelancongan mapan.
-    </p>
+
+    <div class="slider-container">
+      <div class="slider-track">
+        <div class="slide"><img src="pengkalan.jpg" alt="Gambar aktiviti 1"></div>
+        <div class="slide"><img src="aktiviti.jpg" alt="Gambar aktiviti 2"></div>
+        <div class="slide"><img src="produktempatan.jpg" alt="Gambar aktiviti 3"></div>
+        <div class="slide"><img src="produk.jpg" alt="Gambar aktiviti 4"></div>
+      </div>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
-    
-      </div>
-    </section>
+    </div>
   </footer>
-
-  <script>
-    const navToggle = document.getElementById("navToggle");
-    const navMenu = document.getElementById("navMenu");
-
-    navToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-    });
-  </script>
 </body>
 </html>
