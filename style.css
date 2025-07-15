@@ -169,3 +169,11 @@ body {
 nav a {
   font-weight: 600;
 }
+
+.logo-img {
+  width: 200px;      /* atau 150px untuk lebih kecil */
+  height: auto;      /* ikut nisbah asal */
+  border-radius: 0;  /* tiada bucu bulat */
+  object-fit: contain;
+  margin-bottom: 20px;
+}
