@@ -183,3 +183,36 @@ nav a {
   box-shadow: 0 4px 16px rgba(0, 103, 158, 0.3); /* Warna tema */
 }
 
+.socials {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 20px 10px;
+  margin-top: 0;
+}
+
+.socials p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.social-icons a img {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+
