@@ -2,12 +2,93 @@
 <html lang="ms">
 <head>
   <meta charset="UTF-8" />
-  <link rel="shortcut icon" type="x-icon" href="KR.png">
+  <link rel="shortcut icon" type="image/x-icon" href="KR.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CBT Kalang Rengas</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font League Spartan -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'League Spartan', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #00679e;
+      padding: 20px 0;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .logo {
+      height: 50px;
+      border-radius: 12px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 12px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #00557e;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .hero h1 {
+      color: #00679e;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+      border-top: 1px solid #ddd;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <div class="container">
       <img src="/KR.png" alt="Logo Kalang Rengas" class="logo" />
@@ -29,7 +110,8 @@
       <div class="hero-text">
         <h1>Selamat Datang ke CBT Kalang Rengas</h1>
         <p>
-          Our website is currently under construction. A beuatiful story in the making!
+          Our website is currently under construction.<br/>
+          A beautiful story in the making!
         </p>
       </div>
     </section>
@@ -38,5 +120,6 @@
   <footer>
     <p>&copy; 2025 Kalang Rengas. Dibangunkan dengan semangat komuniti.</p>
   </footer>
+
 </body>
 </html>
