@@ -1,69 +1,96 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kalang Rengas | Bio</title>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'League Spartan', sans-serif;
-      background-color: #f7f7f7;
-      color: #333;
+      background-color: #fafafa;
+      color: #222;
       text-align: center;
       padding: 40px 20px;
+      margin: 0;
     }
+
     .profile-pic {
-      width: 150px;
-      height: 150px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      border: 3px solid #eee;
     }
+
     h1 {
-      font-size: 28px;
-      margin-bottom: 5px;
+      font-size: 26px;
+      margin-bottom: 6px;
       color: #00679e;
     }
-    p.tagline {
+
+    .tagline {
       font-size: 16px;
-      margin-bottom: 25px;
       color: #666;
+      margin-bottom: 30px;
     }
+
     .link {
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       background-color: #00679e;
       color: white;
       text-decoration: none;
       margin: 10px auto;
-      padding: 14px 20px;
+      padding: 14px 18px;
       width: 90%;
       max-width: 400px;
-      border-radius: 10px;
-      font-weight: bold;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 16px;
       transition: background-color 0.3s ease;
     }
+
     .link:hover {
       background-color: #004f7a;
     }
+
+    .link span.icon {
+      font-size: 18px;
+      display: inline-block;
+      width: 24px;
+      text-align: center;
+    }
+
     footer {
-      margin-top: 40px;
-      font-size: 12px;
-      color: #999;
+      margin-top: 50px;
+      font-size: 13px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
 
-  <img src="/DPKR.png" alt="Logo Kalang Rengas" class="profile-photo">
+  <img src="/DPKR.png" alt="Logo Kalang Rengas" class="profile-pic" />
+
   <h1>CBT Kalang Rengas</h1>
   <p class="tagline">Nature. Culture. Community.</p>
 
-  <a href="https://kalangrengas.com" class="link" target="_blank">🌐 Laman Utama</a>
-  <a href="https://wa.me/60189134993" class="link" target="_blank">✆ Whatsapp</a>
-  <a href="https://www.facebook.com/KalangrengasKKG" class="link" target="_blank">ⓕ Facebook</a>
-  <a href="mailto:zarriq@kalangrengas.com" class="link" target="_blank">✉ Email</a>
- 
+  <a href="https://kalangrengas.com" class="link" target="_blank">
+    <span class="icon">🌐</span> Laman Utama
+  </a>
+  <a href="https://wa.me/60189134993" class="link" target="_blank">
+    <span class="icon">✆</span> Whatsapp
+  </a>
+  <a href="https://www.facebook.com/KalangrengasKKG" class="link" target="_blank">
+    <span class="icon">ⓕ</span> Facebook
+  </a>
+  <a href="mailto:zarriq@kalangrengas.com" class="link" target="_blank">
+    <span class="icon">✉</span> Email
+  </a>
 
   <footer>&copy; 2025 Kalang Rengas. Dibangunkan dengan semangat komuniti.</footer>
 
