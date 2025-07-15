@@ -226,9 +226,11 @@ nav a {
 }
 
 @media (max-width: 768px) {
-  .feature-row {
-    flex-direction: column;
+  .section-feature:nth-child(2) .feature-row {
+    flex-direction: column-reverse;
   }
+}
+
 
   /* Untuk bahagian ke-2 sahaja (Perkhemahan): letak gambar dulu */
   .section-feature:nth-child(2) .feature-img {
