@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tentang Kami | Kalang Rengas</title>
-  <link rel="shortcut icon" href="KR.png" type="image/x-icon" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami - Kalang Rengas</title>
+  <link rel="shortcut icon" href="KR.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'League Spartan', sans-serif;
+      line-height: 1.6;
       background: #fff;
       color: #222;
-      line-height: 1.6;
     }
 
     header {
@@ -27,19 +32,29 @@
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
     }
 
     .logo {
-      height: 70px;
+      height: 60px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #00679e;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      justify-content: center;
       gap: 20px;
-      padding: 10px 0;
     }
 
     nav a {
@@ -55,24 +70,53 @@
       background: #f0f8ff;
     }
 
-    .about {
-      background: #f9fafb;
-      padding: 60px 20px;
-      color: #333;
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        display: none;
+        background: #fff;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
     }
 
-    .about h2 {
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
       font-size: 32px;
-      text-align: center;
       color: #00679e;
       margin-bottom: 20px;
     }
 
-    .about p {
-      max-width: 800px;
-      margin: 0 auto 15px;
+    .section-content {
       font-size: 18px;
-      line-height: 1.8;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .about-img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
     }
 
     footer {
@@ -84,54 +128,30 @@
     }
 
     .socials {
-      margin-top: 15px;
-    }
-
-    .socials p {
-      margin-bottom: 8px;
-      font-size: 14px;
-      color: #444;
+      margin-top: 10px;
     }
 
     .social-icons a img {
-      width: 24px;
-      height: 24px;
-      margin: 0 6px;
-      filter: grayscale(100%);
-      transition: filter 0.3s ease;
+      height: 20px;
+      margin: 0 8px;
+      opacity: 0.7;
+      transition: opacity 0.3s;
     }
 
     .social-icons a img:hover {
-      filter: grayscale(0%);
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .about h2 {
-        font-size: 28px;
-      }
-
-      .about p {
-        font-size: 16px;
-      }
-
-      .social-icons a img {
-        width: 20px;
-        height: 20px;
-      }
+      opacity: 1;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <div class="container">
       <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
+
+      <button class="nav-toggle" id="navToggle">&#9776;</button>
+
       <nav>
-        <ul>
+        <ul id="navMenu">
           <li><a href="index.html">Utama</a></li>
           <li><a href="about.html">Tentang Kami</a></li>
           <li><a href="galery.html">Galeri</a></li>
@@ -144,38 +164,33 @@
   </header>
 
   <main>
-    <section class="about">
-      <div class="container">
-        <h2>Tentang Kami</h2>
-        <p>
-          Kalang Rengas ialah sebuah komuniti pelancongan berasaskan komuniti (CBT) yang berakar di Kampung Gunung, Hulu Terengganu. Di sinilah, warisan dan alam berpadu, mencipta pengalaman yang tidak dapat dilupakan.
-        </p>
-        <p>
-          Diurus dan digerakkan oleh penduduk tempatan, inisiatif ini lahir dari semangat gotong-royong, rasa cinta terhadap alam sekitar, dan keinginan untuk berkongsi keunikan kampung kami dengan dunia luar.
-        </p>
-        <p>
-          Dari keheningan "Little Amazon", ke tapak perkhemahan yang mendamaikan, hinggalah aktiviti budaya dan masakan tradisional, setiap detik di Kalang Rengas adalah hasil sentuhan tangan-tangan tempatan.
-        </p>
-        <p>
-          Kami percaya bahawa pelancongan yang terbaik adalah pelancongan yang menyentuh hati — bukan sekadar melihat, tetapi merasai dan menyelami.
-        </p>
-      </div>
-    </section>
+    <h1 class="section-title">Tentang Kalang Rengas</h1>
+    <img src="about-kalangrengas.jpg" alt="Komuniti Kalang Rengas" class="about-img" />
+    <p class="section-content">
+      Kalang Rengas ialah sebuah inisiatif komuniti di Hulu Terengganu yang menjadikan warisan alam dan budaya sebagai teras pelancongan. Didorong oleh semangat kerjasama komuniti Kampung Gunung, projek ini digerakkan oleh Kelab Rukun Tetangga (KRT) dan Kelab Belia tempatan sejak awal penubuhan.
+    </p>
+    <p class="section-content">
+      Kami percaya bahawa pengalaman yang bermakna datang daripada interaksi tulen dengan komuniti dan persekitaran. Oleh itu, pelancong bukan sahaja menikmati keindahan semula jadi seperti "Little Amazon", tetapi juga merasai kehidupan kampung, seni warisan, dan budaya masyarakat kami.
+    </p>
+    <p class="section-content">
+      Melalui CBT (Community-Based Tourism), kami memperkasakan penduduk setempat, melestarikan alam, dan membuka peluang ekonomi berasaskan pelancongan mapan.
+    </p>
   </main>
 
   <footer>
     <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
-    <section class="socials">
-      <p>Hubungi kami melalui:</p>
-      <div class="social-icons">
-        <a href="https://facebook.com/kalangrengas" target="_blank" aria-label="Facebook">
-          <img src="icons/facebook.svg" alt="Facebook" />
-        </a>
-        <a href="https://tiktok.com/@kalangrengas" target="_blank" aria-label="TikTok">
-          <img src="icons/tiktok.svg" alt="TikTok" />
-        </a>
+    
       </div>
     </section>
   </footer>
+
+  <script>
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    navToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
