@@ -1,29 +1,31 @@
 <section class="about-section">
-  <div class="about-content">
-    <h2>Tentang Kami</h2>
-    <p class="lead">
-      <span class="first-letter">K</span><span class="first-paragraph">alang Rengas bukan sekadar sebuah nama. Dahulunya sebuah pengkalan kecil yang menjadi nadi dagangan — tempat bertemunya petani dan peniaga. Di sinilah budu dituang ke botol, ikan rebus digantung di jaring, dan laksa dibungkus penuh kasih. Semuanya ditukar dengan senyuman dan salam tangan.</span>
-    </p>
-    <p>
-      Kami generasi pewaris yang cinta akan warisan menyambung cerita itu. Kami menghidupkan semula Kalang Rengas sebagai destinasi pelancongan komuniti (CBT), di mana alam, budaya dan kenangan lama bersatu. Ikon kami, <strong>“Little Amazon”</strong>, bukan sekadar tarikan — ia lambang hubungan manusia dengan sungai, rimba dan kehidupan yang harmoni.
-    </p>
-    <p>
-      Selamat datang ke Kalang Rengas. Di sini, masa lalu berbicara. Dan masa depan, kita bangunkan bersama.
-    </p>
-  </div>
+  <div class="about-wrapper">
+    <div class="about-text">
+      <h2>Tentang Kami</h2>
+      <p class="lead">
+        <span class="first-letter">K</span><span class="first-paragraph">alang Rengas bukan sekadar sebuah nama. Dahulunya sebuah pengkalan kecil yang menjadi nadi dagangan —tempat bertemunya petani dan peniaga. Di sinilah budu dituang ke botol, ikan rebus digantung di jaring, dan laksa dibungkus penuh kasih. Semuanya ditukar dengan senyuman dan salam tangan.</span>
+      </p>
+      <p>
+        Kami generasi pewaris yang cinta akan warisan menyambung cerita itu. Kami menghidupkan semula Kalang Rengas sebagai destinasi pelancongan komuniti (CBT), di mana alam, budaya dan kenangan lama bersatu. Ikon kami, <strong>“Little Amazon”</strong>, bukan sekadar tarikan ia lambang hubungan manusia dengan sungai, rimba dan kehidupan yang harmoni.
+      </p>
+      <p>
+        Selamat datang ke Kalang Rengas. Di sini, masa lalu berbicara. Dan masa depan, kita bangunkan bersama.
+      </p>
+    </div>
 
-  <div class="about-gallery">
-    <div class="image-card">
-      <img src="pengkalan.jpg" alt="Pengkalan Dagang Lama" />
-      <p class="caption">Jejak sejarah: pengkalan lama tempat bertukar hasil</p>
-    </div>
-    <div class="image-card">
-      <img src="produktempatan.jpg" alt="Produk Tradisional" />
-      <p class="caption">Budu, ikan rebus & laksa: warisan rasa tempatan</p>
-    </div>
-    <div class="image-card">
-      <img src="littleamazon.jpg" alt="Little Amazon Kalang Rengas" />
-      <p class="caption">Little Amazon: pelancongan lestari yang menenangkan</p>
+    <div class="about-gallery">
+      <div class="image-card">
+        <img src="pengkalan.jpg" alt="Pengkalan Dagang Lama" />
+        <p class="caption">Jejak sejarah: pengkalan lama tempat bertukar hasil</p>
+      </div>
+      <div class="image-card">
+        <img src="produktempatan.jpg" alt="Produk Tradisional" />
+        <p class="caption">Budu, ikan rebus & laksa: warisan rasa tempatan</p>
+      </div>
+      <div class="image-card">
+        <img src="littleamazon.jpg" alt="Little Amazon Kalang Rengas" />
+        <p class="caption">Little Amazon: pelancongan lestari yang menenangkan</p>
+      </div>
     </div>
   </div>
 </section>
@@ -34,33 +36,34 @@
     background-color: #f9f9f9;
     font-family: 'League Spartan', sans-serif;
     color: #222;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
   }
 
-  .about-content {
-    max-width: 800px;
+  .about-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .about-text {
     text-align: justify;
     font-size: 18px;
     line-height: 1.8;
-    background-color: white;
   }
 
-  .about-content h2 {
+  .about-text h2 {
     color: #00679e;
     font-size: 28px;
     margin-bottom: 20px;
     text-align: center;
   }
 
-  .about-content .lead {
+  .lead {
     position: relative;
-    text-align: justify;
   }
 
-  .about-content .first-letter {
+  .first-letter {
     float: left;
     font-size: 44px;
     line-height: 1;
@@ -69,7 +72,7 @@
     margin-right: 8px;
   }
 
-  .about-content .first-paragraph {
+  .first-paragraph {
     display: inline;
     font-size: 18px;
     line-height: 1.8;
@@ -77,43 +80,45 @@
 
   .about-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
   }
 
   .image-card {
-    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 14px;
   }
 
   .image-card:hover {
     transform: scale(1.03);
+    box-shadow: 0 4px 16px rgba(0, 103, 158, 0.3);
   }
 
   .image-card img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 14px;
   }
 
   .caption {
-    padding: 10px;
+    padding: 10px 5px 0;
     font-size: 14px;
     color: #555;
   }
 
   @media (max-width: 768px) {
-    .about-content {
+    .about-text {
       font-size: 16px;
       line-height: 1.7;
     }
-    .about-content .first-paragraph {
+    .first-paragraph {
       font-size: 16px;
+    }
+    .about-gallery {
+      gap: 16px;
     }
   }
 </style>
