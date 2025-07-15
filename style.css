@@ -184,36 +184,33 @@ nav a {
 }
 
 .socials {
-  text-align: center;
-  background: #f9f9f9;
-  padding: 20px 10px;
-  margin-top: 0;
+  margin-top: 20px;
 }
 
 .socials p {
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 12px;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 10px;
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.social-icons a img {
-  width: 28px;
-  height: 28px;
+.social-icons img {
+  width: 24px;
+  height: 24px;
   filter: grayscale(100%);
-  transition: filter 0.3s ease, transform 0.3s ease;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
-.social-icons a:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.1);
+.social-icons img:hover {
+  opacity: 1;
 }
+
 
 .section-feature {
   padding: 60px 20px;
