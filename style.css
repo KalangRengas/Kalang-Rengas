@@ -170,4 +170,16 @@ nav a {
   font-weight: 600;
 }
 
+.image-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(0, 103, 158, 0.3); /* Warna tema */
+}
 
