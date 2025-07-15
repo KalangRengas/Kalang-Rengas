@@ -19,14 +19,14 @@
 
     header {
       background-color: #fff;
-      padding: 20px 0;
+      padding: 15px 20px;
       border-bottom: 1px solid #e0e0e0;
+      position: relative;
     }
 
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -34,8 +34,21 @@
     }
 
     .logo {
-      height: 60px;
-      margin-right: 20px;
+      height: 70px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #00679e;
+      margin: 4px 0;
+      border-radius: 2px;
     }
 
     nav ul {
@@ -61,7 +74,7 @@
 
     .hero {
       text-align: center;
-      padding: 100px 20px 80px;
+      padding: 80px 20px;
     }
 
     .hero h1 {
@@ -86,22 +99,29 @@
       margin-top: 60px;
     }
 
-    /* Mobile Responsive */
+    /* Responsive Styling */
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        width: 100%;
       }
 
       nav ul {
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
+        display: none;
         margin-top: 15px;
       }
 
+      nav ul.show {
+        display: flex;
+      }
+
       .logo {
-        height: 70px;
-        margin-bottom: 10px;
+        height: 80px;
       }
 
       .hero h1 {
@@ -113,14 +133,26 @@
       }
     }
   </style>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('show');
+    }
+  </script>
 </head>
 <body>
 
   <header>
     <div class="container">
       <img src="/KR.png" alt="Logo Kalang Rengas" class="logo" />
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <nav>
-        <ul>
+        <ul id="nav-links">
           <li><a href="#">Home</a></li>
           <li><a href="#">Tentang Kami</a></li>
           <li><a href="galery.html">Galeri</a></li>
@@ -135,13 +167,12 @@
   <main>
     <section class="hero">
       <h1>Selamat Datang ke Kalang Rengas</h1>
-      <p>Our website is currently under construction.
-A beautiful story in the making!</p>
+      <p>Our website is currently under construction. A beautiful story in the making!</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
+    <p>&copy; 2025 Kalang Rengas. sebuah komuniti, satu destinasi.</p>
   </footer>
 
 </body>
