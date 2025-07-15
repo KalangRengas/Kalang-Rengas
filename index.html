@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kalang Rengas CBT – komuniti pelancongan berasaskan warisan dan alam di Hulu Terengganu. Nikmati pelayaran Little Amazon, tapak perkhemahan, dan aktiviti komuniti." />
   <title>Kalang Rengas CBT</title>
   <link rel="shortcut icon" type="image/x-icon" href="KR.png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&display=swap" rel="stylesheet">
@@ -11,6 +12,10 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -86,6 +91,7 @@
       width: 100%;
       height: auto;
       object-fit: cover;
+      display: block;
       filter: brightness(0.6);
     }
 
@@ -132,6 +138,7 @@
     .card img {
       width: 100%;
       display: block;
+      border: none;
     }
 
     .card h3 {
@@ -153,6 +160,17 @@
       color: #aaa;
       border-top: 1px solid #e0e0e0;
       margin-top: 60px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     @media (max-width: 768px) {
@@ -223,17 +241,17 @@
     </section>
 
     <section class="features">
-      <div class="card">
+      <div class="card fade-in">
         <img src="littleamazon.jpg" alt="Little Amazon" loading="lazy" />
         <h3>Little Amazon</h3>
-        <p>Pelayaran sungai yang tenang & syahdu bersama komuniti.</p>
+        <p>“Alami keajaiban rimba tropika dengan setiap kayuhan. Little Amazon menanti pelayar setia</p>
       </div>
-      <div class="card">
+      <div class="card fade-in">
         <img src="produk.jpg" alt="Tapak Khemah" loading="lazy" />
         <h3>Tapak Perkhemahan & Perkelahan</h3>
-        <p>Budu, laksa, ikan rebus — rasa yang membawa nostalgia.</p>
+        <p>Teduh, pemandangan yang menarik dan fasiliti lengkap</p>
       </div>
-      <div class="card">
+      <div class="card fade-in">
         <img src="aktiviti.jpg" alt="Aktiviti Komuniti" loading="lazy" />
         <h3>Aktiviti Komuniti</h3>
         <p>Program mesra pengunjung bersama warga Kalang Rengas.</p>
@@ -244,5 +262,21 @@
   <footer>
     <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
