@@ -97,20 +97,21 @@
 
     .overlay {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      text-align: center;
+      top: 20%;
+      left: 6%;
+      transform: translateY(-20%);
+      text-align: left;
       color: #fff;
       max-width: 90%;
     }
 
     .overlay h1 {
-      font-size: 36px;
-    }
-
-    .overlay p {
-      font-size: 18px;
+      font-size: 42px;
+      background: rgba(0,0,0,0.4);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 12px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     }
 
     .features {
@@ -135,10 +136,23 @@
       box-shadow: 0 8px 24px rgba(0, 103, 158, 0.2);
     }
 
-    .card img {
-      width: 100%;
+    .card a {
+      text-decoration: none;
+      color: inherit;
       display: block;
-      border: none;
+    }
+
+    .card-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .card:hover .card-img {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
     .card h3 {
@@ -197,10 +211,6 @@
       .overlay h1 {
         font-size: 28px;
       }
-
-      .overlay p {
-        font-size: 16px;
-      }
     }
   </style>
   <script>
@@ -235,26 +245,33 @@
     <section class="hero">
       <img src="kalangrengas-hero.jpg" alt="Lanskap Kalang Rengas" class="hero-img" loading="lazy" />
       <div class="overlay">
-        <h1>Selamat Datang ke Kalang Rengas</h1>
-        <p>Komuniti hidup, warisan abadi & pengalaman yang penuh makna.</p>
+        <h1>Kalang Rengas<br />Little Amazon Live</h1>
       </div>
     </section>
 
     <section class="features">
       <div class="card fade-in">
-        <img src="littleamazon.jpg" alt="Little Amazon" loading="lazy" />
-        <h3>Little Amazon</h3>
-        <p>“Alami keajaiban rimba tropika dengan setiap kayuhan. Little Amazon menanti pelayar setia</p>
+        <a href="#">
+          <img src="littleamazon.jpg" alt="Little Amazon" class="card-img" loading="lazy" />
+          <h3>Little Amazon</h3>
+          <p>Alami keajaiban rimba tropika dengan setiap kayuhan. Sungai yang tenang, pokok besar berusia ratusan tahun — satu pelayaran magis di Kalang Rengas.</p>
+        </a>
       </div>
+
       <div class="card fade-in">
-        <img src="produk.jpg" alt="Tapak Khemah" loading="lazy" />
-        <h3>Tapak Perkhemahan & Perkelahan</h3>
-        <p>Teduh, pemandangan yang menarik dan fasiliti lengkap</p>
+        <a href="#">
+          <img src="produk.jpg" alt="Tapak Khemah" class="card-img" loading="lazy" />
+          <h3>Tapak Perkhemahan & Perkelahan</h3>
+          <p>Teduh, selesa, dan dekat dengan alam. Ruang terbuka yang luas sesuai untuk keluarga, sekolah, atau aktiviti komuniti.</p>
+        </a>
       </div>
+
       <div class="card fade-in">
-        <img src="aktiviti.jpg" alt="Aktiviti Komuniti" loading="lazy" />
-        <h3>Aktiviti Komuniti</h3>
-        <p>Program mesra pengunjung bersama warga Kalang Rengas.</p>
+        <a href="#">
+          <img src="aktiviti.jpg" alt="Aktiviti Komuniti" class="card-img" loading="lazy" />
+          <h3>Aktiviti Komuniti</h3>
+          <p>Program santai dan mesra bersama warga tempatan — masakan tradisi, kraf tangan dan warisan budaya yang menghidupkan pengalaman pelancongan.</p>
+        </a>
       </div>
     </section>
   </main>
