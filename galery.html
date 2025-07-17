@@ -13,6 +13,7 @@
     }
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splide@4.1.3/dist/css/splide.min.css" />
 </head>
 <body class="bg-gray-100 text-gray-800">
 
@@ -51,15 +52,21 @@
     <p class="text-lg">Merakam detik istimewa di Kalang Rengas</p>
   </section>
 
-  <!-- Galeri Interaktif dengan kapsyen dan animasi -->
-  <section class="max-w-7xl mx-auto px-4 py-12">
-    <div id="lightgallery" class="grid grid-cols-1 gap-4">
-      <a href="./images/galeri1.jpeg" data-sub-html="<h4>Kenangan Aktiviti Air</h4>"><img src="./images/galeri1.jpeg" alt="Galeri 1" class="w-full h-auto object-cover rounded" /></a>
-      <a href="./images/galeri2.jpeg" data-sub-html="<h4>Pelancong Bergambar Bersama</h4>"><img src="./images/galeri2.jpeg" alt="Galeri 2" class="w-full h-auto object-cover rounded" /></a>
-      <a href="./images/galeri3.jpeg" data-sub-html="<h4>Sesi Team Building</h4>"><img src="./images/galeri3.jpeg" alt="Galeri 3" class="w-full h-auto object-cover rounded" /></a>
-      <a href="./images/galeri4.jpeg" data-sub-html="<h4>Pemandangan Senja di Kalang</h4>"><img src="./images/galeri4.jpeg" alt="Galeri 4" class="w-full h-auto object-cover rounded" /></a>
-      <a href="./images/galeri5.jpeg" data-sub-html="<h4>Lawatan Pelajar Sekolah</h4>"><img src="./images/galeri5.jpeg" alt="Galeri 5" class="w-full h-auto object-cover rounded" /></a>
-      <a href="./images/galeri6.jpeg" data-sub-html="<h4>Sukan Kampung</h4>"><img src="./images/galeri6.jpeg" alt="Galeri 6" class="w-full h-auto object-cover rounded" /></a>
+  <!-- Carousel Gallery -->
+  <section class="max-w-5xl mx-auto px-4 py-12">
+    <div id="lightgallery">
+      <div class="splide" id="gallery-carousel">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide"><a href="./images/galeri1.jpeg" data-sub-html="<h4>Kenangan Aktiviti Air</h4>"><img src="./images/galeri1.jpeg" class="rounded w-full" /></a></li>
+            <li class="splide__slide"><a href="./images/galeri2.jpg" data-sub-html="<h4>Mata dari Langit</h4>"><img src="./images/galeri2.jpeg" class="rounded w-full" /></a></li>
+            <li class="splide__slide"><a href="./images/galeri3.jpeg" data-sub-html="<h4>Tapak Perkhemahan yang Teduh</h4>"><img src="./images/galeri3.jpeg" class="rounded w-full" /></a></li>
+            <li class="splide__slide"><a href="./images/galeri4.jpg" data-sub-html="<h4>Aktiviti di Kalang Rengas</h4>"><img src="./images/galeri4.jpeg" class="rounded w-full" /></a></li>
+            <li class="splide__slide"><a href="./images/galeri5.jpg" data-sub-html="<h4>Pemandangan Menarik</h4>"><img src="./images/galeri5.jpeg" class="rounded w-full" /></a></li>
+            <li class="splide__slide"><a href="./images/galeri6.jpg" data-sub-html="<h4>Suasana Malam</h4>"><img src="./images/galeri6.jpeg" class="rounded w-full" /></a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -71,13 +78,27 @@
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/splide@4.1.3/dist/js/splide.min.js"></script>
   <script>
     document.getElementById('menu-toggle').addEventListener('click', function () {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
+      document.getElementById('mobile-menu').classList.toggle('hidden');
     });
 
+    const splide = new Splide('#gallery-carousel', {
+      type   : 'loop',
+      perPage: 1,
+      autoplay: true,
+      interval: 4000,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      arrows: false,
+      pagination: true,
+    });
+
+    splide.mount();
+
     lightGallery(document.getElementById('lightgallery'), {
+      selector: '.splide__slide a',
       plugins: [lgZoom, lgThumbnail],
       speed: 400,
       zoom: true,
