@@ -7,31 +7,29 @@
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'League Spartan', sans-serif;
       background-color: #fafafa;
       color: #222;
       text-align: center;
-      padding: 40px 20px;
+      padding: 40px 16px;
       margin: 0;
-      box-sizing: border-box;
     }
 
-    .profile-pic {
-      width: 180px;
-      max-width: 80vw;
+    .logo {
+      width: 120px;
       height: auto;
-      border-radius: 14px;
-      object-fit: contain;
-      margin: 0 auto 20px;
-      display: block;
-      border: 1px solid #ddd;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: 26px;
-      margin-bottom: 6px;
+      font-size: 24px;
       color: #00679e;
+      margin-bottom: 6px;
     }
 
     .tagline {
@@ -41,16 +39,16 @@
     }
 
     .link {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
       background-color: #00679e;
       color: white;
       text-decoration: none;
-      margin: 10px auto;
+      margin: 12px auto;
       padding: 14px 18px;
-      width: 90%;
+      width: 100%;
       max-width: 400px;
       border-radius: 14px;
       font-weight: 600;
@@ -62,9 +60,8 @@
       background-color: #004f7a;
     }
 
-    .link span.icon {
+    .link .icon {
       font-size: 18px;
-      display: inline-block;
       width: 24px;
       text-align: center;
     }
@@ -77,11 +74,30 @@
       padding-top: 20px;
       line-height: 1.6;
     }
+
+    @media (max-width: 480px) {
+      .logo {
+        width: 100px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .tagline {
+        font-size: 14px;
+      }
+
+      .link {
+        font-size: 15px;
+        padding: 12px 16px;
+      }
+    }
   </style>
 </head>
 <body>
 
- <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
+  <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
 
   <h1>CBT Kalang Rengas</h1>
   <p class="tagline">Nature. Culture. Community.</p>
