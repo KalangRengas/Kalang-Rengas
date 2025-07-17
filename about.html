@@ -7,7 +7,6 @@
   <meta name="description" content="Kalang Rengas ialah komuniti pelancongan berasaskan masyarakat (CBT) di Hulu Terengganu, menawarkan aktiviti alam berkayak menyelusuri Little Amazon, budaya dan warisan yang tulen.">
   <meta name="keywords" content="Kalang Rengas, CBT Hulu Terengganu, pelancongan komuniti, kampung gunung, eco tourism, Terengganu, Malaysia">
   <meta name="author" content="Kalang Rengas Community">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="KR.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
@@ -164,20 +163,6 @@
       }
     }
   </style>
-  <script>
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('show');
-    }
-
-    let slideIndex = 0;
-    function autoSlide() {
-      const track = document.querySelector('.slider-track');
-      const slides = document.querySelectorAll('.slide');
-      slideIndex = (slideIndex + 1) % slides.length;
-      track.style.transform = translateX(-${slideIndex * 100}%);
-    }
-    setInterval(autoSlide, 3000);
-  </script>
 </head>
 <body>
   <header>
@@ -201,11 +186,16 @@
     <h1>Tentang Kami</h1>
     <p>
       Kalang Rengas ialah sebuah inisiatif komuniti di Hulu Terengganu yang menjadikan warisan alam dan budaya sebagai teras pelancongan. Didorong oleh semangat kerjasama komuniti Kampung Gunung, projek ini digerakkan oleh Kelab Rukun Tetangga (KRT) dan Kelab Belia Kg Gunung sejak awal penubuhan.
+    </p>
 
     <p>
-      Kami percaya bahawa pengalaman yang bermakna datang daripada interaksi tulen dengan komuniti dan persekitaran. Oleh itu, pelancong bukan sahaja menikmati keindahan semula jadi seperti "Little Amazon", tetapi juga merasai kehidupan kampung, seni warisan, dan budaya masyarakat kami
+      Kami percaya bahawa pengalaman yang bermakna datang daripada interaksi tulen dengan komuniti dan persekitaran. Oleh itu, pelancong bukan sahaja menikmati keindahan semula jadi seperti "Little Amazon", tetapi juga merasai kehidupan kampung, seni warisan, dan budaya masyarakat kami.
+    </p>
+
     <p>
-      Melalui CBT (Community-Based Tourism), kami memperkasakan penduduk setempat, melestarikan alam, dan membuka peluang ekonomi berasaskan pelancongan mapan.
+      Melalui CBT (Community-Based Tourism), kami memperkasakan penduduk setempat, melestarikan alam, dan membuka peluang ekonomi berasaskan pelancongan mapan.
+    </p>
+
     <div class="slider-container">
       <div class="slider-track">
         <div class="slide"><img src="pengkalan.jpg" alt="Gambar aktiviti 1"></div>
@@ -218,7 +208,25 @@
 
   <footer>
     <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
-    </div>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      let slideIndex = 0;
+      const track = document.querySelector('.slider-track');
+      const slides = document.querySelectorAll('.slide');
+
+      function autoSlide() {
+        slideIndex = (slideIndex + 1) % slides.length;
+        track.style.transform = `translateX(-${slideIndex * 100}%)`;
+      }
+
+      setInterval(autoSlide, 3000);
+    });
+  </script>
 </body>
 </html>
