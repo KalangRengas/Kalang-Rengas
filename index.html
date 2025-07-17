@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tentang Kami | Kalang Rengas</title>
-  <meta name="description" content="Kalang Rengas ialah komuniti pelancongan berasaskan masyarakat (CBT) di Hulu Terengganu, menawarkan aktiviti alam berkayak menyelusuri Little Amazon, budaya dan warisan yang tulen.">
-  <meta name="keywords" content="Kalang Rengas, CBT Hulu Terengganu, pelancongan komuniti, kampung gunung, eco tourism, Terengganu, Malaysia">
-  <meta name="author" content="Kalang Rengas Community">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalang Rengas | Laman Utama</title>
+  <meta name="description" content="Kalang Rengas ialah komuniti pelancongan berasaskan masyarakat (CBT) di Hulu Terengganu.">
+  <meta name="keywords" content="Kalang Rengas, CBT, Hulu Terengganu, eco tourism">
+  <meta name="author" content="Kalang Rengas Community" />
   <link rel="shortcut icon" href="KR.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
@@ -31,9 +30,7 @@
       align-items: center;
     }
 
-    .logo {
-      height: 60px;
-    }
+    .logo { height: 60px; }
 
     .menu-toggle {
       display: none;
@@ -68,30 +65,71 @@
       background: #f0f8ff;
     }
 
-    main {
-      max-width: 1000px;
-      margin: 40px auto;
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
       padding: 20px;
+      border-radius: 10px;
     }
 
-    h1 {
-      font-size: 36px;
+    .hero-text h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .btn-primary {
+      background-color: #00679e;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .intro h2 {
+      font-size: 32px;
       color: #00679e;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
-    p {
+    .intro p {
       font-size: 18px;
       color: #444;
-      margin-bottom: 20px;
     }
 
     .slider-container {
       position: relative;
       overflow: hidden;
       width: 100%;
+      max-width: 1000px;
       height: 250px;
-      margin-top: 20px;
+      margin: 40px auto;
       border-radius: 12px;
     }
 
@@ -113,6 +151,31 @@
       display: block;
     }
 
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
+
+    .feature-box {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+
+    .feature-box img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .feature-box p {
+      font-size: 16px;
+      color: #333;
+    }
+
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -120,24 +183,6 @@
       color: #aaa;
       border-top: 1px solid #e0e0e0;
       margin-top: 50px;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 10px;
-    }
-
-    .social-icons img {
-      width: 22px;
-      height: 22px;
-      filter: grayscale(100%);
-      transition: transform 0.2s ease;
-    }
-
-    .social-icons img:hover {
-      transform: scale(1.1);
     }
 
     @media (max-width: 768px) {
@@ -162,6 +207,10 @@
       nav ul.show {
         display: flex;
       }
+
+      .hero-text h1 {
+        font-size: 22px;
+      }
     }
   </style>
   <script>
@@ -174,7 +223,7 @@
       const track = document.querySelector('.slider-track');
       const slides = document.querySelectorAll('.slide');
       slideIndex = (slideIndex + 1) % slides.length;
-      track.style.transform = translateX(-${slideIndex * 100}%);
+      track.style.transform = `translateX(-${slideIndex * 100}%)`;
     }
     setInterval(autoSlide, 3000);
   </script>
@@ -197,28 +246,46 @@
     </nav>
   </header>
 
-  <main>
-    <h1>Tentang Kami</h1>
-    <p>
-      Kalang Rengas ialah sebuah inisiatif komuniti di Hulu Terengganu yang menjadikan warisan alam dan budaya sebagai teras pelancongan. Didorong oleh semangat kerjasama komuniti Kampung Gunung, projek ini digerakkan oleh Kelab Rukun Tetangga (KRT) dan Kelab Belia Kg Gunung sejak awal penubuhan.
-
-    <p>
-      Kami percaya bahawa pengalaman yang bermakna datang daripada interaksi tulen dengan komuniti dan persekitaran. Oleh itu, pelancong bukan sahaja menikmati keindahan semula jadi seperti "Little Amazon", tetapi juga merasai kehidupan kampung, seni warisan, dan budaya masyarakat kami
-    <p>
-      Melalui CBT (Community-Based Tourism), kami memperkasakan penduduk setempat, melestarikan alam, dan membuka peluang ekonomi berasaskan pelancongan mapan.
-    <div class="slider-container">
-      <div class="slider-track">
-        <div class="slide"><img src="pengkalan.jpg" alt="Gambar aktiviti 1"></div>
-        <div class="slide"><img src="aktiviti.jpg" alt="Gambar aktiviti 2"></div>
-        <div class="slide"><img src="produktempatan.jpg" alt="Gambar aktiviti 3"></div>
-        <div class="slide"><img src="produk.jpg" alt="Gambar aktiviti 4"></div>
-      </div>
+  <section class="hero">
+    <img src="kalangrengas-hero.jpg" alt="Pemandangan Kalang Rengas">
+    <div class="hero-text">
+      <h1>Let the locals craft your unforgettable experience.</h1>
+      <a href="pakej.html" class="btn-primary">Lihat Pakej</a>
     </div>
-  </main>
+  </section>
+
+  <section class="intro">
+    <h2>Selamat Datang ke Kalang Rengas</h2>
+    <p>
+      Destinasi pelancongan komuniti di Hulu Terengganu yang mengekalkan keindahan alam, budaya dan warisan melalui pengalaman yang tulen dan berjiwa kampung.
+    </p>
+  </section>
+
+  <div class="slider-container">
+    <div class="slider-track">
+      <div class="slide"><img src="littleamazon.jpg" alt="Little Amazon"></div>
+      <div class="slide"><img src="produktempatan.jpg" alt="Produk Tempatan"></div>
+      <div class="slide"><img src="produk.jpg" alt="Hasil Komuniti"></div>
+    </div>
+  </div>
+
+  <section class="features">
+    <div class="feature-box">
+      <img src="icon-nature.svg" alt="Alam Semula Jadi">
+      <p>Alam Semula Jadi</p>
+    </div>
+    <div class="feature-box">
+      <img src="icon-culture.svg" alt="Budaya Kampung">
+      <p>Warisan & Budaya</p>
+    </div>
+    <div class="feature-box">
+      <img src="icon-community.svg" alt="Komuniti">
+      <p>Dipacu Komuniti</p>
+    </div>
+  </section>
 
   <footer>
     <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
-    </div>
   </footer>
 </body>
 </html>
