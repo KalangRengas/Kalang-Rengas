@@ -1,123 +1,133 @@
 <!DOCTYPE html>
 <html lang="ms">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pakej & Harga | Kalang Rengas</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pakej & Harga | Kalang Rengas</title>
+  <link rel="icon" href="images/logo-kalangrengas.png" type="image/png" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/logo-kalangrengas.png" type="image/png">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'League Spartan', sans-serif;
+    }
+  </style>
 
-    <style>
-      body {
-        font-family: 'League Spartan', sans-serif;
-      }
-    </style>
+  <meta name="description" content="Senarai pakej aktiviti dan sewaan peralatan Kalang Rengas untuk pengalaman pelancongan komuniti terbaik di Hulu Terengganu.">
+  <meta name="keywords" content="Kalang Rengas, pakej pelancongan, sewa peralatan, Hulu Terengganu, kayak, ATV, team building">
+  <meta name="author" content="Kalang Rengas Community" />
+</head>
 
-    <!-- Meta SEO -->
-    <meta name="description" content="Senarai pakej aktiviti dan sewaan peralatan Kalang Rengas untuk pengalaman pelancongan komuniti terbaik di Hulu Terengganu.">
-    <meta name="keywords" content="Kalang Rengas, pakej pelancongan, sewa peralatan, Hulu Terengganu, kayak, ATV, team building">
-    <meta name="author" content="Kalang Rengas Community" />
-  </head>
+<body class="bg-white text-gray-900">
 
-  <body class="bg-white text-gray-900">
-    <!-- Header Navigation -->
-    <header class="bg-[#00679e] text-white sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-          <img src="images/logo-kalangrengas.png" alt="Kalang Rengas Logo" class="h-8 w-auto">
-          <div class="text-xl md:text-2xl font-bold">Kalang Rengas</div>
-        </div>
-        <nav class="hidden md:flex space-x-6 text-sm">
-          <a href="index.html" class="hover:underline">Utama</a>
-          <a href="about.html" class="hover:underline">Tentang Kami</a>
-          <a href="galeri.html" class="hover:underline">Galeri</a>
-          <a href="aktiviti.html" class="hover:underline font-semibold underline">Aktiviti</a>
-          <a href="hubungi.html" class="hover:underline">Hubungi Kami</a>
-        </nav>
-        <button id="menuBtn" class="md:hidden focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+  <!-- Header Navigation -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="images/logo-kalangrengas.png" alt="Kalang Rengas Logo" class="h-10 w-auto">
+        <div class="text-xl md:text-2xl font-bold text-[#00679e]">Kalang Rengas</div>
       </div>
-      <div id="mobileMenu" class="hidden md:hidden bg-[#00679e] px-6 py-3 space-y-2 text-sm">
-        <a href="index.html" class="block">Utama</a>
-        <a href="about.html" class="block">Tentang Kami</a>
-        <a href="galeri.html" class="block">Galeri</a>
-        <a href="aktiviti.html" class="block font-semibold underline">Aktiviti</a>
-        <a href="hubungi.html" class="block">Hubungi Kami</a>
+      <nav class="hidden md:flex space-x-6 text-sm font-semibold text-[#00679e]">
+        <a href="index.html" class="hover:underline">Utama</a>
+        <a href="about.html" class="hover:underline">Tentang Kami</a>
+        <a href="galeri.html" class="hover:underline">Galeri</a>
+        <a href="pakej.html" class="underline">Pakej</a>
+        <a href="#" class="hover:underline">Fasiliti</a>
+        <a href="linkbio.html" class="hover:underline">Hubungi</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6 text-[#00679e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-white px-6 py-3 space-y-2 text-sm font-semibold text-[#00679e]">
+      <a href="index.html" class="block">Utama</a>
+      <a href="about.html" class="block">Tentang Kami</a>
+      <a href="galeri.html" class="block">Galeri</a>
+      <a href="pakej.html" class="block underline">Pakej</a>
+      <a href="#" class="block">Fasiliti</a>
+      <a href="linkbio.html" class="block">Hubungi</a>
+    </div>
+  </header>
+
+  <!-- Pakej Section -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold text-[#00679e] mb-8">Pakej & Harga</h1>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Kayak -->
+      <div class="border rounded-xl shadow p-6">
+        <h2 class="text-xl font-semibold mb-2">Kayak Menyusuri Little Amazon</h2>
+        <p class="text-sm mb-2">Jarak trek: 8.5 km</p>
+        <p class="text-sm mb-2">Harga: <span class="font-semibold">RM150</span>/seorang</p>
+        <ul class="text-sm list-disc ml-5 mb-2">
+          <li>Kayak, Buoyancy Aid (BA), Paddle</li>
+          <li>Transport & Guide</li>
+          <li>Pakej Makan Tengahari</li>
+        </ul>
+        <p class="text-xs text-gray-600">*Perlu tempahan awal, minimum 3 orang</p>
       </div>
-    </header>
 
-    <!-- Pakej & Harga Section -->
-    <section class="max-w-6xl mx-auto px-4 py-12">
-      <h1 class="text-3xl md:text-4xl font-bold text-[#00679e] mb-8">Pakej & Harga</h1>
-
-      <!-- Kad Pakej -->
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Kayak -->
-        <div class="border rounded-xl shadow-md p-6">
-          <h2 class="text-xl font-semibold mb-2">Kayak Menyusuri Little Amazon</h2>
-          <p class="text-sm mb-2">Jarak trek: 8.5 km</p>
-          <p class="text-sm mb-2">Harga: <span class="font-semibold">RM150</span>/seorang</p>
-          <ul class="text-sm list-disc ml-5 mb-2">
-            <li>Kayak, Buoyancy Aid (BA), Paddle</li>
-            <li>Transport & Guide</li>
-            <li>Pakej Makan Tengahari</li>
-          </ul>
-          <p class="text-xs text-gray-600">*Perlu tempahan awal, minimum 3 orang</p>
-        </div>
-
-        <!-- ATV -->
-        <div class="border rounded-xl shadow-md p-6">
-          <h2 class="text-xl font-semibold mb-2">Jelajah ATV</h2>
-          <p class="text-sm mb-2">Jarak trek: 1.5 km</p>
-          <p class="text-sm mb-2">Harga: <span class="font-semibold">RM20</span>/seorang</p>
-          <ul class="text-sm list-disc ml-5 mb-2">
-            <li>Taklimat keselamatan, Helmet</li>
-            <li>Guide/Marshall, Trek separa lasak</li>
-          </ul>
-          <p class="text-xs text-gray-600">*Sesuai untuk pemula & santai bersama keluarga</p>
-        </div>
-
-        <!-- Team Building -->
-        <div class="border rounded-xl shadow-md p-6">
-          <h2 class="text-xl font-semibold mb-2">Team Building</h2>
-          <p class="text-sm mb-2">Pakej: Day trip</p>
-          <ul class="text-sm list-disc ml-5 mb-2">
-            <li>Permainan Ice Breaking</li>
-            <li>Aktiviti Dinamika Berkumpulan</li>
-          </ul>
-          <p class="text-xs text-gray-600">*Hubungi kami untuk sebut harga dan susun atur khas kumpulan</p>
-        </div>
+      <!-- ATV -->
+      <div class="border rounded-xl shadow p-6">
+        <h2 class="text-xl font-semibold mb-2">Jelajah ATV</h2>
+        <p class="text-sm mb-2">Jarak trek: 1.5 km</p>
+        <p class="text-sm mb-2">Harga: <span class="font-semibold">RM20</span>/seorang</p>
+        <ul class="text-sm list-disc ml-5 mb-2">
+          <li>Taklimat keselamatan, Helmet</li>
+          <li>Guide/Marshall, Trek separa lasak</li>
+        </ul>
+        <p class="text-xs text-gray-600">*Sesuai untuk pemula & santai bersama keluarga</p>
       </div>
-    </section>
 
-    <!-- Sewaan Peralatan -->
-    <section class="max-w-6xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-bold text-[#00679e] mb-6">Sewaan Peralatan</h2>
-      <div class="grid md:grid-cols-5 gap-4">
-        <!-- 10 gambar alat sewa (placeholder) -->
-        <img src="images/sewa1.jpg" alt="Peralatan 1" class="rounded-xl shadow">
-        <img src="images/sewa2.jpg" alt="Peralatan 2" class="rounded-xl shadow">
-        <img src="images/sewa3.jpg" alt="Peralatan 3" class="rounded-xl shadow">
-        <img src="images/sewa4.jpg" alt="Peralatan 4" class="rounded-xl shadow">
-        <img src="images/sewa5.jpg" alt="Peralatan 5" class="rounded-xl shadow">
-        <img src="images/sewa6.jpg" alt="Peralatan 6" class="rounded-xl shadow">
-        <img src="images/sewa7.jpg" alt="Peralatan 7" class="rounded-xl shadow">
-        <img src="images/sewa8.jpg" alt="Peralatan 8" class="rounded-xl shadow">
-        <img src="images/sewa9.jpg" alt="Peralatan 9" class="rounded-xl shadow">
-        <img src="images/sewa10.jpg" alt="Peralatan 10" class="rounded-xl shadow">
+      <!-- Team Building -->
+      <div class="border rounded-xl shadow p-6">
+        <h2 class="text-xl font-semibold mb-2">Team Building</h2>
+        <p class="text-sm mb-2">Pakej: Day trip</p>
+        <ul class="text-sm list-disc ml-5 mb-2">
+          <li>Permainan Ice Breaking</li>
+          <li>Aktiviti Dinamika Berkumpulan</li>
+        </ul>
+        <p class="text-xs text-gray-600">*Hubungi kami untuk sebut harga dan susun atur khas kumpulan</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </body>
+  <!-- Sewaan Peralatan -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-[#00679e] mb-6">Sewaan Peralatan</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <img src="alatsewaan/Autotent.png" alt="Autotent" class="rounded-xl shadow-sm">
+      <img src="alatsewaan/Bazoongi.png" alt="Bazoongi" class="rounded-xl shadow-sm">
+      <img src="alatsewaan/Canvas.png" alt="Canvas" class="rounded-xl shadow-sm">
+      <img src="alatsewaan/Kanopi-10-x-10.png" alt="Kanopi 10x10" class="rounded-xl shadow-sm">
+      <img src="alatsewaan/Meja-Kerusi.png" alt="Meja & Kerusi" class="rounded-xl shadow-sm">
+      <img src="alatsewaan/Pelampung.png" alt="Pelampung" class="rounded-xl shadow-sm">
+      <img src="alatsewaan/Unta-L.png" alt="Tong Air L" class="rounded-xl shadow-sm">
+      <img src="alatsewaan/Unta-M.png" alt="Tong Air M" class="rounded-xl shadow-sm">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 py-8 border-t mt-12">
+    &copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.
+  </footer>
+
+  <!-- Mobile Menu Toggle -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
 </html>
