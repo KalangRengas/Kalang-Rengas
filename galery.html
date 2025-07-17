@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kalang Rengas | Laman Utama</title>
+  <title>Kalang Rengas | Galeri</title>
   <meta name="description" content="Kalang Rengas ialah komuniti pelancongan berasaskan masyarakat (CBT) di Hulu Terengganu.">
   <meta name="keywords" content="Kalang Rengas, CBT, Hulu Terengganu, eco tourism">
   <meta name="author" content="Kalang Rengas Community" />
   <link rel="shortcut icon" href="KR.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splide@4.1.3/dist/css/splide.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'League Spartan', sans-serif;
-      background: #fff;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
       color: #222;
-      line-height: 1.6;
     }
 
     header {
@@ -65,130 +67,8 @@
       background: #f0f8ff;
     }
 
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .hero-text h1 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .btn-primary {
-      background-color: #00679e;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .intro {
-      max-width: 800px;
-      margin: 40px auto;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .intro h2 {
-      font-size: 32px;
-      color: #00679e;
-      margin-bottom: 15px;
-    }
-
-    .intro p {
-      font-size: 18px;
-      color: #444;
-    }
-
-    .slider-container {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-width: 1000px;
-      height: 250px;
-      margin: 40px auto;
-      border-radius: 12px;
-    }
-
-    .slider-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide {
-      min-width: 100%;
-      height: 250px;
-      flex-shrink: 0;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin: 40px auto;
-      max-width: 1000px;
-      padding: 0 20px;
-    }
-
-    .feature-box {
-      flex: 1 1 200px;
-      text-align: center;
-    }
-
-    .feature-box img {
-      width: 50px;
-      margin-bottom: 10px;
-    }
-
-    .feature-box p {
-      font-size: 16px;
-      color: #333;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
-      color: #aaa;
-      border-top: 1px solid #e0e0e0;
-      margin-top: 50px;
-    }
-
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
+      .menu-toggle { display: flex; }
 
       nav ul {
         display: none;
@@ -204,31 +84,52 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       }
 
-      nav ul.show {
-        display: flex;
-      }
+      nav ul.show { display: flex; }
+    }
 
-      .hero-text h1 {
-        font-size: 22px;
-      }
+    .hero-section {
+      background-color: #00679e;
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+
+    .hero-section h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero-section p {
+      font-size: 18px;
+    }
+
+    .gallery-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .splide__slide img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      color: #aaa;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 50px;
     }
   </style>
-  <script>
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('show');
-    }
-
-    let slideIndex = 0;
-    function autoSlide() {
-      const track = document.querySelector('.slider-track');
-      const slides = document.querySelectorAll('.slide');
-      slideIndex = (slideIndex + 1) % slides.length;
-      track.style.transform = `translateX(-${slideIndex * 100}%)`;
-    }
-    setInterval(autoSlide, 3000);
-  </script>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
     <div class="menu-toggle" onclick="toggleMenu()">
@@ -245,46 +146,47 @@
       </ul>
     </nav>
   </header>
+
   <!-- Hero -->
-  <section class="bg-[#00679e] text-white text-center py-10">
-    <h1 class="text-4xl font-bold mb-2">Galeri Gambar</h1>
-    <p class="text-lg">Merakam detik istimewa di Kalang Rengas</p>
+  <section class="hero-section">
+    <h1>Galeri Gambar</h1>
+    <p>Merakam detik istimewa di Kalang Rengas</p>
   </section>
 
-  <!-- Carousel Gallery -->
-  <section class="max-w-5xl mx-auto px-4 py-12">
+  <!-- Gallery -->
+  <section class="gallery-section">
     <div id="lightgallery">
       <div class="splide" id="gallery-carousel">
         <div class="splide__track">
           <ul class="splide__list">
             <li class="splide__slide">
-              <a href="./images/galeri1.png" data-sub-html="<h4>Kenangan Aktiviti Air</h4>">
-                <img src="./images/galeri1.png" class="rounded w-full max-h-[400px] object-cover" />
+              <a href="images/galeri1.png" data-sub-html="<h4>Kenangan Aktiviti Air</h4>">
+                <img src="images/galeri1.png" alt="Aktiviti Air" />
               </a>
             </li>
             <li class="splide__slide">
-              <a href="./images/galeri2.png" data-sub-html="<h4>Mata dari Langit</h4>">
-                <img src="./images/galeri2.png" class="rounded w-full max-h-[400px] object-cover" />
+              <a href="images/galeri2.png" data-sub-html="<h4>Mata dari Langit</h4>">
+                <img src="images/galeri2.png" alt="Drone View" />
               </a>
             </li>
             <li class="splide__slide">
-              <a href="./images/galeri3.png" data-sub-html="<h4>Tapak Perkhemahan yang Teduh</h4>">
-                <img src="./images/galeri3.png" class="rounded w-full max-h-[400px] object-cover" />
+              <a href="images/galeri3.png" data-sub-html="<h4>Tapak Perkhemahan</h4>">
+                <img src="images/galeri3.png" alt="Camping Site" />
               </a>
             </li>
             <li class="splide__slide">
-              <a href="./images/galeri4.png" data-sub-html="<h4>Aktiviti di Kalang Rengas</h4>">
-                <img src="./images/galeri4.png" class="rounded w-full max-h-[400px] object-cover" />
+              <a href="images/galeri4.png" data-sub-html="<h4>Aktiviti di Kalang Rengas</h4>">
+                <img src="images/galeri4.png" alt="Aktiviti" />
               </a>
             </li>
             <li class="splide__slide">
-              <a href="./images/galeri5.png" data-sub-html="<h4>Pemandangan Menarik</h4>">
-                <img src="./images/galeri5.png" class="rounded w-full max-h-[400px] object-cover" />
+              <a href="images/galeri5.png" data-sub-html="<h4>Pemandangan Menarik</h4>">
+                <img src="images/galeri5.png" alt="Pemandangan" />
               </a>
             </li>
             <li class="splide__slide">
-              <a href="./images/galeri6.png" data-sub-html="<h4>Suasana Malam</h4>">
-                <img src="./images/galeri6.png" class="rounded w-full max-h-[400px] object-cover" />
+              <a href="images/galeri6.png" data-sub-html="<h4>Suasana Malam</h4>">
+                <img src="images/galeri6.png" alt="Night View" />
               </a>
             </li>
           </ul>
@@ -294,21 +196,23 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-white border-t border-gray-200 text-center py-6 text-sm text-gray-500">
+  <footer>
     © 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.
   </footer>
 
+  <!-- Scripts -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/splide@4.1.3/dist/js/splide.min.js"></script>
   <script>
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-
     const splide = new Splide('#gallery-carousel', {
-      type   : 'loop',
+      type: 'loop',
       perPage: 1,
       autoplay: true,
       interval: 4000,
