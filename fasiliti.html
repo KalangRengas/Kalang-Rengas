@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fasiliti | Kalang Rengas</title>
+  <meta name="description" content="Kalang Rengas ialah komuniti pelancongan berasaskan masyarakat (CBT) di Hulu Terengganu.">
+  <meta name="keywords" content="Kalang Rengas, CBT, Hulu Terengganu, eco tourism, fasiliti, kayak">
+  <meta name="author" content="Kalang Rengas Community" />
+  <link rel="shortcut icon" href="KR.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'League Spartan', sans-serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #fff;
+      padding: 15px 20px;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo { height: 60px; }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #00679e;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00679e;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    nav a:hover {
+      background: #f0f8ff;
+    }
+
+    .facility-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .facility-item {
+      text-align: center;
+    }
+
+    .facility-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .facility-item p {
+      font-size: 16px;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      color: #aaa;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        background: #fff;
+        position: absolute;
+        top: 75px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .facility-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 400px) {
+      .facility-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">Utama</a></li>
+        <li><a href="about.html">Tentang Kami</a></li>
+        <li><a href="galery.html">Galeri</a></li>
+        <li><a href="pakej.html">Pakej</a></li>
+        <li><a href="fasiliti">Fasiliti</a></li>
+        <li><a href="linkbio.html">Hubungi</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="facility-grid">
+    <div class="facility-item">
+      <img src="fasiliti/men.png" alt="Tandas Lelaki">
+      <p>Tandas Lelaki</p>
+    </div>
+    <div class="facility-item">
+      <img src="fasiliti/girl.png" alt="Tandas Perempuan">
+      <p>Tandas Perempuan</p>
+    </div>
+    <div class="facility-item">
+      <img src="mosque/Surau.png" alt="Surau">
+      <p>Surau</p>
+    </div>
+    <div class="facility-item">
+      <img src="parking/Parking.png" alt="Parking">
+      <p>Parking</p>
+    </div>
+    <div class="facility-item">
+      <img src="sink/Sinki.png" alt="Sinki">
+      <p>Sinki</p>
+    </div>
+    <div class="facility-item">
+      <img src="faucet/Paip-Air.png" alt="Paip Air">
+      <p>Paip Air</p>
+    </div>
+    <div class="facility-item">
+      <img src="plugpoint/Plugpoint.png" alt="Plugpoint">
+      <p>Plugpoint</p>
+    </div>
+    <div class="facility-item">
+      <img src="fasiliti/spotlight.png" alt="Spotlight">
+      <p>Spotlight</p>
+    </div>
+    <div class="facility-item">
+      <img src="fasiliti/lighting.png" alt="Lampu Pencahayaan">
+      <p>Lampu Pencahayaan</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
+  </footer>
+</body>
+</html>
