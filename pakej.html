@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pakej & Harga | Pakej</title>
+  <title>Pakej & Harga | Kalang Rengas</title>
   <meta name="description" content="Harga Sewaan di CBT Kalang Rengas">
   <meta name="keywords" content="Kalang Rengas, CBT, Hulu Terengganu, eco tourism">
   <meta name="author" content="Kalang Rengas Community" />
@@ -30,7 +30,7 @@
       align-items: center;
     }
 
-    .logo { height: 60px; }
+    .logo { height: 50px; }
 
     .menu-toggle {
       display: none;
@@ -65,115 +65,61 @@
       background: #f0f8ff;
     }
 
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .hero-text h1 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .btn-primary {
-      background-color: #00679e;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .intro {
-      max-width: 800px;
+    .section {
+      max-width: 1200px;
       margin: 40px auto;
-      text-align: center;
       padding: 0 20px;
     }
 
-    .intro h2 {
-      font-size: 32px;
+    .section h1, .section h2 {
       color: #00679e;
-      margin-bottom: 15px;
-    }
-
-    .intro p {
-      font-size: 18px;
-      color: #444;
-    }
-
-    .slider-container {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-width: 1000px;
-      height: 250px;
-      margin: 40px auto;
-      border-radius: 12px;
-    }
-
-    .slider-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide {
-      min-width: 100%;
-      height: 250px;
-      flex-shrink: 0;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin: 40px auto;
-      max-width: 1000px;
-      padding: 0 20px;
-    }
-
-    .feature-box {
-      flex: 1 1 200px;
+      margin-bottom: 20px;
       text-align: center;
     }
 
-    .feature-box img {
-      width: 50px;
+    .pakej-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .pakej-box {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      padding: 20px;
+    }
+
+    .pakej-box h2 {
+      font-size: 20px;
       margin-bottom: 10px;
     }
 
-    .feature-box p {
-      font-size: 16px;
+    .pakej-box p, .pakej-box ul {
+      font-size: 14px;
       color: #333;
+    }
+
+    .pakej-box ul {
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    .pakej-box .note {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     }
 
     footer {
@@ -194,11 +140,10 @@
         display: none;
         flex-direction: column;
         gap: 10px;
-        margin-top: 10px;
-        background: #fff;
         position: absolute;
-        top: 75px;
+        top: 70px;
         right: 20px;
+        background: #fff;
         padding: 10px;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -207,25 +152,12 @@
       nav ul.show {
         display: flex;
       }
-
-      .hero-text h1 {
-        font-size: 22px;
-      }
     }
   </style>
   <script>
     function toggleMenu() {
       document.getElementById('nav-links').classList.toggle('show');
     }
-
-    let slideIndex = 0;
-    function autoSlide() {
-      const track = document.querySelector('.slider-track');
-      const slides = document.querySelectorAll('.slide');
-      slideIndex = (slideIndex + 1) % slides.length;
-      track.style.transform = `translateX(-${slideIndex * 100}%)`;
-    }
-    setInterval(autoSlide, 3000);
   </script>
 </head>
 <body>
@@ -245,77 +177,67 @@
       </ul>
     </nav>
   </header>
-  <!-- Pakej Section -->
-  <section class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="text-3xl md:text-4xl font-bold text-[#00679e] mb-8">Pakej & Harga</h1>
 
-    <div class="grid md:grid-cols-3 gap-6">
+  <!-- Pakej Section -->
+  <section class="section">
+    <h1>Pakej & Harga</h1>
+    <div class="pakej-grid">
       <!-- Kayak -->
-      <div class="border rounded-xl shadow p-6">
-        <h2 class="text-xl font-semibold mb-2">Kayak Menyusuri Little Amazon</h2>
-        <p class="text-sm mb-2">Jarak trek: 8.5 km</p>
-        <p class="text-sm mb-2">Harga: <span class="font-semibold">RM150</span>/seorang</p>
-        <ul class="text-sm list-disc ml-5 mb-2">
+      <div class="pakej-box">
+        <h2>Kayak Menyusuri Little Amazon</h2>
+        <p>Jarak trek: 8.5 km</p>
+        <p>Harga: <strong>RM150</strong>/seorang</p>
+        <ul>
           <li>Kayak, Buoyancy Aid (BA), Paddle</li>
           <li>Transport & Guide</li>
           <li>Pakej Makan Tengahari</li>
         </ul>
-        <p class="text-xs text-gray-600">*Perlu tempahan awal, minimum 3 orang</p>
+        <p class="note">*Perlu tempahan awal, minimum 3 orang</p>
       </div>
 
       <!-- ATV -->
-      <div class="border rounded-xl shadow p-6">
-        <h2 class="text-xl font-semibold mb-2">Jelajah ATV</h2>
-        <p class="text-sm mb-2">Jarak trek: 1.5 km</p>
-        <p class="text-sm mb-2">Harga: <span class="font-semibold">RM20</span>/seorang</p>
-        <ul class="text-sm list-disc ml-5 mb-2">
+      <div class="pakej-box">
+        <h2>Jelajah ATV</h2>
+        <p>Jarak trek: 1.5 km</p>
+        <p>Harga: <strong>RM20</strong>/seorang</p>
+        <ul>
           <li>Taklimat keselamatan, Helmet</li>
           <li>Guide/Marshall, Trek separa lasak</li>
         </ul>
-        <p class="text-xs text-gray-600">*Sesuai untuk pemula & santai bersama keluarga</p>
+        <p class="note">*Sesuai untuk pemula & santai bersama keluarga</p>
       </div>
 
       <!-- Team Building -->
-      <div class="border rounded-xl shadow p-6">
-        <h2 class="text-xl font-semibold mb-2">Team Building</h2>
-        <p class="text-sm mb-2">Pakej: Day trip</p>
-        <ul class="text-sm list-disc ml-5 mb-2">
+      <div class="pakej-box">
+        <h2>Team Building</h2>
+        <p>Pakej: Day trip</p>
+        <ul>
           <li>Permainan Ice Breaking</li>
           <li>Aktiviti Dinamika Berkumpulan</li>
         </ul>
-        <p class="text-xs text-gray-600">*Hubungi kami untuk sebut harga dan susun atur khas kumpulan</p>
+        <p class="note">*Hubungi kami untuk sebut harga dan susun atur khas kumpulan</p>
       </div>
     </div>
   </section>
 
   <!-- Sewaan Peralatan -->
-  <section class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-bold text-[#00679e] mb-6">Sewaan Peralatan</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-      <img src="alatsewaan/Autotent.png" alt="Autotent" class="rounded-xl shadow-sm">
-      <img src="alatsewaan/Bazoongi.png" alt="Bazoongi" class="rounded-xl shadow-sm">
-      <img src="alatsewaan/Canvas.png" alt="Canvas" class="rounded-xl shadow-sm">
-      <img src="alatsewaan/Kanopi-10-x-10.png" alt="Kanopi 10x10" class="rounded-xl shadow-sm">
-      <img src="alatsewaan/Meja-Kerusi.png" alt="Meja & Kerusi" class="rounded-xl shadow-sm">
-      <img src="alatsewaan/Pelampung.png" alt="Pelampung" class="rounded-xl shadow-sm">
-      <img src="alatsewaan/Unta-L.png" alt="Tong Air L" class="rounded-xl shadow-sm">
-      <img src="alatsewaan/Unta-M.png" alt="Tong Air M" class="rounded-xl shadow-sm">
+  <section class="section">
+    <h2>Sewaan Peralatan</h2>
+    <div class="gallery-grid">
+      <img src="alatsewaan/Autotent.png" alt="Autotent">
+      <img src="alatsewaan/Bazoongi.png" alt="Bazoongi">
+      <img src="alatsewaan/Canvas.png" alt="Canvas">
+      <img src="alatsewaan/Kanopi-10-x-10.png" alt="Kanopi 10x10">
+      <img src="alatsewaan/Meja-Kerusi.png" alt="Meja & Kerusi">
+      <img src="alatsewaan/Pelampung.png" alt="Pelampung">
+      <img src="alatsewaan/Unta-L.png" alt="Tong Air L">
+      <img src="alatsewaan/Unta-M.png" alt="Tong Air M">
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center text-sm text-gray-500 py-8 border-t mt-12">
+  <footer>
     &copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.
   </footer>
-
-  <!-- Mobile Menu Toggle -->
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
 </body>
 </html>
