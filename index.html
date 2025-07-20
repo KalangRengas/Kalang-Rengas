@@ -302,38 +302,110 @@
     </div>
   </div>
 </section>
+
+<style>
+  .testimoni-section {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 28px;
+    color: #00679e;
+    margin-bottom: 20px;
+  }
+
+  .testimoni-slider {
+    overflow: hidden;
+    max-width: 90%;
+    margin: 0 auto;
+    position: relative;
+    touch-action: pan-y;
+  }
+
+  .testimoni-track {
+    display: flex;
+    transition: transform 0.6s ease;
+  }
+
+  .testimoni-item {
+    flex: 0 0 100%;
+    padding: 10px;
+  }
+
+  .testimoni-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  @media (max-width: 768px) {
+    .testimoni-item img {
+      max-width: 100%;
+    }
+  }
+</style>
+
 <script>
-let currentSlide = 0;
-let interval;
-const track = document.getElementById("testimoni-track");
-const slider = document.getElementById("testimoni-slider");
-const totalSlides = document.querySelectorAll(".testimoni-item").length;
+  const track = document.getElementById("testimoni-track");
+  const slider = document.getElementById("testimoni-slider");
+  const totalSlides = document.querySelectorAll(".testimoni-item").length;
+  let currentSlide = 0;
+  let interval;
 
-function updateSlider() {
-  const slideWidth = document.querySelector(".testimoni-item").clientWidth;
-  track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-}
+  function updateSlider() {
+    const slideWidth = slider.clientWidth;
+    track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+  }
 
-function startAutoSlide() {
-  interval = setInterval(() => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateSlider();
-  }, 4000); // tukar setiap 4 saat
-}
+  function startAutoSlide() {
+    interval = setInterval(() => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    }, 6000); // Tahan 6 saat sebelum ke testimoni seterusnya
+  }
 
-function stopAutoSlide() {
-  clearInterval(interval);
-}
+  function stopAutoSlide() {
+    clearInterval(interval);
+  }
 
-// Mula jalan bila load
-startAutoSlide();
+  // Mulakan auto slide
+  startAutoSlide();
 
-// Berhenti bila hover
-slider.addEventListener("mouseenter", stopAutoSlide);
-slider.addEventListener("mouseleave", startAutoSlide);
+  // Hover behavior
+  slider.addEventListener("mouseenter", stopAutoSlide);
+  slider.addEventListener("mouseleave", startAutoSlide);
 
-// Responsive fix: update ukuran bila resize
-window.addEventListener("resize", updateSlider);
+  // Swipe gesture for mobile
+  let startX = 0;
+  slider.addEventListener("touchstart", e => {
+    stopAutoSlide();
+    startX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    const deltaX = endX - startX;
+
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX < 0) {
+        currentSlide = (currentSlide + 1) % totalSlides;
+      } else {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      }
+      updateSlider();
+    }
+
+    startAutoSlide();
+  });
+
+  // Sesuaikan saiz bila resize
+  window.addEventListener("resize", updateSlider);
 </script>
 
 
