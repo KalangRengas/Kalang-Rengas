@@ -341,8 +341,8 @@
     max-width: 700px;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     margin: 0 auto;
+    display: block;
   }
 
   @media (max-width: 768px) {
@@ -379,13 +379,12 @@
     clearInterval(interval);
   }
 
-  // First run
+  // Initial setup
   window.addEventListener("load", () => {
     updateSlider();
     startAutoSlide();
   });
 
-  // Hover behavior
   slider.addEventListener("mouseenter", stopAutoSlide);
   slider.addEventListener("mouseleave", startAutoSlide);
 
@@ -412,10 +411,8 @@
     startAutoSlide();
   });
 
-  // Responsif bila resize
   window.addEventListener("resize", updateSlider);
 </script>
-
 
 
 
