@@ -282,8 +282,8 @@
 
 <section class="testimoni-section">
   <h2 class="section-title">Apa Kata Mereka</h2>
-  <div class="testimoni-slider">
-    <div class="testimoni-track">
+  <div class="testimoni-slider" id="testimoni-slider">
+    <div class="testimoni-track" id="testimoni-track">
       <div class="testimoni-item">
         <img src="feedback/testimoni1.png" alt="Testimoni 1" />
       </div>
@@ -302,77 +302,39 @@
     </div>
   </div>
 </section>
+<script>
+let currentSlide = 0;
+let interval;
+const track = document.getElementById("testimoni-track");
+const slider = document.getElementById("testimoni-slider");
+const totalSlides = document.querySelectorAll(".testimoni-item").length;
 
-<style>
-.testimoni-section {
-  background: #f9f9f9;
-  padding: 60px 20px;
-  text-align: center;
+function updateSlider() {
+  const slideWidth = document.querySelector(".testimoni-item").clientWidth;
+  track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
 
-.section-title {
-  font-size: 32px;
-  color: #00679e;
-  margin-bottom: 40px;
-  font-weight: 600;
+function startAutoSlide() {
+  interval = setInterval(() => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlider();
+  }, 4000); // tukar setiap 4 saat
 }
 
-.testimoni-slider {
-  overflow: hidden;
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 16px;
-  position: relative;
+function stopAutoSlide() {
+  clearInterval(interval);
 }
 
-.testimoni-track {
-  display: flex;
-  width: 500%; /* 5 gambar */
-  animation: slideTestimoni 25s infinite ease-in-out;
-}
+// Mula jalan bila load
+startAutoSlide();
 
-.testimoni-item {
-  flex: 0 0 100%;
-  padding: 20px;
-  box-sizing: border-box;
-}
+// Berhenti bila hover
+slider.addEventListener("mouseenter", stopAutoSlide);
+slider.addEventListener("mouseleave", startAutoSlide);
 
-.testimoni-item img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 16px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.testimoni-item img:hover {
-  transform: scale(1.02);
-}
-
-@keyframes slideTestimoni {
-  0%, 8%   { transform: translateX(0); }
-  20%, 28% { transform: translateX(-100%); }
-  40%, 48% { transform: translateX(-200%); }
-  60%, 68% { transform: translateX(-300%); }
-  80%, 88% { transform: translateX(-400%); }
-  100%     { transform: translateX(0); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 26px;
-  }
-
-  .testimoni-item img {
-    width: 100%;
-    max-width: 90vw;
-    height: auto;
-  }
-}
-</style>
+// Responsive fix: update ukuran bila resize
+window.addEventListener("resize", updateSlider);
+</script>
 
 
 
