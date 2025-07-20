@@ -279,7 +279,6 @@
   <div class="modal" id="image-modal" onclick="closeModal()">
     <img id="modal-img" src="" alt="Paparan Penuh">
   </div>
-
 <script>
   const track = document.getElementById("testimoni-track");
   const slider = document.getElementById("testimoni-slider");
@@ -297,6 +296,64 @@
       currentSlide = (currentSlide + 1) % totalSlides;
       updateSlider();
     }, 3000); // <- Tukar dari 6000 kepada 3000 (3 saat)
+  }
+
+  function stopAutoSlide() {
+    clearInterval(interval);
+  }
+
+  // Initial setup
+  window.addEventListener("load", () => {
+    updateSlider();
+    startAutoSlide();
+  });
+
+  slider.addEventListener("mouseenter", stopAutoSlide);
+  slider.addEventListener("mouseleave", startAutoSlide);
+
+  // Swipe gesture
+  let startX = 0;
+  slider.addEventListener("touchstart", e => {
+    stopAutoSlide();
+    startX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    const deltaX = endX - startX;
+
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX < 0) {
+        currentSlide = (currentSlide + 1) % totalSlides;
+      } else {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      }
+      updateSlider();
+    }
+
+    startAutoSlide();
+  });
+
+  window.addEventListener("resize", updateSlider);
+</script>
+
+<script>
+  const track = document.getElementById("testimoni-track");
+  const slider = document.getElementById("testimoni-slider");
+  const totalSlides = document.querySelectorAll(".testimoni-item").length;
+  let currentSlide = 0;
+  let interval;
+
+  function updateSlider() {
+    const slideWidth = slider.clientWidth;
+    track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+  }
+
+  function startAutoSlide() {
+    interval = setInterval(() => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    }, 2000); // <- Tukar dari 6000 kepada 3000 (3 saat)
   }
 
   function stopAutoSlide() {
