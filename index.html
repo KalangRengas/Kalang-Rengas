@@ -280,29 +280,6 @@
     <img id="modal-img" src="" alt="Paparan Penuh">
   </div>
 
- <section class="testimoni-section">
-  <h2 class="section-title">Apa Kata Mereka</h2>
-  <div class="testimoni-slider">
-    <div class="testimoni-track">
-      <div class="testimoni-item">
-        <img src="feedback/testimoni1.png" alt="Testimoni 1" />
-             </div>
-      <div class="testimoni-item">
-        <img src="feedback/testimoni2.png" alt="Testimoni 2" />
-              </div>
-      <div class="testimoni-item">
-        <img src="feedback/testimoni3.png.jpg" alt="Testimoni 3" />
-             </div>
-      <div class="testimoni-item">
-        <img src="feedback/testimoni4.png.jpg" alt="Testimoni 3" />
-             </div>
-      <div class="testimoni-item">
-        <img src="feedback/testimoni5.png.jpg" alt="Testimoni 3" />
-             </div>
-    </div>
-  </div>
-</section>
-
 <style>
 .testimoni-section {
   background: #f9f9f9;
@@ -327,8 +304,8 @@
 
 .testimoni-track {
   display: flex;
-  animation: slideTestimoni 12s infinite ease-in-out;
-  width: 300%;
+  width: 500%; /* 5 gambar */
+  animation: slideTestimoni 25s infinite ease-in-out;
 }
 
 .testimoni-item {
@@ -338,46 +315,43 @@
 }
 
 .testimoni-item img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-
-.testimoni-item p {
-  font-size: 18px;
-  color: #333;
-  line-height: 1.6;
+  width: 100%;
   max-width: 600px;
-  margin: 0 auto;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
 }
 
-/* Slider animation */
+.testimoni-item img:hover {
+  transform: scale(1.02);
+}
+
+/* Animasi lebih perlahan, 5 testimoni */
 @keyframes slideTestimoni {
-  0%, 10% { transform: translateX(0); }
-  33%, 43% { transform: translateX(-100%); }
-  66%, 76% { transform: translateX(-200%); }
-  100% { transform: translateX(0); }
+  0%, 8%   { transform: translateX(0); }
+  20%, 28% { transform: translateX(-100%); }
+  40%, 48% { transform: translateX(-200%); }
+  60%, 68% { transform: translateX(-300%); }
+  80%, 88% { transform: translateX(-400%); }
+  100%     { transform: translateX(0); }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .testimoni-item p {
-    font-size: 16px;
-    padding: 0 10px;
-  }
-
   .section-title {
     font-size: 26px;
   }
 
   .testimoni-item img {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    max-width: 90vw;
+    height: auto;
   }
 }
 </style>
+
 
 
   <footer>
