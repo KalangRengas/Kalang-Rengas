@@ -291,13 +291,13 @@
         <img src="feedback/testimoni2.png" alt="Testimoni 2" />
       </div>
       <div class="testimoni-item">
-        <img src="feedback/testimoni3.jpg" alt="Testimoni 3" />
+        <img src="feedback/testimoni3.png" alt="Testimoni 3" />
       </div>
       <div class="testimoni-item">
-        <img src="feedback/testimoni4.jpg" alt="Testimoni 4" />
+        <img src="feedback/testimoni4.png" alt="Testimoni 4" />
       </div>
       <div class="testimoni-item">
-        <img src="feedback/testimoni5.jpg" alt="Testimoni 5" />
+        <img src="feedback/testimoni5.png" alt="Testimoni 5" />
       </div>
     </div>
   </div>
@@ -306,20 +306,19 @@
 <style>
   .testimoni-section {
     background: #f9f9f9;
-    padding: 40px 20px;
+    padding: 0;
     text-align: center;
   }
 
   .section-title {
     font-size: 28px;
     color: #00679e;
-    margin-bottom: 20px;
+    margin: 30px 0;
   }
 
   .testimoni-slider {
     overflow: hidden;
-    max-width: 90%;
-    margin: 0 auto;
+    width: 100%;
     position: relative;
     touch-action: pan-y;
   }
@@ -327,26 +326,32 @@
   .testimoni-track {
     display: flex;
     transition: transform 0.6s ease;
+    will-change: transform;
   }
 
   .testimoni-item {
     flex: 0 0 100%;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .testimoni-item img {
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     height: auto;
-    margin: 0 auto;
     border-radius: 12px;
-    display: block;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin: 0 auto;
   }
 
   @media (max-width: 768px) {
     .testimoni-item img {
-      max-width: 100%;
+      max-width: 90%;
+    }
+
+    .section-title {
+      font-size: 22px;
     }
   }
 </style>
@@ -367,21 +372,24 @@
     interval = setInterval(() => {
       currentSlide = (currentSlide + 1) % totalSlides;
       updateSlider();
-    }, 6000); // Tahan 6 saat sebelum ke testimoni seterusnya
+    }, 6000);
   }
 
   function stopAutoSlide() {
     clearInterval(interval);
   }
 
-  // Mulakan auto slide
-  startAutoSlide();
+  // First run
+  window.addEventListener("load", () => {
+    updateSlider();
+    startAutoSlide();
+  });
 
   // Hover behavior
   slider.addEventListener("mouseenter", stopAutoSlide);
   slider.addEventListener("mouseleave", startAutoSlide);
 
-  // Swipe gesture for mobile
+  // Swipe gesture
   let startX = 0;
   slider.addEventListener("touchstart", e => {
     stopAutoSlide();
@@ -404,9 +412,10 @@
     startAutoSlide();
   });
 
-  // Sesuaikan saiz bila resize
+  // Responsif bila resize
   window.addEventListener("resize", updateSlider);
 </script>
+
 
 
 
