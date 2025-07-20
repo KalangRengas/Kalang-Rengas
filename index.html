@@ -280,11 +280,105 @@
     <img id="modal-img" src="" alt="Paparan Penuh">
   </div>
 
-  <section class="testimoni">
-    <h2>Apa Kata Pelawat</h2>
-    <p>“Pengalaman yang sangat mengujakan, saya tidak sangka ada tempat seindah ini di Hulu Terengganu.” – Nurul Aisyah</p>
-    <p>“Pakej aktiviti mesra keluarga dan suasana kampung yang mendamaikan.” – Ahmad Raziq</p>
-  </section>
+ <section class="testimoni-section">
+  <h2 class="section-title">Apa Kata Mereka</h2>
+  <div class="testimoni-slider">
+    <div class="testimoni-track">
+      <div class="testimoni-item">
+        <img src="feedback/testimoni1.png" alt="Testimoni 1" />
+             </div>
+      <div class="testimoni-item">
+        <img src="feedback/testimoni2.png" alt="Testimoni 2" />
+              </div>
+      <div class="testimoni-item">
+        <img src="feedback/testimoni3.png.jpg" alt="Testimoni 3" />
+             </div>
+      <div class="testimoni-item">
+        <img src="feedback/testimoni4.png.jpg" alt="Testimoni 3" />
+             </div>
+      <div class="testimoni-item">
+        <img src="feedback/testimoni5.png.jpg" alt="Testimoni 3" />
+             </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.testimoni-section {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  color: #00679e;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.testimoni-slider {
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 16px;
+  position: relative;
+}
+
+.testimoni-track {
+  display: flex;
+  animation: slideTestimoni 12s infinite ease-in-out;
+  width: 300%;
+}
+
+.testimoni-item {
+  flex: 0 0 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.testimoni-item img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.testimoni-item p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Slider animation */
+@keyframes slideTestimoni {
+  0%, 10% { transform: translateX(0); }
+  33%, 43% { transform: translateX(-100%); }
+  66%, 76% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimoni-item p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .testimoni-item img {
+    width: 100px;
+    height: 100px;
+  }
+}
+</style>
+
 
   <footer>
     <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
