@@ -1,116 +1,283 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Kalang Rengas | Laman Utama</title>
-  <meta name="description" content="Kalang Rengas ialah komuniti pelancongan berasaskan komuniti (CBT) di Hulu Terengganu.">
+  <meta name="description" content="Kalang Rengas ialah komuniti pelancongan berasaskan masyarakat (CBT) di Hulu Terengganu.">
   <meta name="keywords" content="Kalang Rengas, CBT, Hulu Terengganu, eco tourism">
-  <meta name="author" content="Kalang Rengas Community">
+  <meta name="author" content="Kalang Rengas Community" />
 
-  <link rel="icon" href="KR.png" type="image/x-icon">
+  <link rel="shortcut icon" href="KR.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- ===== MAIN STYLE ===== -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'League Spartan', sans-serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #fff;
+      padding: 15px 20px;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #00679e;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00679e;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    nav a:hover {
+      background: #f0f8ff;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .hero-text h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .btn-primary {
+      background-color: #00679e;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .intro h2 {
+      font-size: 32px;
+      color: #00679e;
+      margin-bottom: 15px;
+    }
+
+    .intro p {
+      font-size: 18px;
+      color: #444;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      border-radius: 10px;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      color: #aaa;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        background: #fff;
+        position: absolute;
+        top: 75px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .hero-text h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+
+    function openModal(src) {
+      const modal = document.getElementById('image-modal');
+      const modalImg = document.getElementById('modal-img');
+      modal.style.display = 'flex';
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      document.getElementById('image-modal').style.display = 'none';
+    }
+  </script>
 </head>
 
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header class="site-header">
-    <div class="header-inner">
-      <img src="KR.png" alt="Logo Kalang Rengas" class="logo">
+  <header>
+    <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="main-nav">
-        <ul id="navLinks">
-          <li><a href="#" class="active">Utama</a></li>
-          <li><a href="about.html">Tentang Kami</a></li>
-          <li><a href="pakej.html">Pakej</a></li>
-          <li><a href="fasiliti.html">Fasiliti</a></li>
-          <li><a href="linkbio.html">Hubungi</a></li>
-        </ul>
-      </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+
+    <nav>
+      <ul id="nav-links">
+        <li><a href="#">Utama</a></li>
+        <li><a href="about.html">Tentang Kami</a></li>
+        <li><a href="pakej.html">Pakej</a></li>
+        <li><a href="fasiliti.html">Fasiliti</a></li>
+        <li><a href="linkbio.html">Hubungi</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- ===== HERO ===== -->
   <section class="hero">
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
+    <img src="kalangrengas-hero.jpg" alt="Pemandangan Kalang Rengas">
+    <div class="hero-text">
       <h1>Let the locals craft your unforgettable experience.</h1>
-      <a href="pakej.html" class="btn-primary">Terokai Pakej</a>
+      <a href="pakej.html" class="btn-primary">Lihat Pakej</a>
     </div>
   </section>
 
-  <!-- ===== INTRO ===== -->
   <section class="intro">
-    <div class="container">
-      <h2>Selamat Datang ke Kalang Rengas</h2>
-      <p>
-        Kalang Rengas ialah destinasi pelancongan komuniti di Hulu Terengganu
-        yang mengekalkan keindahan alam, budaya, dan warisan melalui
-        pengalaman yang tulen dan berjiwa kampung.
-      </p>
-    </div>
+    <h2>Selamat Datang ke Kalang Rengas</h2>
+    <p>
+      Destinasi pelancongan komuniti di Hulu Terengganu yang mengekalkan
+      keindahan alam, budaya dan warisan melalui pengalaman yang tulen
+      dan berjiwa kampung.
+    </p>
   </section>
 
-  <!-- ===== GALLERY ===== -->
-  <section class="gallery-section">
-    <div class="container">
-      <div class="gallery-grid">
-        <img src="gambarindex/littleamazon.jpg" alt="Little Amazon" class="gallery-img">
-        <img src="gambarindex/produktempatan.jpg" alt="Produk Tempatan" class="gallery-img">
-        <img src="gambarindex/produk.jpg" alt="Hasil Komuniti" class="gallery-img">
-      </div>
-    </div>
+  <section class="gallery">
+    <img src="gambarindex/littleamazon.jpg" onclick="openModal(this.src)" alt="Little Amazon">
+    <img src="gambarindex/produktempatan.jpg" onclick="openModal(this.src)" alt="Produk Tempatan">
+    <img src="gambarindex/produk.jpg" onclick="openModal(this.src)" alt="Hasil Komuniti">
   </section>
 
-  <!-- ===== TESTIMONI ===== -->
-  <section class="testimoni-section">
-    <h2 class="section-title">Apa Kata Mereka</h2>
-
-    <div class="testimoni-slider" id="testimoniSlider">
-      <div class="testimoni-track" id="testimoniTrack">
-        <div class="testimoni-item">
-          <img src="feedback/testimoni1.png" alt="Testimoni 1">
-        </div>
-        <div class="testimoni-item">
-          <img src="feedback/testimoni2.png" alt="Testimoni 2">
-        </div>
-        <div class="testimoni-item">
-          <img src="feedback/testimoni3.png" alt="Testimoni 3">
-        </div>
-        <div class="testimoni-item">
-          <img src="feedback/testimoni4.png" alt="Testimoni 4">
-        </div>
-        <div class="testimoni-item">
-          <img src="feedback/testimoni5.png" alt="Testimoni 5">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== IMAGE MODAL ===== -->
-  <div class="image-modal" id="imageModal">
-    <span class="modal-close" id="modalClose">&times;</span>
-    <img id="modalImage" alt="Paparan Gambar">
-  </div>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer">
+  <footer>
     <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
   </footer>
-
-  <!-- JS -->
-  <script src="js/main.js"></script>
 
 </body>
 </html>
