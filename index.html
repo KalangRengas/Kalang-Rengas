@@ -218,23 +218,41 @@
     <section class="cta"><div class="container reveal"><span class="eyebrow" style="color:#d6f0fa">Perjalanan anda bermula di sini</span><h2>Biar yang biasa menjadi sebuah cerita untuk diingati.</h2><p>Hubungi kami untuk mula merancang pengalaman Kalang Rengas anda.</p><a class="btn btn-light" href="contact.html">Rancang trip anda <span aria-hidden="true">→</span></a></div></section>
   </main>
   <footer class="site-footer"><div class="container"><div class="footer-top"><div><img class="footer-logo" src="KR.png" alt="Logo Kalang Rengas"><p>Pengalaman ekopelancongan yang hidup bersama alam dan komuniti di Hulu Terengganu.</p></div><div><h3>Terokai</h3><ul class="footer-links"><li><a href="about.html">Tentang Kami</a></li><li><a href="experience.html">Pengalaman</a></li><li><a href="gallery.html">Galeri</a></li></ul></div><div><h3>Hubungi</h3><ul class="footer-links"><li><a href="contact.html">Hubungi Kami</a></li><li><a href="mailto:info@kalangrengas.com">info@kalangrengas.com</a></li><li>Hulu Terengganu, Malaysia</li></ul></div></div><div class="footer-bottom"><p>© <span id="year"></span> Kalang Rengas. Hak cipta terpelihara.</p><p>Let the locals craft your unforgettable experience.</p></div></div></footer>
-  <script>
-    (() => {
-      const header = document.querySelector('.site-header'), toggle = document.querySelector('.menu-toggle'), nav = document.querySelector('.site-nav');
-      const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 35);
-      updateHeader(); window.addEventListener('scroll', updateHeader, {passive:true});
-      toggle.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') === 'true'; toggle.setAttribute('aria-expanded', !open); toggle.setAttribute('aria-label', open ? 'Buka menu' : 'Tutup menu'); nav.classList.toggle('open', !open); });
-      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Buka menu'); }));
-      const observer = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), {threshold:.14});
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-      const counters = document.querySelectorAll('[data-count]'); let counted = false;
-      const statObserver = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting && !counted) { counted=true; counters.forEach(el => { const end=+el.dataset.count, suffix=el.dataset.suffix||'', duration=1200, start=performance.now(); const run=now => { const value=Math.min(end,Math.floor((now-start)/duration*end)); el.textContent=value.toLocaleString('ms-MY')+suffix; if(value<end) requestAnimationFrame(run); }; requestAnimationFrame(run); }); } }), {threshold:.45});
-      const statsSection = document.querySelector('.stats'); if (statsSection) statObserver.observe(statsSection);
-      const modal=document.querySelector('#image-modal'), modalImg=modal.querySelector('img'); document.querySelectorAll('.masonry button').forEach(button => button.addEventListener('click', () => { modalImg.src=button.dataset.full; modalImg.alt=button.querySelector('img').alt; modal.showModal(); })); modal.querySelector('.modal-close').addEventListener('click',()=>modal.close()); modal.addEventListener('click',e=>{if(e.target===modal) modal.close();});
-      const reviews=[...document.querySelectorAll('.review')], dots=[...document.querySelectorAll('.review-dots button')]; let active=0, timer; const showReview=index=>{reviews[active].classList.remove('active');dots[active].classList.remove('active');active=index;reviews[active].classList.add('active');dots[active].classList.add('active');}; const startReviews=()=>{clearInterval(timer);timer=setInterval(()=>showReview((active+1)%reviews.length),5500);}; dots.forEach((dot,i)=>dot.addEventListener('click',()=>{showReview(i);startReviews();})); startReviews();
-      const rail=document.querySelector('.gallery-rail'), track=document.querySelector('#rail-track'); let x=0, drag=false, startX=0, startOffset=0, raf; const railWidth=()=>track.scrollWidth/2; const move=()=>{ if(!drag) {x-=.35;if(Math.abs(x)>=railWidth())x=0;track.style.transform=`translateX(${x}px)`;} raf=requestAnimationFrame(move);}; move(); const down=e=>{drag=true;rail.classList.add('is-dragging');startX=(e.touches?e.touches[0]:e).clientX;startOffset=x;}; const dragMove=e=>{if(!drag)return;const point=(e.touches?e.touches[0]:e).clientX;x=startOffset+point-startX;track.style.transform=`translateX(${x}px)`;}; const up=()=>{drag=false;rail.classList.remove('is-dragging');}; rail.addEventListener('pointerdown',down);window.addEventListener('pointermove',dragMove);window.addEventListener('pointerup',up); window.addEventListener('blur',()=>cancelAnimationFrame(raf));
-      document.querySelector('#year').textContent=new Date().getFullYear();
-    })();
-  </script>
+ <script>
+  (() => {
+    const header = document.querySelector('.site-header'), toggle = document.querySelector('.menu-toggle'), nav = document.querySelector('.site-nav');
+    const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 35);
+    updateHeader(); window.addEventListener('scroll', updateHeader, {passive:true});
+    toggle.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') === 'true'; toggle.setAttribute('aria-expanded', !open); toggle.setAttribute('aria-label', open ? 'Buka menu' : 'Tutup menu'); nav.classList.toggle('open', !open); });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Buka menu'); }));
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), {threshold:.14});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const counters = document.querySelectorAll('[data-count]'); let counted = false;
+    const statObserver = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting && !counted) { counted=true; counters.forEach(el => { const end=+el.dataset.count, suffix=el.dataset.suffix||'', duration=1200, start=performance.now(); const run=now => { const value=Math.min(end,Math.floor((now-start)/duration*end)); el.textContent=value.toLocaleString('ms-MY')+suffix; if(value<end) requestAnimationFrame(run); }; requestAnimationFrame(run); }); } }), {threshold:.45});
+    const statsSection = document.querySelector('.stats'); if (statsSection) statObserver.observe(statsSection);
+
+    const modal = document.querySelector('#image-modal'),
+          modalImg = modal.querySelector('img');
+
+    document.querySelectorAll('.masonry button, .discovery-card').forEach(item => {
+      item.addEventListener('click', event => {
+        event.preventDefault();
+
+        const image = item.querySelector('img');
+        modalImg.src = item.dataset.full || image.src;
+        modalImg.alt = image.alt;
+
+        modal.showModal();
+      });
+    });
+
+    modal.querySelector('.modal-close').addEventListener('click', () => modal.close());
+    modal.addEventListener('click', event => { if(event.target === modal) modal.close(); });
+
+    const reviews=[...document.querySelectorAll('.review')], dots=[...document.querySelectorAll('.review-dots button')]; let active=0, timer; const showReview=index=>{reviews[active].classList.remove('active');dots[active].classList.remove('active');active=index;reviews[active].classList.add('active');dots[active].classList.add('active');}; const startReviews=()=>{clearInterval(timer);timer=setInterval(()=>showReview((active+1)%reviews.length),5500);}; dots.forEach((dot,i)=>dot.addEventListener('click',()=>{showReview(i);startReviews();})); startReviews();
+    const rail=document.querySelector('.gallery-rail'), track=document.querySelector('#rail-track'); let x=0, drag=false, startX=0, startOffset=0, raf; const railWidth=()=>track.scrollWidth/2; const move=()=>{ if(!drag) {x-=.35;if(Math.abs(x)>=railWidth())x=0;track.style.transform=`translateX(${x}px)`;} raf=requestAnimationFrame(move);}; move(); const down=e=>{drag=true;rail.classList.add('is-dragging');startX=(e.touches?e.touches[0]:e).clientX;startOffset=x;}; const dragMove=e=>{if(!drag)return;const point=(e.touches?e.touches[0]:e).clientX;x=startOffset+point-startX;track.style.transform=`translateX(${x}px)`;}; const up=()=>{drag=false;rail.classList.remove('is-dragging');}; rail.addEventListener('pointerdown',down);window.addEventListener('pointermove',dragMove);window.addEventListener('pointerup',up); window.addEventListener('blur',()=>cancelAnimationFrame(raf));
+    document.querySelector('#year').textContent=new Date().getFullYear();
+  })();
+</script>
 </body>
 </html>
