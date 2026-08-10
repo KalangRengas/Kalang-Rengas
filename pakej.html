@@ -29,6 +29,10 @@
     .equipment-more{display:grid;min-height:100%;place-items:center;text-align:center}.equipment-placeholder{display:grid;width:100%;aspect-ratio:1/1;place-items:center;color:var(--blue);background:linear-gradient(135deg,#e7f2f6,#fff);font-size:2.4rem;font-weight:500}.equipment-more span{width:100%}
     .food-menu{background:#fff}.food-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.food-card{display:flex;min-height:430px;flex-direction:column;overflow:hidden;border-radius:1rem;background:#f4f8f8;box-shadow:0 7px 20px rgba(10,47,59,.08)}.food-card.featured-food{background:#063a53;color:#fff}.food-photo{height:210px;overflow:hidden}.food-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.food-card:hover .food-photo img{transform:scale(1.05)}.food-copy{display:flex;flex:1;flex-direction:column;padding:1.5rem}.food-copy h3{margin:.25rem 0 .8rem;font-size:clamp(1.7rem,2.7vw,2.3rem);font-weight:500}.food-copy p{color:var(--muted)}.featured-food .food-copy p{color:#d4e5ec}.food-price{display:block;margin-top:auto;padding-top:1.2rem;color:var(--blue);font-size:1.5rem;font-weight:600}.featured-food .food-price{color:#fff}.food-copy .btn{align-self:flex-start;margin-top:1rem}.featured-food .btn{border-color:#fff;color:var(--blue);background:#fff}.featured-food .btn:hover{color:#fff;background:transparent}@media(max-width:800px){.food-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.food-grid{grid-template-columns:1fr}}
   </style>
+  <style>
+    .food-photo.placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#d7edf5,#f9fcfd)}
+    .food-photo.placeholder span{padding:1rem;color:var(--blue);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-align:center;text-transform:uppercase}
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Lompat ke kandungan</a>
@@ -52,6 +56,23 @@
   <footer class="site-footer"><div class="container"><div class="footer-top"><div><img class="footer-logo" src="KR.png" alt="Logo Kalang Rengas"><p>Pengalaman ekopelancongan yang hidup bersama alam dan komuniti di Hulu Terengganu.</p></div><div><h3>Terokai</h3><ul class="footer-links"><li><a href="about.html">Tentang Kami</a></li><li><a href="pakej.html">Pakej</a></li><li><a href="galery.html">Galeri</a></li></ul></div><div><h3>Hubungi</h3><ul class="footer-links"><li><a href="linkbio.html">Hubungi Kami</a></li><li><a href="mailto:info@kalangrengas.com">info@kalangrengas.com</a></li><li>Hulu Terengganu, Malaysia</li></ul></div></div><div class="footer-bottom"><p>© <span id="year"></span> Kalang Rengas. Hak cipta terpelihara.</p><p>Let the locals craft your unforgettable experience.</p></div></div></footer>
   <script>
     (()=>{const header=document.querySelector('.site-header'),toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.site-nav');const update=()=>header.classList.toggle('scrolled',scrollY>35);update();addEventListener('scroll',update,{passive:true});toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));toggle.setAttribute('aria-label',open?'Buka menu':'Tutup menu');nav.classList.toggle('open',!open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Buka menu')}));const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.14});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));const closeModal=modal=>modal.classList.remove('open');document.querySelectorAll('[data-modal]').forEach(button=>button.addEventListener('click',()=>document.querySelector('#'+button.dataset.modal).classList.add('open')));document.querySelectorAll('.modal').forEach(modal=>{modal.querySelector('.modal-close').addEventListener('click',()=>closeModal(modal));modal.addEventListener('click',event=>{if(event.target===modal)closeModal(modal)})});addEventListener('keydown',event=>{if(event.key==='Escape')document.querySelectorAll('.modal.open').forEach(closeModal)});document.querySelector('#year').textContent=new Date().getFullYear()})();
+  </script>
+  <script>
+    (() => {
+      const foodCards = document.querySelectorAll('.food-card');
+      const signature = foodCards[0];
+      const lunch = foodCards[1];
+      const breakfast = foodCards[2];
+
+      signature.querySelector('.food-price').textContent = 'RM75 / 5 orang';
+
+      lunch.querySelector('.eyebrow').remove();
+      lunch.querySelector('p').textContent = 'Hidangan tengah hari disediakan untuk melengkapkan jadual aktiviti dan memberi ruang kepada setiap kumpulan untuk berehat serta menikmati sajian tempatan dengan selesa.';
+      lunch.insertAdjacentHTML('afterbegin', '<div class="food-photo"><img src="pakej/Tempahan-Tggi.png" alt="Tempahan Makan Tengah Hari Kalang Rengas"></div>');
+
+      breakfast.querySelector('.eyebrow').remove();
+      breakfast.insertAdjacentHTML('afterbegin', '<div class="food-photo"><img src="pakej/Tempahan-Pagi.png" alt="Tempahan Makan Pagi Kalang Rengas"></div>');
+    })();
   </script>
 </body>
 </html>
