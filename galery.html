@@ -1,209 +1,55 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lihat detik alam, aktiviti dan komuniti Kalang Rengas melalui galeri gambar kami.">
+  <meta name="theme-color" content="#00679e">
   <title>Galeri | Kalang Rengas</title>
-  <meta name="description" content="Kalang Rengas ialah komuniti pelancongan berasaskan masyarakat (CBT) di Hulu Terengganu.">
-  <meta name="keywords" content="Kalang Rengas, CBT, Hulu Terengganu, eco tourism">
-  <meta name="author" content="Kalang Rengas Community" />
-  <link rel="shortcut icon" href="KR.png" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="KR.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'League Spartan', sans-serif;
-      background-color: #fff;
-      color: #222;
-    }
-
-    header {
-      background: #fff;
-      padding: 15px 20px;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo { height: 60px; }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: #00679e;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #00679e;
-      font-weight: 600;
-      padding: 6px 10px;
-      border-radius: 8px;
-      transition: background 0.2s ease;
-    }
-
-    nav a:hover {
-      background: #f0f8ff;
-    }
-
-    .hero {
-      text-align: center;
-      background: #00679e;
-      color: white;
-      padding: 40px 20px;
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 18px;
-    }
-
-    .gallery-container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 16px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-grid a:hover img {
-      transform: scale(1.02);
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
-      color: #aaa;
-      border-top: 1px solid #e0e0e0;
-      margin-top: 50px;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        background: #fff;
-        position: absolute;
-        top: 75px;
-        right: 20px;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
+    :root{--blue:#00679e;--ink:#10232c;--muted:#5d6c72;--pale:#f4f8f8;--shadow:0 20px 55px rgba(7,43,56,.14)}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'League Spartan',sans-serif;color:var(--ink);background:#fff;line-height:1.55;overflow-x:hidden}img{display:block;max-width:100%}a{text-decoration:none;color:inherit}button{font:inherit}:focus-visible{outline:3px solid #f7b733;outline-offset:3px}.skip-link{position:absolute;z-index:2000;top:-5rem;left:1rem;padding:.7rem 1rem;color:#fff;background:var(--blue)}.skip-link:focus{top:0}.container{width:min(1160px,calc(100% - 3rem));margin:auto}.eyebrow{display:block;margin-bottom:1rem;color:var(--blue);font-size:.73rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}h1,h2,h3{letter-spacing:-.04em;line-height:1.03}h2{font-size:clamp(2.25rem,5vw,4.5rem);font-weight:500}p{color:var(--muted)}
+    /* Header */.site-header{position:fixed;z-index:1000;inset:0 0 auto;height:88px;display:flex;align-items:center;transition:.35s}.site-header.scrolled{height:72px;background:rgba(255,255,255,.8);box-shadow:0 8px 30px rgba(10,49,63,.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.header-inner{width:min(1320px,calc(100% - 3rem));margin:auto;display:flex;align-items:center;justify-content:space-between}.logo img{height:56px;width:auto;transition:.25s}.site-header.scrolled .logo img{height:47px}.site-nav ul{display:flex;align-items:center;gap:.25rem;list-style:none}.site-nav a{position:relative;display:block;padding:.65rem .85rem;color:#fff;font-size:.87rem;font-weight:600}.site-header.scrolled .site-nav a{color:var(--blue)}.site-nav a::after{content:'';position:absolute;right:.85rem;bottom:.35rem;left:.85rem;height:2px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .25s}.site-nav a:hover::after,.site-nav a:focus-visible::after,.site-nav a[aria-current='page']::after{transform:scaleX(1);transform-origin:left}.menu-toggle{display:none;width:44px;height:44px;padding:9px;border:0;background:transparent;cursor:pointer}.menu-toggle span{display:block;width:26px;height:2px;margin:5px auto;background:#fff;transition:.25s}.site-header.scrolled .menu-toggle span{background:var(--blue)}.menu-toggle[aria-expanded='true'] span:first-child{transform:translateY(7px) rotate(45deg)}.menu-toggle[aria-expanded='true'] span:nth-child(2){opacity:0}.menu-toggle[aria-expanded='true'] span:last-child{transform:translateY(-7px) rotate(-45deg)}
+    /* Page */.hero{position:relative;display:grid;min-height:76svh;align-items:end;isolation:isolate;overflow:hidden;padding:0 0 clamp(4rem,9vw,7rem);color:#fff}.hero::after{content:'';position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(4,30,40,.75),rgba(4,30,40,.22) 70%),linear-gradient(0deg,rgba(4,30,40,.5),transparent 58%)}.hero img{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;animation:slowZoom 15s ease-out both}@keyframes slowZoom{from{transform:scale(1.06)}to{transform:scale(1)}}.hero-copy{width:min(1160px,calc(100% - 3rem));margin:auto}.hero .eyebrow{color:#d6f0fa}.hero h1{max-width:900px;font-size:clamp(3.5rem,8vw,7.5rem);font-weight:500}.hero h1 em{font-weight:300}.hero p{max-width:470px;margin-top:1.35rem;color:#e4f6fd;font-size:clamp(1.05rem,1.8vw,1.27rem)}section{padding:clamp(4.5rem,9vw,8.5rem) 0}.section-intro{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:3rem}.section-intro p{max-width:390px}.gallery{background:var(--pale)}.gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:110px;gap:1rem}.gallery-card{position:relative;overflow:hidden;border:0;border-radius:1rem;background:#d7e8ed;cursor:zoom-in}.gallery-card:nth-child(1){grid-column:span 7;grid-row:span 4}.gallery-card:nth-child(2){grid-column:span 5;grid-row:span 2}.gallery-card:nth-child(3){grid-column:span 5;grid-row:span 2}.gallery-card:nth-child(4){grid-column:span 4;grid-row:span 3}.gallery-card:nth-child(5){grid-column:span 4;grid-row:span 3}.gallery-card:nth-child(6){grid-column:span 4;grid-row:span 3}.gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .65s ease}.gallery-card::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,28,39,.68),transparent 54%);opacity:.75;transition:.3s}.gallery-card:hover img,.gallery-card:focus-visible img{transform:scale(1.08)}.gallery-card:hover::after,.gallery-card:focus-visible::after{opacity:1}.gallery-label{position:absolute;z-index:1;right:1.15rem;bottom:1rem;left:1.15rem;color:#fff;text-align:left}.gallery-label span{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.gallery-label h3{margin-top:.22rem;font-size:clamp(1.3rem,2vw,2rem);font-weight:500}.gallery-note{margin-top:3rem;text-align:center;color:var(--muted);font-size:.9rem}.gallery-note span{color:var(--blue);font-weight:700}.modal{position:fixed;z-index:2000;inset:0;display:grid;place-items:center;padding:1.5rem;background:rgba(0,20,30,.9);opacity:0;visibility:hidden;transition:.25s}.modal.open{opacity:1;visibility:visible}.modal-content{position:relative;width:min(1050px,100%);max-height:90svh;padding:.55rem;border-radius:.7rem;background:#fff;transform:scale(.96);transition:.25s}.modal.open .modal-content{transform:scale(1)}.modal-content img{max-width:100%;max-height:81svh;width:auto;margin:auto;border-radius:.35rem}.modal-caption{padding:.7rem .4rem .2rem;color:var(--ink);font-weight:600}.modal-close{position:absolute;top:-.7rem;right:-.7rem;width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:var(--ink);font-size:1.5rem;cursor:pointer}.site-footer{padding:4rem 0 1.4rem;color:#fff;background:#062d40}.footer-top{display:grid;grid-template-columns:1.4fr repeat(2,1fr);gap:3rem;padding-bottom:3rem}.footer-logo{height:60px;width:auto;margin-bottom:1.1rem}.site-footer p{max-width:300px;color:#b9cbd2}.site-footer h3{margin-bottom:1.1rem;color:#fff;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase}.footer-links{display:grid;gap:.55rem;list-style:none;color:#c7d7dc}.footer-links a:hover{color:#fff}.footer-bottom{display:flex;justify-content:space-between;gap:1rem;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.15);color:#a9c0c9;font-size:.82rem}.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s,transform .75s}.reveal.visible{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}@media(max-width:800px){.site-header,.site-header.scrolled{height:72px;background:rgba(255,255,255,.82);backdrop-filter:blur(14px)}.logo img,.site-header.scrolled .logo img{height:46px}.menu-toggle{display:block}.menu-toggle span{background:var(--blue)}.site-nav{position:absolute;top:72px;right:1rem;left:1rem;padding:.7rem;border-radius:.7rem;background:rgba(255,255,255,.97);box-shadow:0 20px 55px rgba(7,43,56,.14);opacity:0;visibility:hidden;transform:translateY(-15px);transition:.25s}.site-nav.open{opacity:1;visibility:visible;transform:none}.site-nav ul{display:block}.site-nav a{padding:.85rem;color:var(--blue)}.gallery-grid{grid-auto-rows:100px}.gallery-card:nth-child(1){grid-column:span 12;grid-row:span 4}.gallery-card:nth-child(2),.gallery-card:nth-child(3){grid-column:span 6;grid-row:span 3}.gallery-card:nth-child(n+4){grid-column:span 4;grid-row:span 3}.footer-top{grid-template-columns:1fr 1fr}.footer-top>:first-child{grid-column:1/-1}}@media(max-width:520px){.container,.hero-copy{width:calc(100% - 2rem)}.header-inner{width:calc(100% - 2rem)}.hero{min-height:66svh}.section-intro{display:block}.section-intro p{margin-top:1rem}.gallery-grid{grid-template-columns:1fr;grid-auto-rows:250px}.gallery-card:nth-child(n){grid-column:auto;grid-row:auto}.footer-top{grid-template-columns:1fr;gap:2rem}.footer-top>:first-child{grid-column:auto}.footer-bottom{display:block}.footer-bottom p+p{margin-top:.5rem}}
+  </style>
+  <style>
+    .gallery-card:nth-child(7),.gallery-card:nth-child(8),.gallery-card:nth-child(9){grid-column:span 4;grid-row:span 3}
+    @media(max-width:800px){.gallery-card:nth-child(n+7){grid-column:span 4;grid-row:span 3}}
+    @media(max-width:520px){.gallery-card:nth-child(n+7){grid-column:auto;grid-row:auto}}
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Lompat ke kandungan</a>
+  <header class="site-header" id="site-header"><div class="header-inner"><a class="logo" href="index.html" aria-label="Kalang Rengas - Laman utama"><img src="KR.png" alt="Logo Kalang Rengas"></a><button class="menu-toggle" type="button" aria-label="Buka menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button><nav class="site-nav" id="site-nav" aria-label="Navigasi utama"><ul><li><a href="index.html">Utama</a></li><li><a href="about.html">Tentang Kami</a></li><li><a href="pakej.html">Pakej</a></li><li><a href="galery.html" aria-current="page">Galeri</a></li><li><a href="fasiliti.html">Fasiliti</a></li><li><a href="linkbio.html">Hubungi</a></li></ul></nav></div></header>
+  <main id="main-content"><section class="hero" aria-labelledby="page-title"><img src="images/galery2.png" alt="Pemandangan Kalang Rengas dari udara"><div class="hero-copy"><span class="eyebrow">Detik Kalang Rengas</span><h1 id="page-title">Alam, komuniti <em>dan cerita yang hidup.</em></h1><p>Setiap gambar ialah sekilas pandang kepada pengalaman yang menanti untuk anda terokai.</p></div></section><section class="gallery"><div class="container"><div class="section-intro reveal"><div><span class="eyebrow">Galeri gambar</span><h2>Lihat lebih dekat, rasa lebih mendalam.</h2></div><p>Klik pada mana-mana gambar untuk melihatnya dalam paparan penuh.</p></div><div class="gallery-grid reveal"><button class="gallery-card" type="button" data-image="images/galery1.png" data-caption="Kenangan Aktiviti Air"><img src="images/galery1.png" alt="Aktiviti air di Kalang Rengas"><span class="gallery-label"><span>01</span><h3>Aktiviti Air</h3></span></button><button class="gallery-card" type="button" data-image="images/galery2.png" data-caption="Mata dari Langit"><img src="images/galery2.png" alt="Pemandangan Kalang Rengas dari udara"><span class="gallery-label"><span>02</span><h3>Mata dari Langit</h3></span></button><button class="gallery-card" type="button" data-image="images/galery3.png" data-caption="Tapak Perkhemahan"><img src="images/galery3.png" alt="Tapak perkhemahan Kalang Rengas"><span class="gallery-label"><span>03</span><h3>Tapak Perkhemahan</h3></span></button><button class="gallery-card" type="button" data-image="images/galery4.png" data-caption="Aktiviti di Kalang Rengas"><img src="images/galery4.png" alt="Aktiviti di Kalang Rengas"><span class="gallery-label"><span>04</span><h3>Aktiviti Bersama</h3></span></button><button class="gallery-card" type="button" data-image="images/galery5.png" data-caption="Pemandangan Menarik"><img src="images/galery5.png" alt="Pemandangan alam Kalang Rengas"><span class="gallery-label"><span>05</span><h3>Ruang Untuk Bernafas</h3></span></button><button class="gallery-card" type="button" data-image="images/galery6.png" data-caption="Suasana Malam"><img src="images/galery6.png" alt="Suasana malam di Kalang Rengas"><span class="gallery-label"><span>06</span><h3>Suasana Malam</h3></span></button></div><p class="gallery-note reveal"><span>Tip:</span> klik gambar untuk membuka paparan besar, kemudian tekan Esc untuk menutupnya.</p></div></section></main>
+  <div class="modal" id="gallery-modal" role="dialog" aria-modal="true" aria-label="Paparan gambar"><div class="modal-content"><button class="modal-close" type="button" aria-label="Tutup gambar">×</button><img src="" alt=""><p class="modal-caption"></p></div></div>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div><img class="footer-logo" src="KR.png" alt="Logo Kalang Rengas"><p>Pengalaman ekopelancongan yang hidup bersama alam dan komuniti di Hulu Terengganu.</p></div><div><h3>Terokai</h3><ul class="footer-links"><li><a href="about.html">Tentang Kami</a></li><li><a href="pakej.html">Pakej</a></li><li><a href="galery.html">Galeri</a></li></ul></div><div><h3>Hubungi</h3><ul class="footer-links"><li><a href="linkbio.html">Hubungi Kami</a></li><li><a href="mailto:info@kalangrengas.com">info@kalangrengas.com</a></li><li>Hulu Terengganu, Malaysia</li></ul></div></div><div class="footer-bottom"><p>© <span id="year"></span> Kalang Rengas. Hak cipta terpelihara.</p><p>Let the locals craft your unforgettable experience.</p></div></div></footer>
+  <script>
+    (()=>{const header=document.querySelector('.site-header'),toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.site-nav'),modal=document.querySelector('#gallery-modal'),modalImage=modal.querySelector('img'),caption=modal.querySelector('.modal-caption');const update=()=>header.classList.toggle('scrolled',scrollY>35);update();addEventListener('scroll',update,{passive:true});toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));toggle.setAttribute('aria-label',open?'Buka menu':'Tutup menu');nav.classList.toggle('open',!open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Buka menu')}));const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));document.querySelectorAll('.gallery-card').forEach(card=>card.addEventListener('click',()=>{modalImage.src=card.dataset.image;modalImage.alt=card.querySelector('img').alt;caption.textContent=card.dataset.caption;modal.classList.add('open')}));const close=()=>modal.classList.remove('open');modal.querySelector('.modal-close').addEventListener('click',close);modal.addEventListener('click',event=>{if(event.target===modal)close()});addEventListener('keydown',event=>{if(event.key==='Escape')close()});document.querySelector('#year').textContent=new Date().getFullYear()})();
+  </script>
+  <script>
+    (() => {
+      const grid = document.querySelector('.gallery-grid');
+      const modal = document.querySelector('#gallery-modal');
+      const modalImage = modal.querySelector('img');
+      const caption = modal.querySelector('.modal-caption');
 
-<header>
-  <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
-  <nav>
-    <ul id="nav-links">
-      <li><a href="index.html">Utama</a></li>
-      <li><a href="about.html">Tentang Kami</a></li>
-      <li><a href="galery.html">Galeri</a></li>
-      <li><a href="pakej.html">Pakej</a></li>
-      <li><a href="fasiti.html">Fasiliti</a></li>
-      <li><a href="linkbio.html">Hubungi</a></li>
-    </ul>
-  </nav>
-</header>
+      grid.insertAdjacentHTML('beforeend', `
+        <button class="gallery-card" type="button" data-image="aktiviti.jpg" data-caption="Aktiviti Bersama Komuniti"><img src="aktiviti.jpg" alt="Aktiviti komuniti Kalang Rengas"><span class="gallery-label"><span>07</span><h3>Bersama Komuniti</h3></span></button>
+        <button class="gallery-card" type="button" data-image="pengkalan.jpg" data-caption="Alam Kalang Rengas"><img src="pengkalan.jpg" alt="Keindahan alam Kalang Rengas"><span class="gallery-label"><span>08</span><h3>Alam yang Dijaga</h3></span></button>
+        <button class="gallery-card" type="button" data-image="produktempatan.jpg" data-caption="Hasil Tempatan"><img src="produktempatan.jpg" alt="Hasil tempatan Kalang Rengas"><span class="gallery-label"><span>09</span><h3>Hasil Tempatan</h3></span></button>
+      `);
 
-<section class="hero">
-  <h1>Galeri Gambar</h1>
-  <p>Merakam detik istimewa di Kalang Rengas</p>
-</section>
-
-<section class="gallery-container">
-  <div id="lightgallery" class="gallery-grid">
-    <a href="images/galery1.png" data-sub-html="Kenangan Aktiviti Air">
-      <img src="images/galery1.png" alt="Aktiviti Air" />
-    </a>
-    <a href="images/galery2.png" data-sub-html="Mata dari Langit">
-      <img src="images/galery2.png" alt="Drone View" />
-    </a>
-    <a href="images/galery3.png" data-sub-html="Tapak Perkhemahan">
-      <img src="images/galery3.png" alt="Camping" />
-    </a>
-    <a href="images/galery4.png" data-sub-html="Aktiviti di Kalang Rengas">
-      <img src="images/galery4.png" alt="Aktiviti" />
-    </a>
-    <a href="images/galery5.png" data-sub-html="Pemandangan Menarik">
-      <img src="images/galery5.png" alt="View" />
-    </a>
-    <a href="images/galery6.png" data-sub-html="Suasana Malam">
-      <img src="images/galery6.png" alt="Night" />
-    </a>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.</p>
-</footer>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.min.js"></script>
-<script>
-  lightGallery(document.getElementById('lightgallery'), {
-    selector: 'a',
-    plugins: [lgThumbnail, lgZoom],
-    speed: 400
-  });
-
-  function toggleMenu() {
-    document.getElementById('nav-links').classList.toggle('show');
-  }
-</script>
-
+      grid.querySelectorAll('.gallery-card:nth-child(n+7)').forEach(card => card.addEventListener('click', () => {
+        modalImage.src = card.dataset.image;
+        modalImage.alt = card.querySelector('img').alt;
+        caption.textContent = card.dataset.caption;
+        modal.classList.add('open');
+      }));
+    })();
+  </script>
 </body>
 </html>
