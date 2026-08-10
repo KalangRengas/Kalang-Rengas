@@ -1,360 +1,55 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terokai pakej kayak, ATV, team building dan sewaan peralatan di Kalang Rengas, Hulu Terengganu.">
+  <meta name="theme-color" content="#00679e">
   <title>Pakej & Harga | Kalang Rengas</title>
-  <meta name="description" content="Harga Sewaan di CBT Kalang Rengas">
-  <meta name="keywords" content="Kalang Rengas, CBT, Hulu Terengganu, eco tourism">
-  <meta name="author" content="Kalang Rengas Community" />
-  <link rel="shortcut icon" href="KR.png" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="KR.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'League Spartan', sans-serif;
-      background: #fff;
-      color: #222;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #fff;
-      padding: 15px 20px;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo { height: 50px; }
-
-    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
-    .menu-toggle span {
-      height: 3px; width: 25px; background: #00679e; margin: 4px 0; border-radius: 2px;
-    }
-
-    nav ul {
-      list-style: none; display: flex; gap: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #00679e;
-      font-weight: 600;
-      padding: 6px 10px;
-      border-radius: 8px;
-      transition: background 0.2s ease;
-    }
-
-    nav a:hover { background: #f0f8ff; }
-
-    .section {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .section h1, .section h2 {
-      color: #00679e;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .pakej-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .pakej-box {
-      border: 1px solid #eee;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      padding: 20px;
-      background: #fff;
-      position: relative;
-    }
-
-    .pakej-box img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .pakej-box h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .pakej-box p, .pakej-box ul {
-      font-size: 14px;
-      color: #333;
-    }
-
-    .pakej-box ul {
-      margin-left: 20px;
-      margin-bottom: 10px;
-    }
-
-    .highlight-price {
-      font-size: 22px;
-      font-weight: bold;
-      color: #00679e;
-      margin-top: 15px;
-      display: block;
-    }
-
-    .pakej-box .note {
-      font-size: 12px;
-      color: #777;
-    }
-
-    .btn-view {
-      display: inline-block;
-      background: #00679e;
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      margin-top: 10px;
-      transition: background 0.3s ease;
-      font-size: 14px;
-    }
-
-    .btn-view:hover { background: #005580; }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: #fff;
-      border-radius: 12px;
-      max-width: 90%;
-      max-height: 90%;
-      padding: 10px;
-      position: relative;
-    }
-
-    .modal-content img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 24px;
-      color: #333;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 12px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
-      color: #aaa;
-      border-top: 1px solid #e0e0e0;
-      margin-top: 50px;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle { display: flex; }
-      nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        background: #fff;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      }
-      nav ul.show { display: flex; }
-    }
+    :root{--blue:#00679e;--ink:#10232c;--muted:#5d6c72;--pale:#f4f8f8;--line:#dfe8e9;--white:#fff;--shadow:0 20px 55px rgba(7,43,56,.14)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'League Spartan',sans-serif;color:var(--ink);background:#fff;line-height:1.55;overflow-x:hidden}img{display:block;max-width:100%}a{text-decoration:none;color:inherit}button{font:inherit}:focus-visible{outline:3px solid #f7b733;outline-offset:3px}.skip-link{position:absolute;z-index:10000;top:-4rem;left:1rem;padding:.7rem 1rem;border-radius:0 0 .5rem .5rem;color:#fff;background:var(--blue)}.skip-link:focus{top:0}.container{width:min(1160px,calc(100% - 3rem));margin:auto}.eyebrow{display:block;margin-bottom:1rem;color:var(--blue);font-size:.73rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}h1,h2,h3{line-height:1.02;letter-spacing:-.035em}h2{font-size:clamp(2.25rem,5vw,4.5rem);font-weight:500}p{color:var(--muted)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:3.2rem;padding:.2rem 1.25rem;border:1px solid var(--blue);border-radius:999px;color:#fff;background:var(--blue);font-weight:600;cursor:pointer;transition:.25s ease}.btn:hover,.btn:focus-visible{border-color:#004d77;background:#004d77;transform:translateY(-2px)}.btn-outline{color:var(--blue);background:transparent}.btn-outline:hover,.btn-outline:focus-visible{color:#fff;background:var(--blue)}
+    /* Header */
+    .site-header{position:fixed;z-index:1000;inset:0 0 auto;height:88px;display:flex;align-items:center;transition:.35s ease}.site-header.scrolled{height:72px;background:rgba(255,255,255,.8);box-shadow:0 8px 30px rgba(10,49,63,.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.header-inner{width:min(1320px,calc(100% - 3rem));margin:auto;display:flex;align-items:center;justify-content:space-between}.logo img{width:auto;height:56px;transition:.25s}.site-header.scrolled .logo img{height:47px}.site-nav ul{display:flex;align-items:center;gap:.25rem;list-style:none}.site-nav a{position:relative;display:block;padding:.65rem .85rem;color:#fff;font-size:.87rem;font-weight:600}.site-header.scrolled .site-nav a{color:var(--blue)}.site-nav a::after{content:'';position:absolute;right:.85rem;bottom:.35rem;left:.85rem;height:2px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .25s}.site-nav a:hover::after,.site-nav a:focus-visible::after,.site-nav a[aria-current='page']::after{transform:scaleX(1);transform-origin:left}.menu-toggle{display:none;width:44px;height:44px;padding:9px;border:0;background:transparent;cursor:pointer}.menu-toggle span{display:block;width:26px;height:2px;margin:5px auto;background:#fff;transition:.25s}.site-header.scrolled .menu-toggle span{background:var(--blue)}.menu-toggle[aria-expanded='true'] span:first-child{transform:translateY(7px) rotate(45deg)}.menu-toggle[aria-expanded='true'] span:nth-child(2){opacity:0}.menu-toggle[aria-expanded='true'] span:last-child{transform:translateY(-7px) rotate(-45deg)}
+    /* Hero */
+    .hero{position:relative;display:grid;min-height:78svh;place-items:end start;isolation:isolate;overflow:hidden;color:#fff}.hero::after{content:'';position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(4,30,40,.74),rgba(4,30,40,.25) 70%),linear-gradient(0deg,rgba(4,30,40,.46),transparent 55%)}.hero img{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;animation:heroZoom 15s ease-out both}@keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1)}}.hero-copy{width:min(1160px,calc(100% - 3rem));padding:0 0 clamp(4rem,9vw,7rem);margin:auto}.hero .eyebrow{color:#d6f0fa}.hero h1{max-width:850px;font-size:clamp(3.4rem,8vw,7.3rem);font-weight:500}.hero h1 em{font-weight:300}.hero p{max-width:500px;margin:1.5rem 0 2rem;color:#fff;font-size:clamp(1.05rem,1.8vw,1.25rem)}
+    section{padding:clamp(4.5rem,9vw,8.5rem) 0}.section-intro{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:3rem}.section-intro p{max-width:395px}.packages{background:var(--pale)}.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.package-card{position:relative;display:flex;min-height:620px;flex-direction:column;overflow:hidden;border-radius:1rem;background:#fff;box-shadow:0 7px 20px rgba(10,47,59,.1)}.package-card.featured{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;min-height:400px}.package-photo{min-height:250px;overflow:hidden}.package-card.featured .package-photo{height:auto}.package-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.package-card:hover .package-photo img{transform:scale(1.055)}.package-content{display:flex;flex:1;flex-direction:column;padding:1.5rem}.package-content h3{margin:.35rem 0 .65rem;font-size:clamp(1.7rem,2.6vw,2.4rem);font-weight:500}.package-card:not(.featured) .package-content h3{font-size:1.65rem}.package-distance{font-size:.9rem;color:var(--muted)}.included{display:grid;gap:.55rem;margin:1.35rem 0 1.15rem;list-style:none;color:#42545b;font-size:.92rem}.included li{display:flex;gap:.65rem}.included li::before{content:'✓';color:var(--blue);font-weight:700}.package-bottom{margin-top:auto}.price{display:block;margin-bottom:.3rem;color:var(--blue);font-size:1.55rem;font-weight:600;letter-spacing:-.03em}.price+.price{margin-top:.1rem}.note{min-height:2.7em;color:#728087;font-size:.82rem}.package-actions{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:1rem}.package-actions .btn{min-height:2.8rem;font-size:.86rem}.package-card.team{background:#063a53;color:#fff}.package-card.team .package-content p,.package-card.team .included,.package-card.team .note{color:#d4e5ec}.package-card.team .price{color:#fff}.package-card.team .btn{border-color:#fff;color:var(--blue);background:#fff}.package-card.team .btn:hover{color:#fff;background:transparent}
+    .booking{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,9vw,9rem);align-items:center}.booking-copy{font-size:clamp(1.4rem,2.5vw,2.1rem);line-height:1.3;color:var(--ink)}.booking-copy p{color:inherit}.booking-copy p+p{margin-top:1rem}.booking-copy strong{color:var(--blue);font-weight:500}.booking-card{padding:clamp(2rem,5vw,4rem);border-radius:1rem;background:var(--blue);color:#fff}.booking-card h3{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:500}.booking-card p{margin:1rem 0 1.5rem;color:#d9f2fc}.booking-card .btn{border-color:#fff;color:var(--blue);background:#fff}.booking-card .btn:hover{color:#fff;background:transparent}
+    .equipment{background:var(--pale)}.equipment-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.equipment-item{overflow:hidden;border-radius:.75rem;background:#fff;box-shadow:0 5px 15px rgba(10,47,59,.07)}.equipment-item img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .4s}.equipment-item:hover img{transform:scale(1.05)}.equipment-item span{display:block;padding:.9rem 1rem;color:var(--ink);font-size:.9rem;font-weight:600}
+    .modal{position:fixed;z-index:2000;inset:0;display:grid;place-items:center;padding:1.5rem;background:rgba(0,20,30,.88);opacity:0;visibility:hidden;transition:.25s}.modal.open{opacity:1;visibility:visible}.modal-content{position:relative;width:min(1000px,100%);max-height:90svh;padding:.6rem;border-radius:.7rem;background:#fff;transform:scale(.96);transition:.25s}.modal.open .modal-content{transform:scale(1)}.modal-content img{max-height:82svh;width:auto;max-width:100%;margin:auto;border-radius:.35rem}.modal-close{position:absolute;top:-.7rem;right:-.7rem;width:42px;height:42px;border:0;border-radius:50%;color:var(--ink);background:#fff;font-size:1.5rem;cursor:pointer}
+    .site-footer{padding:4rem 0 1.4rem;color:#fff;background:#062d40}.footer-top{display:grid;grid-template-columns:1.4fr repeat(2,1fr);gap:3rem;padding-bottom:3rem}.footer-logo{width:auto;height:60px;margin-bottom:1.1rem}.site-footer p{max-width:300px;color:#b9cbd2}.site-footer h3{margin-bottom:1.1rem;color:#fff;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase}.footer-links{display:grid;gap:.55rem;list-style:none;color:#c7d7dc}.footer-links a:hover{color:#fff}.footer-bottom{display:flex;justify-content:space-between;gap:1rem;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.15);color:#a9c0c9;font-size:.82rem}.reveal{opacity:0;transform:translateY(25px);transition:opacity .75s ease,transform .75s ease}.reveal.visible{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}@media(max-width:900px){.package-grid{grid-template-columns:repeat(2,1fr)}.package-card.featured{grid-column:span 2}.equipment-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:800px){.site-header,.site-header.scrolled{height:72px;background:rgba(255,255,255,.8);backdrop-filter:blur(14px)}.logo img,.site-header.scrolled .logo img{height:46px}.menu-toggle{display:block}.menu-toggle span{background:var(--blue)}.site-nav{position:absolute;top:72px;right:1rem;left:1rem;padding:.7rem;border-radius:.7rem;background:rgba(255,255,255,.97);box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(-15px);transition:.25s}.site-nav.open{opacity:1;visibility:visible;transform:none}.site-nav ul{display:block}.site-nav a{padding:.85rem;color:var(--blue)}.booking{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}.footer-top>:first-child{grid-column:1/-1}}@media(max-width:560px){.container,.hero-copy{width:calc(100% - 2rem)}.header-inner{width:calc(100% - 2rem)}.hero{min-height:74svh}.section-intro{display:block}.section-intro p{margin-top:1rem}.package-grid{grid-template-columns:1fr}.package-card.featured{grid-column:auto;display:flex;min-height:0}.package-card{min-height:0}.package-photo{min-height:260px}.equipment-grid{grid-template-columns:1fr 1fr;gap:.65rem}.equipment-item span{padding:.7rem;font-size:.8rem}.footer-top{grid-template-columns:1fr;gap:2rem}.footer-top>:first-child{grid-column:auto}.footer-bottom{display:block}.footer-bottom p+p{margin-top:.5rem}}
   </style>
-  <script>
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('show');
-    }
-
-    function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
-    }
-
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-  </script>
+  <style>
+    .hot-badge{position:absolute;z-index:2;top:1rem;left:1rem;padding:.45rem .8rem;border-radius:999px;color:#fff;background:#e36a29;font-size:.72rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;box-shadow:0 5px 14px rgba(113,47,10,.28)}
+    .equipment-more{display:grid;min-height:100%;place-items:center;text-align:center}.equipment-placeholder{display:grid;width:100%;aspect-ratio:1/1;place-items:center;color:var(--blue);background:linear-gradient(135deg,#e7f2f6,#fff);font-size:2.4rem;font-weight:500}.equipment-more span{width:100%}
+  </style>
 </head>
 <body>
-  <header>
-    <img src="KR.png" alt="Logo Kalang Rengas" class="logo" />
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-    <nav>
-      <ul id="nav-links">
-        <li><a href="index.html">Utama</a></li>
-        <li><a href="about.html">Tentang Kami</a></li>
-        <li><a href="galery.html">Galeri</a></li>
-        <li><a href="pakej.html">Pakej</a></li>
-        <li><a href="fasiliti.html">Fasiliti</a></li>
-        <li><a href="linkbio.html">Hubungi</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Pakej Section -->
-  <section class="section">
-    <h1>Pakej & Harga</h1>
-    <div class="pakej-grid">
-
-      <!-- Kayak Route 1 -->
-      <div class="pakej-box">
-        <img src="pakej/Laluan.png" alt="Kayak Route 1">
-        <h2>Kayak: Little Amazon</h2>
-        <p>Jarak trek: 8.5 km</p>
-        <ul>
-          <li>Kayak, Buoyancy Aid (BA), Paddle</li>
-          <li>Transport & Guide</li>
-          <li>Pakej Makan Tengahari</li>
-        </ul>
-        <span class="highlight-price">RM150 / seorang</span>
-        <a href="javascript:void(0)" class="btn-view" onclick="openModal('route1')">Lihat Laluan</a>
-        <p class="note">*Perlu tempahan awal, minimum 3 orang</p>
-      </div>
-
-      <!-- Kayak Route 2 -->
-      <div class="pakej-box">
-        <img src="pakej/kayak-route2.png" alt="Kayak Route 2">
-        <h2>Kayak Little Amazon (Extreme Routes)</h2>
-        <p>Jarak trek: 22 km</p>
-        <ul>
-          <li>Kayak, Buoyancy Aid (BA), Paddle</li>
-          <li>Guide & Briefing</li>
-	<li>Pakej Makan Tengahari</li>
-          <li>Air minuman disediakan</li>
-        </ul>
-        <span class="highlight-price">RM200 / seorang</span>
-        <a href="javascript:void(0)" class="btn-view" onclick="openModal('route2')">Lihat Laluan</a>
-        <p class="note">*Mencabar, namun view mengagumkan</p>
-      </div>
-
-      <!-- Kayak Route 3 -->
-      <div class="pakej-box">
-        <img src="pakej/kayak-route3.png" alt="Kayak Route 3">
-        <h2>Kayak Santai</h2>
-        <p>Jarak trek: 2.5 km</p>
-        <ul>
-          <li>Kayak, Buoyancy Aid (BA), Paddle</li>
-          <li>Guide disediakan</li>
-                  </ul>
-        <span class="highlight-price">RM39 / seorang</span>
-        <a href="javascript:void(0)" class="btn-view" onclick="openModal('route3')">Lihat Laluan</a>
-        <p class="note">*Minimum 2 orang, masa sekitar 30 minit</p>
-      </div>
-
-      <!-- ATV -->
-      <div class="pakej-box">
-        <img src="pakej/Template ATV.png" alt="Pakej ATV">
-        <h2>Jelajah ATV</h2>
-        <p>Jarak trek: 2.1 km</p>
-        <ul>
-          <li>Taklimat keselamatan, Helmet</li>
-          <li>Guide/Marshall, Trek separa lasak</li>
-        </ul>
-        <span class="highlight-price">RM20 / Single Rider</span>
-		  <span class="highlight-price">RM25 / Two Riders</span>
-        <p class="note">*Sesuai untuk pemula & santai bersama keluarga</p>
-      </div>
-
-      <!-- Team Building -->
-      <div class="pakej-box">
-        <img src="pakej/team.png" alt="Pakej Team Building">
-        <h2>Team Building</h2>
-        <p>Pakej: Day trip</p>
-        <ul>
-          <li>Permainan Ice Breaking</li>
-          <li>Aktiviti Dinamika Berkumpulan</li>
-        </ul>
-        <span class="highlight-price">Hubungi untuk sebut harga</span>
-        <p class="note">*Susun atur khas kumpulan boleh diatur</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modals for kayak routes -->
-  <div id="route1" class="modal" onclick="closeModal('route1')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <span class="close-btn" onclick="closeModal('route1')">&times;</span>
-      <img src="pakej/route1.jpg" alt="Peta Laluan Little Amazon">
-    </div>
-  </div>
-
-  <div id="route2" class="modal" onclick="closeModal('route2')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <span class="close-btn" onclick="closeModal('route2')">&times;</span>
-      <img src="pakej/route2.jpg" alt="Peta Laluan Kalang Drift">
-    </div>
-  </div>
-
-  <div id="route3" class="modal" onclick="closeModal('route3')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <span class="close-btn" onclick="closeModal('route3')">&times;</span>
-      <img src="pakej/route3.jpg" alt="Peta Laluan Hidden Stream">
-    </div>
-  </div>
-
-  <!-- Sewaan Peralatan -->
-  <section class="section">
-    <h2>Sewaan Peralatan</h2>
-    <div class="gallery-grid">
-      <img src="alatsewaan/Autotent.png" alt="Autotent">
-      <img src="alatsewaan/Bazoongi.png" alt="Bazoongi">
-      <img src="alatsewaan/Canvas.png" alt="Canvas">
-      <img src="alatsewaan/Kanopi-10-x-10.png" alt="Kanopi 10x10">
-      <img src="alatsewaan/Meja-Kerusi.png" alt="Meja & Kerusi">
-      <img src="alatsewaan/Pelampung.png" alt="Pelampung">
-      <img src="alatsewaan/Unta-L.png" alt="Tong Air L">
-      <img src="alatsewaan/Unta-M.png" alt="Tong Air M">
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Kalang Rengas. Sebuah komuniti, satu destinasi.
-  </footer>
+  <a class="skip-link" href="#main-content">Lompat ke kandungan</a>
+  <header class="site-header" id="site-header"><div class="header-inner"><a class="logo" href="index.html" aria-label="Kalang Rengas - Laman utama"><img src="KR.png" alt="Logo Kalang Rengas"></a><button class="menu-toggle" type="button" aria-label="Buka menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button><nav class="site-nav" id="site-nav" aria-label="Navigasi utama"><ul><li><a href="index.html">Utama</a></li><li><a href="about.html">Tentang Kami</a></li><li><a href="pakej.html" aria-current="page">Pakej</a></li><li><a href="galery.html">Galeri</a></li><li><a href="fasiliti.html">Fasiliti</a></li><li><a href="linkbio.html">Hubungi</a></li></ul></nav></div></header>
+  <main id="main-content">
+    <section class="hero" aria-labelledby="page-title"><img src="pakej/Laluan.png" alt="Laluan kayak Little Amazon Kalang Rengas"><div class="hero-copy"><span class="eyebrow">Rancang pengalaman anda</span><h1 id="page-title">Pilih rentak <em>pengembaraan anda.</em></h1><p>Daripada kayuhan yang tenang hingga aktiviti berkumpulan yang mengeratkan hubungan, setiap pakej membawa anda lebih dekat kepada Kalang Rengas.</p><a class="btn" href="#pakej">Lihat pakej <span aria-hidden="true">↓</span></a></div></section>
+    <section class="packages" id="pakej"><div class="container"><div class="section-intro reveal"><div><span class="eyebrow">Pakej pilihan</span><h2>Pengalaman yang menanti untuk diterokai.</h2></div><p>Semua pakej dikendalikan dengan panduan tempatan, perhatian terhadap keselamatan dan rasa hormat kepada alam sekeliling.</p></div><div class="package-grid">
+      <article class="package-card featured reveal"><span class="hot-badge">Paling laris</span><div class="package-photo"><img src="pakej/Laluan.png" alt="Laluan Kayak Little Amazon"></div><div class="package-content"><span class="eyebrow">Pakej Kayak 01</span><h3>Little Amazon</h3><p class="package-distance">Jarak trek: 8.5 km</p><ul class="included"><li>Kayak, Buoyancy Aid (BA) dan paddle</li><li>Pengangkutan dan jurupandu</li><li>Pakej makan tengah hari</li></ul><div class="package-bottom"><span class="price">RM150 / seorang</span><p class="note">Perlu tempahan awal. Minimum 3 orang.</p><div class="package-actions"><a class="btn" href="https://www.whatsapp.my/60189134993/web" target="_blank" rel="noopener">Booking sekarang</a></div></div></div></article>
+      <article class="package-card reveal"><div class="package-photo"><img src="pakej/kayak-route2.png" alt="Laluan kayak Little Amazon Extreme Routes"></div><div class="package-content"><span class="eyebrow">Kayak 02</span><h3>Little Amazon Extreme Routes</h3><p class="package-distance">Jarak trek: 22 km</p><ul class="included"><li>Kayak, Buoyancy Aid (BA) dan paddle</li><li>Jurupandu dan taklimat</li><li>Pakej makan tengah hari</li><li>Air minuman disediakan</li></ul><div class="package-bottom"><span class="price">RM200 / seorang</span><p class="note">Mencabar, namun pemandangannya mengagumkan.</p><div class="package-actions"><a class="btn btn-outline" href="https://www.whatsapp.my/60189134993/web" target="_blank" rel="noopener">Booking sekarang</a></div></div></div></article>
+      <article class="package-card reveal"><div class="package-photo"><img src="pakej/kayak-route3.png" alt="Laluan Kayak Santai"></div><div class="package-content"><span class="eyebrow">Kayak 03</span><h3>Kayak Santai</h3><p class="package-distance">Jarak trek: 2.5 km</p><ul class="included"><li>Kayak, Buoyancy Aid (BA) dan paddle</li><li>Jurupandu disediakan</li></ul><div class="package-bottom"><span class="price">RM39 / seorang</span><p class="note">Minimum 2 orang. Tempoh sekitar 30 minit.</p><div class="package-actions"><a class="btn btn-outline" href="https://www.whatsapp.my/60189134993/web" target="_blank" rel="noopener">Booking sekarang</a></div></div></div></article>
+      <article class="package-card reveal"><div class="package-photo"><img src="pakej/Template ATV.png" alt="Pakej Jelajah ATV"></div><div class="package-content"><span class="eyebrow">Aktiviti darat</span><h3>Jelajah ATV</h3><p class="package-distance">Jarak trek: 2.1 km</p><ul class="included"><li>Taklimat keselamatan dan helmet</li><li>Jurupandu atau marshal</li><li>Trek separa lasak</li></ul><div class="package-bottom"><span class="price">RM20 / single rider</span><span class="price">RM25 / two riders</span><p class="note">Sesuai untuk pemula dan aktiviti santai bersama keluarga.</p><div class="package-actions"><a class="btn btn-outline" href="https://www.whatsapp.my/60145380028/ATVkr" target="_blank" rel="noopener">Hubungi kami</a></div></div></div></article>
+      <article class="package-card team reveal"><div class="package-photo"><img src="pakej/team.png" alt="Aktiviti Team Building Kalang Rengas"></div><div class="package-content"><span class="eyebrow" style="color:#d6f0fa">Untuk kumpulan</span><h3>Team Building</h3><p class="package-distance" style="color:#d4e5ec">Pakej: Day trip</p><ul class="included"><li>Permainan ice breaking</li><li>Aktiviti dinamika berkumpulan</li><li>Pakej boleh disesuaikan mengikut keperluan kumpulan</li></ul><div class="package-bottom"><span class="price">Hubungi untuk sebut harga</span><p class="note">Pakej khas boleh dirangka mengikut objektif, saiz dan keperluan kumpulan anda.</p><div class="package-actions"><a class="btn" href="https://www.whatsapp.my/60189134993/web" target="_blank" rel="noopener">Hubungi kami</a></div></div></div></article>
+    </div></div></section>
+    <section><div class="container booking"><div class="booking-copy reveal"><span class="eyebrow">Sebelum anda datang</span><h2>Setiap perjalanan lebih baik apabila dirancang bersama.</h2><p>Pilihan pakej boleh disesuaikan mengikut saiz kumpulan, minat dan masa lawatan anda.</p><p><strong>Hubungi kami</strong> untuk semakan ketersediaan, tempahan awal atau pertanyaan khusus.</p></div><div class="booking-card reveal"><span class="eyebrow" style="color:#d6f0fa">Tempahan</span><h3>Perlukan bantuan memilih pakej?</h3><p>Kami sedia membantu anda merancang pengalaman yang paling sesuai untuk kumpulan anda.</p><a class="btn" href="https://www.whatsapp.my/60189134993/web" target="_blank" rel="noopener">Hubungi Kalang Rengas <span aria-hidden="true">→</span></a></div></div></section>
+    <section class="equipment"><div class="container"><div class="section-intro reveal"><div><span class="eyebrow">Sewaan peralatan</span><h2>Sedia untuk lebih banyak kemungkinan.</h2></div><p>Peralatan asas untuk melengkapkan aktiviti dan acara anda boleh didapati melalui sewaan.</p></div><div class="equipment-grid reveal"><div class="equipment-item"><img src="alatsewaan/Autotent.png" alt="Autotent"><span>Autotent</span></div><div class="equipment-item"><img src="alatsewaan/Bazoongi.png" alt="Bazoongi"><span>Bazoongi</span></div><div class="equipment-item"><img src="alatsewaan/Canvas.png" alt="Canvas"><span>Canvas</span></div><div class="equipment-item"><img src="alatsewaan/Kanopi-10-x-10.png" alt="Kanopi 10 x 10"><span>Kanopi 10 x 10</span></div><div class="equipment-item"><img src="alatsewaan/Meja-Kerusi.png" alt="Meja dan kerusi"><span>Meja dan kerusi</span></div><div class="equipment-item"><img src="alatsewaan/Pelampung.png" alt="Pelampung"><span>Pelampung</span></div><div class="equipment-item"><img src="alatsewaan/Unta-L.png" alt="Tong air L"><span>Tong air L</span></div><div class="equipment-item"><img src="alatsewaan/Unta-M.png" alt="Tong air M"><span>Tong air M</span></div><div class="equipment-item equipment-more"><div class="equipment-placeholder">09</div><span>Peralatan tambahan</span></div><div class="equipment-item equipment-more"><div class="equipment-placeholder">10</div><span>Peralatan tambahan</span></div><div class="equipment-item equipment-more"><div class="equipment-placeholder">11</div><span>Peralatan tambahan</span></div><div class="equipment-item equipment-more"><div class="equipment-placeholder">12</div><span>Peralatan tambahan</span></div></div></div></section>
+  </main>
+  <div class="modal" id="route1" role="dialog" aria-modal="true" aria-label="Peta laluan Little Amazon"><div class="modal-content"><button class="modal-close" type="button" aria-label="Tutup">×</button><img src="pakej/route1.jpg" alt="Peta Laluan Little Amazon"></div></div>
+  <div class="modal" id="route2" role="dialog" aria-modal="true" aria-label="Peta laluan Extreme Routes"><div class="modal-content"><button class="modal-close" type="button" aria-label="Tutup">×</button><img src="pakej/route2.jpg" alt="Peta Laluan Kayak Extreme Routes"></div></div>
+  <div class="modal" id="route3" role="dialog" aria-modal="true" aria-label="Peta laluan Kayak Santai"><div class="modal-content"><button class="modal-close" type="button" aria-label="Tutup">×</button><img src="pakej/route3.jpg" alt="Peta Laluan Kayak Santai"></div></div>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div><img class="footer-logo" src="KR.png" alt="Logo Kalang Rengas"><p>Pengalaman ekopelancongan yang hidup bersama alam dan komuniti di Hulu Terengganu.</p></div><div><h3>Terokai</h3><ul class="footer-links"><li><a href="about.html">Tentang Kami</a></li><li><a href="pakej.html">Pakej</a></li><li><a href="galery.html">Galeri</a></li></ul></div><div><h3>Hubungi</h3><ul class="footer-links"><li><a href="linkbio.html">Hubungi Kami</a></li><li><a href="mailto:info@kalangrengas.com">info@kalangrengas.com</a></li><li>Hulu Terengganu, Malaysia</li></ul></div></div><div class="footer-bottom"><p>© <span id="year"></span> Kalang Rengas. Hak cipta terpelihara.</p><p>Let the locals craft your unforgettable experience.</p></div></div></footer>
+  <script>
+    (()=>{const header=document.querySelector('.site-header'),toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.site-nav');const update=()=>header.classList.toggle('scrolled',scrollY>35);update();addEventListener('scroll',update,{passive:true});toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));toggle.setAttribute('aria-label',open?'Buka menu':'Tutup menu');nav.classList.toggle('open',!open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Buka menu')}));const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.14});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));const closeModal=modal=>modal.classList.remove('open');document.querySelectorAll('[data-modal]').forEach(button=>button.addEventListener('click',()=>document.querySelector('#'+button.dataset.modal).classList.add('open')));document.querySelectorAll('.modal').forEach(modal=>{modal.querySelector('.modal-close').addEventListener('click',()=>closeModal(modal));modal.addEventListener('click',event=>{if(event.target===modal)closeModal(modal)})});addEventListener('keydown',event=>{if(event.key==='Escape')document.querySelectorAll('.modal.open').forEach(closeModal)});document.querySelector('#year').textContent=new Date().getFullYear()})();
+  </script>
 </body>
 </html>
-
-
-
-
