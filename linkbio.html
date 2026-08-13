@@ -1,12 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="ms">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kalang Rengas | Bio</title>
-  <meta name="description" content="Kalang Rengas ialah komuniti pelancongan berasaskan masyarakat di Hulu Terengganu.">
-
   <link rel="icon" href="KR.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,21 +11,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     :root {
       --kr-blue: #00679e;
-      --text: #1f2933;
-      --muted: #667085;
-      --line: #dce7ec;
+      --footer-blue: #06384b;
+      --line: #d9e5eb;
+      --text: #263238;
     }
 
     body {
       margin: 0;
-      min-height: 100vh;
-      padding: 48px 20px 28px;
       background: #fff;
       color: var(--text);
       font-family: "League Spartan", sans-serif;
@@ -36,31 +29,21 @@
     }
 
     main {
-      width: min(100%, 390px);
+      width: min(100%, 400px);
+      min-height: calc(100vh - 150px);
       margin: 0 auto;
+      padding: 42px 20px 40px;
     }
 
     .logo {
       display: block;
-      width: 96px;
+      width: 102px;
       height: auto;
-      margin: 0 auto 16px;
-    }
-
-    h1 {
-      margin: 0;
-      color: var(--kr-blue);
-      font-size: 24px;
-      line-height: 1.1;
-    }
-
-    .tagline {
-      margin: 8px 0 28px;
-      color: var(--muted);
-      font-size: 15px;
+      margin: 0 auto;
     }
 
     .links {
+      margin-top: 22px;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 10px;
@@ -69,16 +52,17 @@
     .link {
       display: flex;
       align-items: center;
-      gap: 14px;
-      min-height: 52px;
-      padding: 14px 18px;
+      justify-content: center;
+      gap: 12px;
+      min-height: 56px;
+      padding: 14px 20px;
       border-bottom: 1px solid var(--line);
       color: var(--kr-blue);
       font-size: 16px;
       font-weight: 600;
-      text-align: left;
+      text-align: center;
       text-decoration: none;
-      transition: background-color 0.2s ease, color 0.2s ease;
+      transition: background-color .2s ease, color .2s ease;
     }
 
     .link:last-child {
@@ -89,72 +73,157 @@
     .link:focus-visible {
       background: var(--kr-blue);
       color: #fff;
-      outline: none;
+      outline: 0;
     }
 
     .icon {
       width: 20px;
-      text-align: center;
       font-size: 17px;
+      text-align: center;
     }
 
     footer {
-      margin-top: 32px;
-      color: var(--muted);
+      padding: 42px 20px 18px;
+      background: var(--footer-blue);
+      color: #fff;
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.6;
+    }
+
+    .footer-inner {
+      width: min(100%, 400px);
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      display: block;
+      width: 66px;
+      height: auto;
+      margin: 0 auto 16px;
+    }
+
+    .footer-description {
+      max-width: 310px;
+      margin: 0 auto 20px;
+      color: rgba(255, 255, 255, .9);
+      font-size: 15px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .social-links a {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .45);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 15px;
+      text-decoration: none;
+      transition: background-color .2s ease, color .2s ease;
+    }
+
+    .social-links a:hover,
+    .social-links a:focus-visible {
+      background: #fff;
+      color: var(--footer-blue);
+      outline: 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: center;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, .2);
+      color: rgba(255, 255, 255, .9);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      margin: 0;
     }
 
     @media (max-width: 480px) {
-      body {
-        padding-top: 36px;
+      main {
+        padding-top: 32px;
       }
 
       .logo {
-        width: 86px;
-      }
-
-      h1 {
-        font-size: 22px;
+        width: 88px;
       }
     }
   </style>
 </head>
+
 <body>
   <main>
     <img src="KR.png" alt="Logo Kalang Rengas" class="logo">
-
-    <h1>CBT Kalang Rengas</h1>
-    <p class="tagline">Nature. Culture. Community.</p>
 
     <nav class="links" aria-label="Pautan Kalang Rengas">
       <a href="https://kalangrengas.com" class="link" target="_blank" rel="noopener">
         <span class="icon"><i class="fa-solid fa-globe"></i></span>
         Laman Utama
       </a>
+
       <a href="https://wa.me/60189134993" class="link" target="_blank" rel="noopener">
         <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
         WhatsApp
       </a>
+
       <a href="https://www.facebook.com/KalangrengasKKG" class="link" target="_blank" rel="noopener">
         <span class="icon"><i class="fa-brands fa-facebook-f"></i></span>
         Facebook
       </a>
+
       <a href="https://www.tiktok.com/@cbt.kalang.rengas" class="link" target="_blank" rel="noopener">
         <span class="icon"><i class="fa-brands fa-tiktok"></i></span>
         TikTok
       </a>
+
       <a href="mailto:info@kalangrengas.com" class="link">
         <span class="icon"><i class="fa-solid fa-envelope"></i></span>
         Email
       </a>
     </nav>
-
-    <footer>
-      © 2025 CBT Kalang Rengas<br>
-      Kampung Gunung, 21800 Ajil, Terengganu
-    </footer>
   </main>
+
+  <footer>
+    <div class="footer-inner">
+      <img src="KR.png" alt="Kalang Rengas" class="footer-logo">
+
+      <p class="footer-description">
+        Let the locals craft your unforgettable experience.
+      </p>
+
+      <div class="social-links" aria-label="Media sosial Kalang Rengas">
+        <a href="https://www.facebook.com/KalangrengasKKG" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@cbt.kalang.rengas" target="_blank" rel="noopener" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href="https://wa.me/60189134993" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="mailto:info@kalangrengas.com" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kalang Rengas. Hak cipta terpelihara.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
-```
