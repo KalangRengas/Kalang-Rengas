@@ -22,6 +22,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       color: var(--ink);
@@ -32,7 +33,11 @@
 
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, calc(100% - 3rem)); margin: auto; }
+
+    .container {
+      width: min(1120px, calc(100% - 3rem));
+      margin: auto;
+    }
 
     .eyebrow {
       display: block;
@@ -41,6 +46,12 @@
       font-weight: 700;
       letter-spacing: .15em;
       text-transform: uppercase;
+    }
+
+    h1, h2, h3, h4 {
+      margin-top: 0;
+      line-height: 1.06;
+      letter-spacing: -.035em;
     }
 
     .site-header {
@@ -127,11 +138,6 @@
       transition: .25s;
     }
 
-    .site-header.scrolled .menu-toggle span { background: var(--blue); }
-    .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
-    .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-    .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
-
     .hero {
       position: relative;
       display: grid;
@@ -147,7 +153,9 @@
       position: absolute;
       z-index: -2;
       inset: 0;
-      background: url("https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/pakej/mainpakej.png") center / cover;
+      background:
+        url("https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/pakej/mainpakej.png")
+        center / cover;
     }
 
     .hero::after {
@@ -170,12 +178,6 @@
       color: #d6f0fa;
     }
 
-    h1, h2, h3, h4 {
-      margin-top: 0;
-      line-height: 1.06;
-      letter-spacing: -.035em;
-    }
-
     h1 {
       max-width: 780px;
       margin-bottom: 1.1rem;
@@ -196,6 +198,11 @@
     .equipment {
       padding: clamp(4.5rem, 9vw, 7rem) 0;
       background: var(--pale);
+    }
+
+    .section {
+      padding: clamp(4.5rem, 8vw, 7rem) 0;
+      border-top: 1px solid var(--line);
     }
 
     .section-intro {
@@ -235,7 +242,8 @@
       transition: .25s ease;
     }
 
-    .kayak-card:hover {
+    .kayak-card:hover,
+    .safety-card:hover {
       border-color: var(--blue);
       box-shadow: 0 18px 38px rgba(0,103,158,.14);
       transform: translateY(-3px);
@@ -245,7 +253,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: .6rem;
       padding: 1rem 1.2rem;
       border-bottom: 1px solid var(--line);
     }
@@ -268,20 +276,30 @@
       letter-spacing: .1em;
     }
 
-    .new-package {
+    .package-badge {
+      padding: .38rem .62rem;
+      border-radius: 999px;
       color: #fff;
       background: var(--blue);
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
-    .gallery {
+    .gallery,
+    .activity-gallery {
       display: grid;
-      grid-auto-columns: 84%;
       grid-auto-flow: column;
       gap: .65rem;
       overflow-x: auto;
-      padding: .75rem;
       scroll-snap-type: x mandatory;
       scrollbar-width: thin;
+    }
+
+    .gallery {
+      grid-auto-columns: 84%;
+      padding: .75rem;
     }
 
     .gallery img {
@@ -424,26 +442,66 @@
       justify-content: center;
       min-height: 2.8rem;
       padding: .2rem 1rem;
+      border: 0;
       border-radius: 999px;
       color: #fff;
       background: var(--blue);
+      font-family: inherit;
       font-size: .84rem;
       font-weight: 600;
       white-space: nowrap;
+      cursor: pointer;
     }
 
-    .other-activities {
-      padding: clamp(4.5rem, 8vw, 7rem) 0;
-      border-top: 1px solid var(--line);
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .safety-card {
+      display: grid;
+      justify-items: center;
+      min-height: 205px;
+      padding: 1.5rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .85rem;
+      background: #fff;
+      text-align: center;
+      transition: .2s ease;
+    }
+
+    .safety-card img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+    }
+
+    .safety-card h3 {
+      margin: .85rem 0 .35rem;
+      color: var(--blue);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .safety-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .78rem;
+      line-height: 1.35;
     }
 
     .activity-card {
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
+      grid-template-columns: 180px 1fr;
+      gap: 1.25rem;
+      align-items: start;
+      padding: 1rem;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 1rem;
       background: #fff;
+      box-shadow: 0 8px 24px rgba(10,47,59,.07);
     }
 
     .activity-card.team {
@@ -451,17 +509,24 @@
       background: var(--deep);
     }
 
-    .activity-card img {
+    .activity-gallery {
+      grid-auto-columns: 100%;
+      border-radius: .65rem;
+    }
+
+    .activity-gallery img {
       width: 100%;
-      height: 100%;
-      min-height: 280px;
+      aspect-ratio: 1 / 1;
+      border-radius: .65rem;
       object-fit: cover;
+      scroll-snap-align: start;
     }
 
     .activity-copy {
       display: flex;
+      min-height: 180px;
       flex-direction: column;
-      padding: 1.5rem;
+      padding: .35rem .4rem .35rem 0;
     }
 
     .activity-copy h3 {
@@ -479,7 +544,21 @@
     .activity-copy .button { align-self: start; margin-top: auto; }
     .activity-card.team .button { color: var(--blue); background: #fff; }
 
-    .equipment { border-top: 1px solid var(--line); }
+    .activity-price {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin: .9rem 0 0;
+      color: var(--blue);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .activity-price span {
+      padding: .3rem .55rem;
+      border-radius: .35rem;
+      background: var(--pale);
+    }
 
     .equipment-grid {
       display: grid;
@@ -584,37 +663,6 @@
     .footer-inner p { margin: 0; }
 
     @media (max-width: 760px) {
-      .section-intro,
-      .booking-card,
-      .footer-inner {
-        align-items: start;
-        flex-direction: column;
-      }
-
-      .kayak-grid,
-      .activity-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .equipment-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .footer-top {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-top > :first-child {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media (max-width: 430px) {
-      .container { width: calc(100% - 2rem); }
-      .activity-info { grid-template-columns: 1fr; }
-      .include-list { grid-template-columns: repeat(2, 1fr); }
-      .package-foot { align-items: start; flex-direction: column; }
-
       .site-header {
         height: 72px;
         background: rgba(255,255,255,.9);
@@ -653,6 +701,63 @@
         padding: .85rem;
       }
 
+      .section-intro,
+      .booking-card,
+      .footer-inner {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .kayak-grid,
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .safety-grid,
+      .equipment-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-top > :first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .container,
+      .hero .container {
+        width: calc(100% - 2rem);
+      }
+
+      .activity-info,
+      .safety-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .include-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .package-foot,
+      .activity-card {
+        align-items: start;
+        grid-template-columns: 1fr;
+        flex-direction: column;
+      }
+
+      .activity-gallery {
+        max-width: 220px;
+      }
+
+      .activity-copy {
+        min-height: 0;
+        padding: 0;
+      }
+
       .footer-top {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -680,6 +785,7 @@
         <a href="index.html">Utama</a>
         <a href="about.html">Tentang Kami</a>
         <a href="pakej.html" aria-current="page">Pakej</a>
+        <a href="#keselamatan">Keselamatan</a>
         <a href="galery.html">Galeri</a>
         <a href="fasiliti.html">Fasiliti</a>
         <a href="linkbio.html">Hubungi</a>
@@ -710,37 +816,55 @@
       </div>
     </section>
 
-    <section class="other-activities">
+    <section class="section" id="keselamatan">
+      <div class="container">
+        <div class="section-intro">
+          <div>
+            <span class="eyebrow">Keutamaan kami</span>
+            <h2>Keselamatan dalam setiap perjalanan.</h2>
+          </div>
+          <p>Setiap aktiviti dirancang dengan persediaan, panduan dan langkah keselamatan yang jelas.</p>
+        </div>
+
+        <div class="safety-grid">
+          <article class="safety-card">
+            <img src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/certified.png" alt="Certified Guide">
+            <h3>Certified Guide</h3>
+            <p>Jurupandu bertauliah untuk membantu perjalanan anda.</p>
+          </article>
+
+          <article class="safety-card">
+            <img src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/erp.png" alt="ERP">
+            <h3>ERP</h3>
+            <p>Emergency Response Plan</p>
+          </article>
+
+          <article class="safety-card">
+            <img src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/rams.png" alt="RAMS">
+            <h3>RAMS</h3>
+            <p>Risk Analysys Management Sytems</p>
+          </article>
+
+          <article class="safety-card">
+            <img src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/sop.png" alt="SOP">
+            <h3>SOP</h3>
+            <p>Standard Operation Procedure</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="container">
         <div class="section-intro">
           <div>
             <span class="eyebrow">Aktiviti lain</span>
             <h2>Teruskan pengembaraan anda.</h2>
           </div>
-          <p>Pilih aktiviti darat atau program berkumpulan untuk melengkapkan lawatan ke Kalang Rengas.</p>
+          <p>Terokai lebih banyak pengalaman bersama kami.</p>
         </div>
 
-        <div class="activity-grid">
-          <article class="activity-card">
-            <img src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/pakej/Template%20ATV.png" alt="Jelajah ATV">
-            <div class="activity-copy">
-              <span class="eyebrow">Aktiviti darat</span>
-              <h3>Jelajah ATV</h3>
-              <p>Jelajah trek separa lasak sepanjang 2.1 km. Termasuk taklimat keselamatan, helmet serta bantuan jurupandu atau marshal.</p>
-              <a class="button" href="https://www.wassap.my/60145380028/ATVkr" target="_blank">Hubungi kami</a>
-            </div>
-          </article>
-
-          <article class="activity-card team">
-            <img src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/pakej/team.png" alt="Team Building">
-            <div class="activity-copy">
-              <span class="eyebrow" style="color:#c4e8f5">Untuk kumpulan</span>
-              <h3>Team Building</h3>
-              <p>Program day trip dengan aktiviti ice breaking dan dinamika berkumpulan yang boleh disesuaikan mengikut objektif anda.</p>
-              <a class="button" href="https://www.wassap.my/60189134993/webTeam" target="_blank">Dapatkan sebut harga</a>
-            </div>
-          </article>
-        </div>
+        <div class="activity-grid" id="activity-grid"></div>
       </div>
     </section>
 
@@ -815,27 +939,28 @@
   </footer>
 
   <script>
-    const imageBase = "https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/";
-
-    const icons = {
-      kayak: imageBase + "kayak.png",
-      paddle: imageBase + "paddle.png",
-      pfd: imageBase + "life-vest.png",
-      guide: imageBase + "people.png",
-      transport: imageBase + "express-delivery.png",
-      lunch: imageBase + "restaurant.png"
-    };
+    const base = "https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/";
 
     const gallery = [
-      imageBase + "galery1.png",
-      imageBase + "galery2.png",
-      imageBase + "galery3.png",
-      imageBase + "galery4.png"
+      base + "galery1.png",
+      base + "galery2.png",
+      base + "galery3.png",
+      base + "galery4.png"
     ];
+
+    const icons = {
+      kayak: base + "kayak.png",
+      paddle: base + "paddle.png",
+      pfd: base + "life-vest.png",
+      guide: base + "people.png",
+      transport: base + "express-delivery.png",
+      lunch: base + "restaurant.png"
+    };
 
     const packages = [
       {
         label: "Pakej Kayak 01",
+        badge: "Paling Popular",
         code: "KLA",
         title: "Kayak Little Amazon Routes",
         summary: "Terokai sungai Little Amazon yang tenang, dikelilingi kehijauan alam semula jadi.",
@@ -861,7 +986,8 @@
         lunch: true
       },
       {
-        label: "Pakej Kayak Terbaru",
+        label: "Pakej Kayak 03",
+        badge: "Terbaru",
         code: "KLW",
         title: "Kayak Neram Wildscape Route",
         summary: "Laluan kayak yang dipenuhi Pokok Keruing Neram, dengan pemandangan sungai dan alam semula jadi yang indah.",
@@ -871,8 +997,7 @@
         original: "RM198",
         price: "RM180",
         booking: "https://www.wassap.my/60189134993/webKLW",
-        lunch: true,
-        newest: true
+        lunch: true
       },
       {
         label: "Pakej Kayak 04",
@@ -889,32 +1014,61 @@
       }
     ];
 
-    const includes = (withLunch) => `
-      <div class="includes">
-        <h4>Termasuk dalam pakej</h4>
-        <ul class="include-list">
-          <li><img src="${icons.kayak}" alt=""><span>Kayak</span></li>
-          <li><img src="${icons.paddle}" alt=""><span>Paddle</span></li>
-          <li><img src="${icons.pfd}" alt=""><span>Personal Floating Device</span></li>
-          <li><img src="${icons.guide}" alt=""><span>Certified Guide</span></li>
-          <li><img src="${icons.transport}" alt=""><span>Domestic Transport</span></li>
-          ${withLunch ? `<li><img src="${icons.lunch}" alt=""><span>Makan Tengah Hari</span></li>` : ""}
-        </ul>
-      </div>
-    `;
+    const activities = [
+      {
+        title: "Jelajah ATV",
+        label: "Aktiviti darat",
+        summary: "Jelajah trek separa lasak sepanjang 2.1 km. Termasuk taklimat keselamatan, helmet serta bantuan jurupandu atau marshal.",
+        booking: "https://www.wassap.my/60145380028/ATVkr",
+        button: "Hubungi kami",
+        price: ["Single Rider RM20", "Two Riders RM25"]
+      },
+      {
+        title: "Team Building",
+        label: "Untuk kumpulan",
+        summary: "Rancang program team building mengikut keperluan kumpulan anda, dengan aktiviti dan fasilitator yang disesuaikan mengikut objektif program.",
+        booking: "https://www.wassap.my/60189134993/webTeam",
+        button: "Dapatkan sebut harga",
+        team: true
+      }
+    ];
 
-    document.querySelector("#kayak-grid").innerHTML = packages.map((item) => `
+    function makeGallery(title, className) {
+      return `
+        <div class="${className}" aria-label="Galeri ${title}">
+          ${gallery.map((image, i) =>
+            `<img src="${image}" alt="${title} ${i + 1}">`
+          ).join("")}
+        </div>
+      `;
+    }
+
+    function packageIncludes(withLunch) {
+      return `
+        <div class="includes">
+          <h4>Termasuk dalam pakej</h4>
+          <ul class="include-list">
+            <li><img src="${icons.kayak}" alt=""><span>Kayak</span></li>
+            <li><img src="${icons.paddle}" alt=""><span>Paddle</span></li>
+            <li><img src="${icons.pfd}" alt=""><span>Personal Floating Device</span></li>
+            <li><img src="${icons.guide}" alt=""><span>Certified Guide</span></li>
+            <li><img src="${icons.transport}" alt=""><span>Domestic Transport</span></li>
+            ${withLunch ? `<li><img src="${icons.lunch}" alt=""><span>Makan Tengah Hari</span></li>` : ""}
+          </ul>
+        </div>
+      `;
+    }
+
+    document.querySelector("#kayak-grid").innerHTML = packages.map(item => `
       <article class="kayak-card">
         <div class="package-head">
           <span class="package-number">${item.label}</span>
-          <span class="package-code ${item.newest ? "new-package" : ""}">${item.code}</span>
+          ${item.badge ? `<span class="package-badge">${item.badge}</span>` : ""}
+          <span class="package-code">${item.code}</span>
         </div>
 
-        <div class="gallery">
-          ${gallery.map((image, index) => `<img src="${image}" alt="${item.title} ${index + 1}">`).join("")}
-        </div>
-
-        <span class="gallery-note">Slide untuk lihat 4 gambar</span>
+        ${makeGallery(item.title, "gallery")}
+        <span class="gallery-note">Slide untuk lihat lebih lagi</span>
 
         <div class="package-body">
           <h3>${item.title}</h3>
@@ -926,7 +1080,7 @@
             <div><span>Minimum</span><strong>${item.minimum}</strong></div>
           </div>
 
-          ${includes(item.lunch)}
+          ${packageIncludes(item.lunch)}
 
           <div class="package-foot">
             <span class="price">
@@ -941,21 +1095,41 @@
       </article>
     `).join("");
 
+    document.querySelector("#activity-grid").innerHTML = activities.map(item => `
+      <article class="activity-card ${item.team ? "team" : ""}">
+        ${makeGallery(item.title, "activity-gallery")}
+
+        <div class="activity-copy">
+          <span class="eyebrow" ${item.team ? 'style="color:#c4e8f5"' : ""}>${item.label}</span>
+          <h3>${item.title}</h3>
+          <p>${item.summary}</p>
+
+          ${item.price ? `
+            <div class="activity-price">
+              ${item.price.map(price => `<span>${price}</span>`).join("")}
+            </div>
+          ` : ""}
+
+          <a class="button" href="${item.booking}" target="_blank">${item.button}</a>
+        </div>
+      </article>
+    `).join("");
+
     const header = document.querySelector(".site-header");
     const toggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".nav");
 
     const updateHeader = () => {
-      header.classList.toggle("scrolled", scrollY > 35);
+      header.classList.toggle("scrolled", window.scrollY > 35);
     };
 
     updateHeader();
     addEventListener("scroll", updateHeader, { passive: true });
 
     toggle.addEventListener("click", () => {
-      const open = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!open));
-      nav.classList.toggle("open", !open);
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+      nav.classList.toggle("open", !isOpen);
     });
   </script>
 </body>
