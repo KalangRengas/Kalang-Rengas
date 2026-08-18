@@ -21,7 +21,10 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -31,8 +34,15 @@
       line-height: 1.5;
     }
 
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
       width: min(1120px, calc(100% - 3rem));
@@ -85,7 +95,9 @@
       transition: .25s;
     }
 
-    .site-header.scrolled .brand img { height: 47px; }
+    .site-header.scrolled .brand img {
+      height: 47px;
+    }
 
     .nav {
       display: flex;
@@ -117,7 +129,9 @@
       transform: scaleX(1);
     }
 
-    .site-header.scrolled .nav { color: var(--blue); }
+    .site-header.scrolled .nav {
+      color: var(--blue);
+    }
 
     .menu-toggle {
       display: none;
@@ -185,7 +199,9 @@
       font-weight: 500;
     }
 
-    h1 em { font-weight: 300; }
+    h1 em {
+      font-weight: 300;
+    }
 
     .hero p {
       max-width: 590px;
@@ -317,7 +333,9 @@
       font-size: .72rem;
     }
 
-    .package-body { padding: .55rem 1.25rem 1.3rem; }
+    .package-body {
+      padding: .55rem 1.25rem 1.3rem;
+    }
 
     .package-body h3 {
       margin: .45rem 0 .55rem;
@@ -491,9 +509,10 @@
       line-height: 1.35;
     }
 
+    /* AKTIVITI LAIN */
     .activity-card {
       display: grid;
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 300px 1fr;
       gap: 1.25rem;
       align-items: start;
       padding: 1rem;
@@ -524,7 +543,7 @@
 
     .activity-copy {
       display: flex;
-      min-height: 180px;
+      min-height: 300px;
       flex-direction: column;
       padding: .35rem .4rem .35rem 0;
     }
@@ -540,9 +559,19 @@
       color: var(--muted);
     }
 
-    .activity-card.team p { color: #c5dbe3; }
-    .activity-copy .button { align-self: start; margin-top: auto; }
-    .activity-card.team .button { color: var(--blue); background: #fff; }
+    .activity-card.team p {
+      color: #c5dbe3;
+    }
+
+    .activity-copy .button {
+      align-self: start;
+      margin-top: auto;
+    }
+
+    .activity-card.team .button {
+      color: var(--blue);
+      background: #fff;
+    }
 
     .activity-price {
       display: flex;
@@ -586,7 +615,9 @@
       font-weight: 600;
     }
 
-    .booking { padding: clamp(4rem, 8vw, 6rem) 0; }
+    .booking {
+      padding: clamp(4rem, 8vw, 6rem) 0;
+    }
 
     .booking-card {
       display: flex;
@@ -605,8 +636,14 @@
       font-weight: 500;
     }
 
-    .booking-card .eyebrow { color: #c4e8f5; }
-    .booking-card .button { color: var(--blue); background: #fff; }
+    .booking-card .eyebrow {
+      color: #c4e8f5;
+    }
+
+    .booking-card .button {
+      color: var(--blue);
+      background: #fff;
+    }
 
     footer {
       padding: 4rem 0 1.4rem;
@@ -660,7 +697,9 @@
       font-size: .82rem;
     }
 
-    .footer-inner p { margin: 0; }
+    .footer-inner p {
+      margin: 0;
+    }
 
     @media (max-width: 760px) {
       .site-header {
@@ -669,9 +708,17 @@
         backdrop-filter: blur(14px);
       }
 
-      .brand img { height: 46px; }
-      .menu-toggle { display: block; }
-      .menu-toggle span { background: var(--blue); }
+      .brand img {
+        height: 46px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .menu-toggle span {
+        background: var(--blue);
+      }
 
       .nav {
         position: absolute;
@@ -718,12 +765,12 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .footer-top {
-        grid-template-columns: 1fr 1fr;
+      .activity-card {
+        grid-template-columns: 1fr;
       }
 
-      .footer-top > :first-child {
-        grid-column: 1 / -1;
+      .activity-copy {
+        min-height: 0;
       }
     }
 
@@ -742,15 +789,13 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .package-foot,
-      .activity-card {
+      .package-foot {
         align-items: start;
-        grid-template-columns: 1fr;
         flex-direction: column;
       }
 
       .activity-gallery {
-        max-width: 220px;
+        max-width: 100%;
       }
 
       .activity-copy {
@@ -771,14 +816,27 @@
 </head>
 
 <body>
+
   <header class="site-header">
     <div class="header-inner">
+
       <a class="brand" href="index.html">
-        <img src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/KR.png" alt="Kalang Rengas">
+        <img
+          src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/KR.png"
+          alt="Kalang Rengas"
+        >
       </a>
 
-      <button class="menu-toggle" type="button" aria-label="Buka menu" aria-controls="site-nav" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Buka menu"
+        aria-controls="site-nav"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
       <nav class="nav" id="site-nav">
@@ -790,130 +848,229 @@
         <a href="fasiliti.html">Fasiliti</a>
         <a href="linkbio.html">Hubungi</a>
       </nav>
+
     </div>
   </header>
 
   <main>
+
     <section class="hero">
       <div class="container">
         <span class="eyebrow">Pakej Kayak Kalang Rengas</span>
-        <h1>Pilih rentak <em>pengembaraan anda.</em></h1>
-        <p>Setiap pakej dibangunkan berasaskan kekuatan alam semula jadi, warisan komuniti dan pengalaman luar untuk perjalanan yang autentik, selamat dan bermakna.</p>
+
+        <h1>
+          Pilih rentak
+          <em>pengembaraan anda.</em>
+        </h1>
+
+        <p>
+          Setiap pakej dibangunkan berasaskan
+          warisan komuniti dan pengalaman luar 
+          untuk perjalanan yang autentik,
+          selamat dan bermakna.
+        </p>
       </div>
     </section>
 
     <section class="packages">
       <div class="container">
+
         <div class="section-intro">
           <div>
             <span class="eyebrow">Pakej pilihan</span>
             <h2>Kayak bersama rentak alam.</h2>
           </div>
-          <p>Slide galeri pada setiap pakej untuk melihat lebih banyak gambar aktiviti.</p>
+
+          <p>
+            Slide untuk lihat lebih banyak gambar.
+          </p>
         </div>
 
         <div class="kayak-grid" id="kayak-grid"></div>
+
       </div>
     </section>
 
     <section class="section" id="keselamatan">
       <div class="container">
+
         <div class="section-intro">
           <div>
             <span class="eyebrow">Keutamaan kami</span>
             <h2>Keselamatan dalam setiap perjalanan.</h2>
           </div>
-          <p>Setiap aktiviti dirancang dengan persediaan, panduan dan langkah keselamatan yang jelas.</p>
+
+          <p>
+            Setiap aktiviti dirancang dengan persediaan, panduan dan langkah keselamatan yang jelas.
+          </p>
         </div>
 
         <div class="safety-grid">
+
           <article class="safety-card">
-            <img src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/certified.png" alt="Certified Guide">
+            <img
+              src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/certified.png"
+              alt="Certified Guide"
+            >
             <h3>Certified Guide</h3>
-            <p>Jurupandu bertauliah untuk membantu perjalanan anda.</p>
+            <p>Guide bertauliah untuk membantu trip anda.</p>
           </article>
 
           <article class="safety-card">
-            <img src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/erp.png" alt="ERP">
+            <img
+              src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/erp.png"
+              alt="ERP"
+            >
             <h3>ERP</h3>
             <p>Emergency Response Plan</p>
           </article>
 
           <article class="safety-card">
-            <img src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/rams.png" alt="RAMS">
+            <img
+              src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/rams.png"
+              alt="RAMS"
+            >
             <h3>RAMS</h3>
             <p>Risk Analysys Management Sytems</p>
           </article>
 
           <article class="safety-card">
-            <img src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/sop.png" alt="SOP">
+            <img
+              src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/sop.png"
+              alt="SOP"
+            >
             <h3>SOP</h3>
             <p>Standard Operation Procedure</p>
           </article>
+
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
+
         <div class="section-intro">
           <div>
             <span class="eyebrow">Aktiviti lain</span>
             <h2>Teruskan pengembaraan anda.</h2>
           </div>
-          <p>Terokai lebih banyak pengalaman bersama kami.</p>
+
+          <p>
+            Terokai lebih banyak pengalaman bersama kami.
+          </p>
         </div>
 
         <div class="activity-grid" id="activity-grid"></div>
+
       </div>
     </section>
 
     <section class="equipment">
       <div class="container">
+
         <div class="section-intro">
           <div>
             <span class="eyebrow">Sewaan peralatan</span>
             <h2>Peralatan untuk disewa.</h2>
           </div>
-          <p>Keperluan asas untuk aktiviti luar dan perhimpunan kumpulan anda.</p>
+
+          <p>
+            Keperluan asas untuk aktiviti luar.
+          </p>
         </div>
 
         <div class="equipment-grid">
-          <div class="equipment-item"><img src="autotent.png" alt="Autotent"><span>Autotent</span></div>
-          <div class="equipment-item"><img src="bazoongi.png" alt="Bazoongi"><span>Bazoongi</span></div>
-          <div class="equipment-item"><img src="canvas.png" alt="Canvas"><span>Canvas</span></div>
-          <div class="equipment-item"><img src="kanopi10.png" alt="Kanopi 10 x 10"><span>Kanopi 10 x 10</span></div>
-          <div class="equipment-item"><img src="mejakusi.png" alt="Meja dan kerusi"><span>Meja dan kerusi</span></div>
-          <div class="equipment-item"><img src="pelampung.png" alt="Pelampung"><span>Pelampung</span></div>
-          <div class="equipment-item"><img src="untam.png" alt="Tent Unta M"><span>Tent Unta M</span></div>
-          <div class="equipment-item"><img src="untam.png" alt="Tent Unta L"><span>Tent Unta L</span></div>
+
+          <div class="equipment-item">
+            <img src="autotent.png" alt="Autotent">
+            <span>Autotent</span>
+          </div>
+
+          <div class="equipment-item">
+            <img src="bazoongi.png" alt="Bazoongi">
+            <span>Bazoongi</span>
+          </div>
+
+          <div class="equipment-item">
+            <img src="canvas.png" alt="Canvas">
+            <span>Canvas</span>
+          </div>
+
+          <div class="equipment-item">
+            <img src="kanopi10.png" alt="Kanopi 10 x 10">
+            <span>Kanopi 10 x 10</span>
+          </div>
+
+          <div class="equipment-item">
+            <img src="mejakusi.png" alt="Meja dan kerusi">
+            <span>Meja dan kerusi</span>
+          </div>
+
+          <div class="equipment-item">
+            <img src="pelampung.png" alt="Pelampung">
+            <span>Pelampung</span>
+          </div>
+
+          <div class="equipment-item">
+            <img src="untam.png" alt="Tent Unta M">
+            <span>Tent Unta M</span>
+          </div>
+
+          <div class="equipment-item">
+            <img src="untam.png" alt="Tent Unta L">
+            <span>Tent Unta L</span>
+          </div>
+
         </div>
       </div>
     </section>
 
     <section class="booking">
       <div class="container">
+
         <div class="booking-card">
+
           <div>
             <span class="eyebrow">Tempahan</span>
-            <h2>Sedia untuk ke sungai?</h2>
+            <h2>Sedia untuk ke Kalang Rengas?</h2>
           </div>
-          <a class="button" href="https://www.wassap.my/60189134993/web" target="_blank">Hubungi Kalang Rengas</a>
+
+          <a
+            class="button"
+            href="https://www.wassap.my/60189134993/web"
+            target="_blank"
+          >
+            Hubungi Kalang Rengas
+          </a>
+
         </div>
+
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="container">
+
       <div class="footer-top">
+
         <div>
-          <img class="footer-logo" src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/KR.png" alt="Kalang Rengas">
-          <p>Pengalaman ekopelancongan yang hidup bersama alam dan komuniti di Hulu Terengganu.</p>
+          <img
+            class="footer-logo"
+            src="https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/KR.png"
+            alt="Kalang Rengas"
+          >
+
+          <p>
+            Pengalaman ekopelancongan yang hidup bersama alam dan komuniti di Hulu Terengganu.
+          </p>
         </div>
 
         <div>
           <h3>Terokai</h3>
+
           <ul class="footer-links">
             <li><a href="about.html">Tentang Kami</a></li>
             <li><a href="pakej.html">Pakej</a></li>
@@ -923,25 +1080,35 @@
 
         <div>
           <h3>Hubungi</h3>
+
           <ul class="footer-links">
             <li><a href="linkbio.html">Hubungi Kami</a></li>
             <li><a href="mailto:info@kalangrengas.com">info@kalangrengas.com</a></li>
             <li>Hulu Terengganu, Malaysia</li>
           </ul>
         </div>
+
       </div>
 
       <div class="footer-inner">
         <p>&copy; 2026 Kalang Rengas. Hak cipta terpelihara.</p>
         <p>Let the locals craft your unforgettable experience.</p>
       </div>
+
     </div>
   </footer>
 
   <script>
-    const base = "https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/";
 
-    const gallery = [
+    const base =
+      "https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/";
+
+    /*
+      GALLERY LAMA
+      Digunakan sementara untuk KLX
+      dan aktiviti ATV / Team Building
+    */
+    const defaultGallery = [
       base + "galery1.png",
       base + "galery2.png",
       base + "galery3.png",
@@ -957,7 +1124,13 @@
       lunch: base + "restaurant.png"
     };
 
+
+    /*
+      PAKEJ KAYAK
+    */
+
     const packages = [
+
       {
         label: "Pakej Kayak 01",
         badge: "Paling Popular",
@@ -970,8 +1143,17 @@
         original: "RM165",
         price: "RM150",
         booking: "https://www.wassap.my/60189134993/webKLA",
-        lunch: true
+        lunch: true,
+
+        gallery: [
+          base + "kla1.png",
+          base + "kla2.png",
+          base + "kla3.png",
+          base + "kla4.png"
+        ]
       },
+
+
       {
         label: "Pakej Kayak 02",
         code: "KLX",
@@ -983,8 +1165,16 @@
         original: "RM220",
         price: "RM200",
         booking: "https://www.wassap.my/60189134993/webKLX",
-        lunch: true
+        lunch: true,
+
+        /*
+          Gambar KLX belum ada.
+          Sementara itu guna gallery lama.
+        */
+        gallery: defaultGallery
       },
+
+
       {
         label: "Pakej Kayak 03",
         badge: "Terbaru",
@@ -997,8 +1187,17 @@
         original: "RM198",
         price: "RM180",
         booking: "https://www.wassap.my/60189134993/webKLW",
-        lunch: true
+        lunch: true,
+
+        gallery: [
+          base + "klw1.png",
+          base + "klw2.png",
+          base + "klw3.png",
+          base + "klw4.png"
+        ]
       },
+
+
       {
         label: "Pakej Kayak 04",
         code: "KSA",
@@ -1010,127 +1209,366 @@
         original: "RM43",
         price: "RM39",
         booking: "https://www.wassap.my/60189134993/webKSA",
-        lunch: false
+        lunch: false,
+
+        gallery: [
+          base + "ksa1.png",
+          base + "ksa2.png",
+          base + "ksa3.png",
+          base + "ksa4.png"
+        ]
       }
+
     ];
 
+
+    /*
+      AKTIVITI LAIN
+    */
+
     const activities = [
+
       {
         title: "Jelajah ATV",
         label: "Aktiviti darat",
-        summary: "Jelajah trek separa lasak sepanjang 2.1 km. Termasuk taklimat keselamatan, helmet serta bantuan jurupandu atau marshal.",
+        summary: "Jelajah ATV sepanjang 2.1 km melalui laluan yang separa lasak. Aktiviti dimulakan dengan taklimat keselamatan dan dipantau oleh jurupandu atau marshal sepanjang perjalanan.
+",
         booking: "https://www.wassap.my/60145380028/ATVkr",
         button: "Hubungi kami",
-        price: ["Single Rider RM20", "Two Riders RM25"]
+        price: [
+          "Single Rider RM20",
+          "Two Riders RM25"
+        ],
+        gallery: defaultGallery
       },
+
+
       {
         title: "Team Building",
         label: "Untuk kumpulan",
-        summary: "Rancang program team building mengikut keperluan kumpulan anda, dengan aktiviti dan fasilitator yang disesuaikan mengikut objektif program.",
+        summary: "Rancang program team building mengikut keperluan anda, dengan aktiviti dan fasilitator yang disesuaikan mengikut objektif program.",
         booking: "https://www.wassap.my/60189134993/webTeam",
         button: "Dapatkan sebut harga",
-        team: true
+        team: true,
+        gallery: defaultGallery
       }
+
     ];
 
-    function makeGallery(title, className) {
+
+    /*
+      GALLERY FUNCTION
+    */
+
+    function makeGallery(images, title, className) {
+
       return `
-        <div class="${className}" aria-label="Galeri ${title}">
-          ${gallery.map((image, i) =>
-            `<img src="${image}" alt="${title} ${i + 1}">`
+        <div
+          class="${className}"
+          aria-label="Galeri ${title}"
+        >
+
+          ${images.map((image, i) =>
+            `<img
+              src="${image}"
+              alt="${title} ${i + 1}"
+              loading="lazy"
+            >`
           ).join("")}
+
         </div>
       `;
+
     }
+
+
+    /*
+      PACKAGE INCLUDE
+    */
 
     function packageIncludes(withLunch) {
+
       return `
         <div class="includes">
+
           <h4>Termasuk dalam pakej</h4>
+
           <ul class="include-list">
-            <li><img src="${icons.kayak}" alt=""><span>Kayak</span></li>
-            <li><img src="${icons.paddle}" alt=""><span>Paddle</span></li>
-            <li><img src="${icons.pfd}" alt=""><span>Personal Floating Device</span></li>
-            <li><img src="${icons.guide}" alt=""><span>Certified Guide</span></li>
-            <li><img src="${icons.transport}" alt=""><span>Domestic Transport</span></li>
-            ${withLunch ? `<li><img src="${icons.lunch}" alt=""><span>Makan Tengah Hari</span></li>` : ""}
+
+            <li>
+              <img src="${icons.kayak}" alt="">
+              <span>Kayak</span>
+            </li>
+
+            <li>
+              <img src="${icons.paddle}" alt="">
+              <span>Paddle</span>
+            </li>
+
+            <li>
+              <img src="${icons.pfd}" alt="">
+              <span>Personal Floating Device</span>
+            </li>
+
+            <li>
+              <img src="${icons.guide}" alt="">
+              <span>Certified Guide</span>
+            </li>
+
+            <li>
+              <img src="${icons.transport}" alt="">
+              <span>Domestic Transport</span>
+            </li>
+
+            ${
+              withLunch
+              ? `
+                <li>
+                  <img src="${icons.lunch}" alt="">
+                  <span>Makan Tengah Hari</span>
+                </li>
+              `
+              : ""
+            }
+
           </ul>
+
         </div>
       `;
+
     }
 
-    document.querySelector("#kayak-grid").innerHTML = packages.map(item => `
-      <article class="kayak-card">
-        <div class="package-head">
-          <span class="package-number">${item.label}</span>
-          ${item.badge ? `<span class="package-badge">${item.badge}</span>` : ""}
-          <span class="package-code">${item.code}</span>
-        </div>
 
-        ${makeGallery(item.title, "gallery")}
-        <span class="gallery-note">Slide untuk lihat lebih lagi</span>
+    /*
+      RENDER PAKEJ KAYAK
+    */
 
-        <div class="package-body">
-          <h3>${item.title}</h3>
-          <p class="summary">${item.summary}</p>
+    document.querySelector("#kayak-grid").innerHTML =
+      packages.map(item => `
 
-          <div class="activity-info">
-            <div><span>Jarak</span><strong>${item.distance}</strong></div>
-            <div><span>Durasi</span><strong>${item.duration}</strong></div>
-            <div><span>Minimum</span><strong>${item.minimum}</strong></div>
-          </div>
+        <article class="kayak-card">
 
-          ${packageIncludes(item.lunch)}
+          <div class="package-head">
 
-          <div class="package-foot">
-            <span class="price">
-              <span class="original-price">${item.original}</span>
-              ${item.price}
-              <small>per pax</small>
+            <span class="package-number">
+              ${item.label}
             </span>
 
-            <a class="button" href="${item.booking}" target="_blank">Tempah sekarang</a>
+            ${
+              item.badge
+              ? `<span class="package-badge">${item.badge}</span>`
+              : ""
+            }
+
+            <span class="package-code">
+              ${item.code}
+            </span>
+
           </div>
-        </div>
-      </article>
-    `).join("");
 
-    document.querySelector("#activity-grid").innerHTML = activities.map(item => `
-      <article class="activity-card ${item.team ? "team" : ""}">
-        ${makeGallery(item.title, "activity-gallery")}
 
-        <div class="activity-copy">
-          <span class="eyebrow" ${item.team ? 'style="color:#c4e8f5"' : ""}>${item.label}</span>
-          <h3>${item.title}</h3>
-          <p>${item.summary}</p>
+          ${makeGallery(
+            item.gallery,
+            item.title,
+            "gallery"
+          )}
 
-          ${item.price ? `
-            <div class="activity-price">
-              ${item.price.map(price => `<span>${price}</span>`).join("")}
+
+          <span class="gallery-note">
+            Slide untuk lihat lebih lagi
+          </span>
+
+
+          <div class="package-body">
+
+            <h3>
+              ${item.title}
+            </h3>
+
+            <p class="summary">
+              ${item.summary}
+            </p>
+
+
+            <div class="activity-info">
+
+              <div>
+                <span>Jarak</span>
+                <strong>${item.distance}</strong>
+              </div>
+
+              <div>
+                <span>Durasi</span>
+                <strong>${item.duration}</strong>
+              </div>
+
+              <div>
+                <span>Minimum</span>
+                <strong>${item.minimum}</strong>
+              </div>
+
             </div>
-          ` : ""}
 
-          <a class="button" href="${item.booking}" target="_blank">${item.button}</a>
-        </div>
-      </article>
-    `).join("");
 
-    const header = document.querySelector(".site-header");
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav");
+            ${packageIncludes(item.lunch)}
+
+
+            <div class="package-foot">
+
+              <span class="price">
+
+                <span class="original-price">
+                  ${item.original}
+                </span>
+
+                ${item.price}
+
+                <small>
+                  per pax
+                </small>
+
+              </span>
+
+
+              <a
+                class="button"
+                href="${item.booking}"
+                target="_blank"
+              >
+                Tempah sekarang
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      `).join("");
+
+
+    /*
+      RENDER AKTIVITI LAIN
+    */
+
+    document.querySelector("#activity-grid").innerHTML =
+      activities.map(item => `
+
+        <article class="activity-card ${item.team ? "team" : ""}">
+
+          ${makeGallery(
+            item.gallery,
+            item.title,
+            "activity-gallery"
+          )}
+
+
+          <div class="activity-copy">
+
+            <span
+              class="eyebrow"
+              ${item.team ? 'style="color:#c4e8f5"' : ""}
+            >
+              ${item.label}
+            </span>
+
+
+            <h3>
+              ${item.title}
+            </h3>
+
+
+            <p>
+              ${item.summary}
+            </p>
+
+
+            ${
+              item.price
+              ? `
+                <div class="activity-price">
+
+                  ${item.price.map(price =>
+                    `<span>${price}</span>`
+                  ).join("")}
+
+                </div>
+              `
+              : ""
+            }
+
+
+            <a
+              class="button"
+              href="${item.booking}"
+              target="_blank"
+            >
+              ${item.button}
+            </a>
+
+          </div>
+
+        </article>
+
+      `).join("");
+
+
+    /*
+      HEADER
+    */
+
+    const header =
+      document.querySelector(".site-header");
+
+    const toggle =
+      document.querySelector(".menu-toggle");
+
+    const nav =
+      document.querySelector(".nav");
+
 
     const updateHeader = () => {
-      header.classList.toggle("scrolled", window.scrollY > 35);
+
+      header.classList.toggle(
+        "scrolled",
+        window.scrollY > 35
+      );
+
     };
 
+
     updateHeader();
-    addEventListener("scroll", updateHeader, { passive: true });
+
+
+    addEventListener(
+      "scroll",
+      updateHeader,
+      { passive: true }
+    );
+
+
+    /*
+      MOBILE MENU
+    */
 
     toggle.addEventListener("click", () => {
-      const isOpen = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!isOpen));
-      nav.classList.toggle("open", !isOpen);
+
+      const isOpen =
+        toggle.getAttribute("aria-expanded") === "true";
+
+      toggle.setAttribute(
+        "aria-expanded",
+        String(!isOpen)
+      );
+
+      nav.classList.toggle(
+        "open",
+        !isOpen
+      );
+
     });
+
   </script>
+
 </body>
 </html>
