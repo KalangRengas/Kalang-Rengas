@@ -313,18 +313,19 @@
       scrollbar-width: thin;
     }
 
-    .gallery {
-      grid-auto-columns: 84%;
-      padding: .75rem;
-    }
+   .gallery {
+  grid-auto-columns: 88%;
+  padding: .75rem;
+}
 
-    .gallery img {
-      width: 100%;
-      height: 238px;
-      border-radius: .65rem;
-      object-fit: cover;
-      scroll-snap-align: start;
-    }
+.gallery img {
+  width: 100%;
+  aspect-ratio: 800 / 752;
+  height: auto;
+  border-radius: .65rem;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
 
     .gallery-note {
       display: block;
