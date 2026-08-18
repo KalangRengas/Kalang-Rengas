@@ -852,6 +852,7 @@
     </div>
   </header>
 
+
   <main>
 
     <section class="hero">
@@ -864,13 +865,13 @@
         </h1>
 
         <p>
-          Setiap pakej dibangunkan berasaskan
-          warisan komuniti dan pengalaman luar 
-          untuk perjalanan yang autentik,
+          Setiap pakej dibangunkan berasaskan kekuatan alam semula jadi,
+          warisan komuniti dan pengalaman luar untuk perjalanan yang autentik,
           selamat dan bermakna.
         </p>
       </div>
     </section>
+
 
     <section class="packages">
       <div class="container">
@@ -882,7 +883,7 @@
           </div>
 
           <p>
-            Slide untuk lihat lebih banyak gambar.
+            Slide galeri untuk lihat lebih banyak gambar aktiviti.
           </p>
         </div>
 
@@ -890,6 +891,7 @@
 
       </div>
     </section>
+
 
     <section class="section" id="keselamatan">
       <div class="container">
@@ -901,7 +903,8 @@
           </div>
 
           <p>
-            Setiap aktiviti dirancang dengan persediaan, panduan dan langkah keselamatan yang jelas.
+            Setiap aktiviti dirancang dengan persediaan,
+            panduan dan langkah keselamatan yang jelas.
           </p>
         </div>
 
@@ -913,7 +916,7 @@
               alt="Certified Guide"
             >
             <h3>Certified Guide</h3>
-            <p>Guide bertauliah untuk membantu trip anda.</p>
+            <p>Guide bertauliah untuk membantu trip kayak anda.</p>
           </article>
 
           <article class="safety-card">
@@ -947,6 +950,7 @@
       </div>
     </section>
 
+
     <section class="section">
       <div class="container">
 
@@ -965,6 +969,7 @@
 
       </div>
     </section>
+
 
     <section class="equipment">
       <div class="container">
@@ -1026,6 +1031,7 @@
       </div>
     </section>
 
+
     <section class="booking">
       <div class="container">
 
@@ -1033,7 +1039,7 @@
 
           <div>
             <span class="eyebrow">Tempahan</span>
-            <h2>Sedia untuk ke Kalang Rengas?</h2>
+            <h2>Sedia ke Kalang Rengas?</h2>
           </div>
 
           <a
@@ -1051,6 +1057,7 @@
 
   </main>
 
+
   <footer>
     <div class="container">
 
@@ -1064,7 +1071,8 @@
           >
 
           <p>
-            Pengalaman ekopelancongan yang hidup bersama alam dan komuniti di Hulu Terengganu.
+            Pengalaman ekopelancongan yang hidup bersama alam
+            dan komuniti di Hulu Terengganu.
           </p>
         </div>
 
@@ -1098,22 +1106,33 @@
     </div>
   </footer>
 
+
   <script>
+
+    /* =========================================================
+       BASE IMAGE URL
+    ========================================================= */
 
     const base =
       "https://raw.githubusercontent.com/KalangRengas/Kalang-Rengas/main/images/";
 
-    /*
-      GALLERY LAMA
-      Digunakan sementara untuk KLX
-      dan aktiviti ATV / Team Building
-    */
+
+    /* =========================================================
+       OLD / DEFAULT GALLERY
+       Digunakan sementara untuk KLX, ATV dan Team Building
+    ========================================================= */
+
     const defaultGallery = [
       base + "galery1.png",
       base + "galery2.png",
       base + "galery3.png",
       base + "galery4.png"
     ];
+
+
+    /* =========================================================
+       ICONS
+    ========================================================= */
 
     const icons = {
       kayak: base + "kayak.png",
@@ -1125,9 +1144,25 @@
     };
 
 
-    /*
-      PAKEJ KAYAK
-    */
+    /* =========================================================
+       FUNCTION
+       Guna gallery package sendiri.
+       Kalau gallery kosong / tiada, fallback ke gallery lama.
+    ========================================================= */
+
+    function getGallery(images) {
+
+      if (Array.isArray(images) && images.length > 0) {
+        return images;
+      }
+
+      return defaultGallery;
+    }
+
+
+    /* =========================================================
+       PAKEJ KAYAK
+    ========================================================= */
 
     const packages = [
 
@@ -1136,13 +1171,15 @@
         badge: "Paling Popular",
         code: "KLA",
         title: "Kayak Little Amazon",
-        summary: "Terokai Little Amazon yang tenang, dikelilingi kehijauan alam semula jadi.",
+        summary:
+          "Terokai Little Amazon yang tenang, dikelilingi kehijauan alam semula jadi.",
         distance: "8.5 km",
         duration: "2-3 jam",
         minimum: "4 orang",
         original: "RM165",
         price: "RM150",
-        booking: "https://www.wassap.my/60189134993/webKLA",
+        booking:
+          "https://www.wassap.my/60189134993/webKLA",
         lunch: true,
 
         gallery: [
@@ -1158,19 +1195,18 @@
         label: "Pakej Kayak 02",
         code: "KLX",
         title: "Kayak Little Amazon Extreme",
-        summary: "Laluan lebih jauh untuk peserta yang mahu menikmati pengalaman sungai dengan lebih mendalam.",
+        summary:
+          "Laluan lebih jauh untuk peserta yang mahu menikmati pengalaman sungai dengan lebih mendalam.",
         distance: "22 km",
         duration: "5-6 jam",
         minimum: "4 orang",
         original: "RM220",
         price: "RM200",
-        booking: "https://www.wassap.my/60189134993/webKLX",
+        booking:
+          "https://www.wassap.my/60189134993/webKLX",
         lunch: true,
 
-        /*
-          Gambar KLX belum ada.
-          Sementara itu guna gallery lama.
-        */
+        /* KLX belum ada gambar baru */
         gallery: defaultGallery
       },
 
@@ -1180,13 +1216,15 @@
         badge: "Terbaru",
         code: "KLW",
         title: "Kayak Neram Wildscape",
-        summary: "Laluan kayak yang dipenuhi Pokok Keruing Neram, dengan pemandangan sungai dan alam semula jadi yang indah.",
+        summary:
+          "Laluan kayak yang dipenuhi Pokok Keruing Neram, dengan pemandangan sungai dan alam semula jadi yang indah.",
         distance: "7 km",
         duration: "2-3 jam",
         minimum: "4 orang",
         original: "RM198",
         price: "RM180",
-        booking: "https://www.wassap.my/60189134993/webKLW",
+        booking:
+          "https://www.wassap.my/60189134993/webKLW",
         lunch: true,
 
         gallery: [
@@ -1202,13 +1240,15 @@
         label: "Pakej Kayak 04",
         code: "KSA",
         title: "Kayak Santai",
-        summary: "Pilihan pendek dan santai untuk keluarga, kumpulan kecil dan peserta kali pertama.",
+        summary:
+          "Pilihan pendek dan santai untuk keluarga, kumpulan kecil dan peserta kali pertama.",
         distance: "2.5 km",
         duration: "30 minit",
         minimum: "6 orang",
         original: "RM43",
         price: "RM39",
-        booking: "https://www.wassap.my/60189134993/webKSA",
+        booking:
+          "https://www.wassap.my/60189134993/webKSA",
         lunch: false,
 
         gallery: [
@@ -1222,18 +1262,19 @@
     ];
 
 
-    /*
-      AKTIVITI LAIN
-    */
+    /* =========================================================
+       AKTIVITI LAIN
+    ========================================================= */
 
     const activities = [
 
       {
         title: "Jelajah ATV",
         label: "Aktiviti darat",
-        summary: "Jelajah ATV sepanjang 2.1 km melalui laluan yang separa lasak. Aktiviti dimulakan dengan taklimat keselamatan dan dipantau oleh jurupandu atau marshal sepanjang perjalanan.
-",
-        booking: "https://www.wassap.my/60145380028/ATVkr",
+        summary:
+          "Jelajah ATV sepanjang 2.1 km melalui laluan yang mencabar. Aktiviti dimulakan dengan taklimat keselamatan dan dipantau oleh jurupandu atau marshal sepanjang perjalanan.",
+        booking:
+          "https://www.wassap.my/60145380028/ATVkr",
         button: "Hubungi kami",
         price: [
           "Single Rider RM20",
@@ -1246,8 +1287,10 @@
       {
         title: "Team Building",
         label: "Untuk kumpulan",
-        summary: "Rancang program team building mengikut keperluan anda, dengan aktiviti dan fasilitator yang disesuaikan mengikut objektif program.",
-        booking: "https://www.wassap.my/60189134993/webTeam",
+        summary:
+          "Rancang sahaja objektif dan keperluan pasukan anda. Kami uruskan selebihnya dengan susunan aktiviti, fasiliti dan program yang sesuai untuk kumpulan anda.",
+        booking:
+          "https://www.wassap.my/60189134993/webTeam",
         button: "Dapatkan sebut harga",
         team: true,
         gallery: defaultGallery
@@ -1256,11 +1299,13 @@
     ];
 
 
-    /*
-      GALLERY FUNCTION
-    */
+    /* =========================================================
+       MAKE GALLERY
+    ========================================================= */
 
     function makeGallery(images, title, className) {
+
+      const selectedGallery = getGallery(images);
 
       return `
         <div
@@ -1268,23 +1313,23 @@
           aria-label="Galeri ${title}"
         >
 
-          ${images.map((image, i) =>
-            `<img
+          ${selectedGallery.map((image, i) => `
+            <img
               src="${image}"
               alt="${title} ${i + 1}"
               loading="lazy"
-            >`
-          ).join("")}
+              onerror="this.style.display='none'"
+            >
+          `).join("")}
 
         </div>
       `;
-
     }
 
 
-    /*
-      PACKAGE INCLUDE
-    */
+    /* =========================================================
+       PACKAGE INCLUDES
+    ========================================================= */
 
     function packageIncludes(withLunch) {
 
@@ -1296,27 +1341,42 @@
           <ul class="include-list">
 
             <li>
-              <img src="${icons.kayak}" alt="">
+              <img
+                src="${icons.kayak}"
+                alt=""
+              >
               <span>Kayak</span>
             </li>
 
             <li>
-              <img src="${icons.paddle}" alt="">
+              <img
+                src="${icons.paddle}"
+                alt=""
+              >
               <span>Paddle</span>
             </li>
 
             <li>
-              <img src="${icons.pfd}" alt="">
+              <img
+                src="${icons.pfd}"
+                alt=""
+              >
               <span>Personal Floating Device</span>
             </li>
 
             <li>
-              <img src="${icons.guide}" alt="">
+              <img
+                src="${icons.guide}"
+                alt=""
+              >
               <span>Certified Guide</span>
             </li>
 
             <li>
-              <img src="${icons.transport}" alt="">
+              <img
+                src="${icons.transport}"
+                alt=""
+              >
               <span>Domestic Transport</span>
             </li>
 
@@ -1324,7 +1384,10 @@
               withLunch
               ? `
                 <li>
-                  <img src="${icons.lunch}" alt="">
+                  <img
+                    src="${icons.lunch}"
+                    alt=""
+                  >
                   <span>Makan Tengah Hari</span>
                 </li>
               `
@@ -1335,99 +1398,190 @@
 
         </div>
       `;
-
     }
 
 
-    /*
-      RENDER PAKEJ KAYAK
-    */
+    /* =========================================================
+       RENDER KAYAK
+    ========================================================= */
 
-    document.querySelector("#kayak-grid").innerHTML =
-      packages.map(item => `
-
-        <article class="kayak-card">
-
-          <div class="package-head">
-
-            <span class="package-number">
-              ${item.label}
-            </span>
-
-            ${
-              item.badge
-              ? `<span class="package-badge">${item.badge}</span>`
-              : ""
-            }
-
-            <span class="package-code">
-              ${item.code}
-            </span>
-
-          </div>
+    const kayakGrid =
+      document.querySelector("#kayak-grid");
 
 
-          ${makeGallery(
-            item.gallery,
-            item.title,
-            "gallery"
-          )}
+    if (kayakGrid) {
 
+      kayakGrid.innerHTML =
+        packages.map(item => `
 
-          <span class="gallery-note">
-            Slide untuk lihat lebih lagi
-          </span>
+          <article class="kayak-card">
 
+            <div class="package-head">
 
-          <div class="package-body">
+              <span class="package-number">
+                ${item.label}
+              </span>
 
-            <h3>
-              ${item.title}
-            </h3>
+              ${
+                item.badge
+                ? `
+                  <span class="package-badge">
+                    ${item.badge}
+                  </span>
+                `
+                : ""
+              }
 
-            <p class="summary">
-              ${item.summary}
-            </p>
-
-
-            <div class="activity-info">
-
-              <div>
-                <span>Jarak</span>
-                <strong>${item.distance}</strong>
-              </div>
-
-              <div>
-                <span>Durasi</span>
-                <strong>${item.duration}</strong>
-              </div>
-
-              <div>
-                <span>Minimum</span>
-                <strong>${item.minimum}</strong>
-              </div>
+              <span class="package-code">
+                ${item.code}
+              </span>
 
             </div>
 
 
-            ${packageIncludes(item.lunch)}
+            ${makeGallery(
+              item.gallery,
+              item.title,
+              "gallery"
+            )}
 
 
-            <div class="package-foot">
+            <span class="gallery-note">
+              Slide untuk lihat lebih lagi
+            </span>
 
-              <span class="price">
 
-                <span class="original-price">
-                  ${item.original}
+            <div class="package-body">
+
+              <h3>
+                ${item.title}
+              </h3>
+
+              <p class="summary">
+                ${item.summary}
+              </p>
+
+
+              <div class="activity-info">
+
+                <div>
+                  <span>Jarak</span>
+                  <strong>${item.distance}</strong>
+                </div>
+
+                <div>
+                  <span>Durasi</span>
+                  <strong>${item.duration}</strong>
+                </div>
+
+                <div>
+                  <span>Minimum</span>
+                  <strong>${item.minimum}</strong>
+                </div>
+
+              </div>
+
+
+              ${packageIncludes(item.lunch)}
+
+
+              <div class="package-foot">
+
+                <span class="price">
+
+                  <span class="original-price">
+                    ${item.original}
+                  </span>
+
+                  ${item.price}
+
+                  <small>
+                    per pax
+                  </small>
+
                 </span>
 
-                ${item.price}
 
-                <small>
-                  per pax
-                </small>
+                <a
+                  class="button"
+                  href="${item.booking}"
+                  target="_blank"
+                >
+                  Tempah sekarang
+                </a>
 
+              </div>
+
+            </div>
+
+          </article>
+
+        `).join("");
+
+    }
+
+
+    /* =========================================================
+       RENDER ACTIVITIES
+    ========================================================= */
+
+    const activityGrid =
+      document.querySelector("#activity-grid");
+
+
+    if (activityGrid) {
+
+      activityGrid.innerHTML =
+        activities.map(item => `
+
+          <article
+            class="activity-card ${item.team ? "team" : ""}"
+          >
+
+            ${makeGallery(
+              item.gallery,
+              item.title,
+              "activity-gallery"
+            )}
+
+
+            <div class="activity-copy">
+
+              <span
+                class="eyebrow"
+                ${
+                  item.team
+                  ? 'style="color:#c4e8f5"'
+                  : ""
+                }
+              >
+                ${item.label}
               </span>
+
+
+              <h3>
+                ${item.title}
+              </h3>
+
+
+              <p>
+                ${item.summary}
+              </p>
+
+
+              ${
+                item.price
+                ? `
+                  <div class="activity-price">
+
+                    ${item.price.map(price => `
+                      <span>${price}</span>
+                    `).join("")}
+
+                  </div>
+                `
+                : ""
+              }
 
 
               <a
@@ -1435,87 +1589,21 @@
                 href="${item.booking}"
                 target="_blank"
               >
-                Tempah sekarang
+                ${item.button}
               </a>
 
             </div>
 
-          </div>
+          </article>
 
-        </article>
+        `).join("");
 
-      `).join("");
-
-
-    /*
-      RENDER AKTIVITI LAIN
-    */
-
-    document.querySelector("#activity-grid").innerHTML =
-      activities.map(item => `
-
-        <article class="activity-card ${item.team ? "team" : ""}">
-
-          ${makeGallery(
-            item.gallery,
-            item.title,
-            "activity-gallery"
-          )}
+    }
 
 
-          <div class="activity-copy">
-
-            <span
-              class="eyebrow"
-              ${item.team ? 'style="color:#c4e8f5"' : ""}
-            >
-              ${item.label}
-            </span>
-
-
-            <h3>
-              ${item.title}
-            </h3>
-
-
-            <p>
-              ${item.summary}
-            </p>
-
-
-            ${
-              item.price
-              ? `
-                <div class="activity-price">
-
-                  ${item.price.map(price =>
-                    `<span>${price}</span>`
-                  ).join("")}
-
-                </div>
-              `
-              : ""
-            }
-
-
-            <a
-              class="button"
-              href="${item.booking}"
-              target="_blank"
-            >
-              ${item.button}
-            </a>
-
-          </div>
-
-        </article>
-
-      `).join("");
-
-
-    /*
-      HEADER
-    */
+    /* =========================================================
+       HEADER
+    ========================================================= */
 
     const header =
       document.querySelector(".site-header");
@@ -1529,10 +1617,14 @@
 
     const updateHeader = () => {
 
-      header.classList.toggle(
-        "scrolled",
-        window.scrollY > 35
-      );
+      if (header) {
+
+        header.classList.toggle(
+          "scrolled",
+          window.scrollY > 35
+        );
+
+      }
 
     };
 
@@ -1543,30 +1635,40 @@
     addEventListener(
       "scroll",
       updateHeader,
-      { passive: true }
+      {
+        passive: true
+      }
     );
 
 
-    /*
-      MOBILE MENU
-    */
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
 
-    toggle.addEventListener("click", () => {
+    if (toggle && nav) {
 
-      const isOpen =
-        toggle.getAttribute("aria-expanded") === "true";
+      toggle.addEventListener("click", () => {
 
-      toggle.setAttribute(
-        "aria-expanded",
-        String(!isOpen)
-      );
+        const isOpen =
+          toggle.getAttribute(
+            "aria-expanded"
+          ) === "true";
 
-      nav.classList.toggle(
-        "open",
-        !isOpen
-      );
 
-    });
+        toggle.setAttribute(
+          "aria-expanded",
+          String(!isOpen)
+        );
+
+
+        nav.classList.toggle(
+          "open",
+          !isOpen
+        );
+
+      });
+
+    }
 
   </script>
 
